@@ -1,0 +1,25 @@
+{
+  "synchronization": {
+    "title": "Synchronisation",
+    "description": "L'état de la synchronisation des données de ce bureau avec le système central.",
+    "apiUnavailableTitle": "La synchronisation n'est pas connectée",
+    "apiUnavailableDescription": "Le serveur ne fournit pas encore de points d'accès au statut de synchronisation. Aucune file fictive n'est affichée.",
+    "connectedTo": "Actuellement connecté à",
+    "officeServer": "Serveur du bureau (réseau local)",
+    "centralServer": "Serveur central (internet)",
+    "lastSynced": "Dernière synchronisation",
+    "pendingCount_one": "{{count}} changement en attente de synchronisation",
+    "pendingCount_other": "{{count}} changements en attente de synchronisation",
+    "allSynced": "Tout est synchronisé",
+    "queueTitle": "En attente de synchronisation",
+    "columnWhat": "Quoi",
+    "columnWhen": "Enregistré à",
+    "columnStatus": "Statut",
+    "emptyTitle": "Rien en attente",
+    "emptyDescription": "Chaque changement effectué au bureau a atteint le système central.",
+    "statusPending": "En attente",
+    "statusSyncing": "Envoi en cours…",
+    "statusFailed": "Échec de l'envoi — nouvelle tentative bientôt",
+    "explainer": "Rien n'est jamais perdu si internet tombe en panne ici. Tout ce que vous enregistrez est sauvegardé immédiatement sur l'ordinateur du bureau, et envoyé au système central dès que la connexion revient."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "validation": {
+    "required": "Ce champ est obligatoire.",
+    "nameTooShort_one": "Saisissez au moins {{count}} caractère.",
+    "nameTooShort_other": "Saisissez au moins {{count}} caractères.",
+    "emailInvalid": "Saisissez une adresse e-mail valide, par ex. nom@exemple.com.",
+    "phoneInvalid": "Saisissez un numéro camerounais de 9 chiffres commençant par 6 ou 2, par ex. 677 099 845.",
+    "idCardInvalid": "Saisissez un numéro de CNI valide : 9 chiffres (carte 2016) ou A + une lettre ou un chiffre + 8 chiffres (nouvelle carte), par ex. AB12345678.",
+    "emailPlaceholder": "ex. nom@exemple.com"
+  }
+}

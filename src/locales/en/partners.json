@@ -1,0 +1,113 @@
+{
+  "partners": {
+    "fields": {
+      "type": "Partner type",
+      "selectType": "Select a type",
+      "name": "Name",
+      "contactPerson": "Contact person",
+      "phone": "Phone number",
+      "idNumber": "ID number",
+      "address": "Address",
+      "notes": "Notes",
+      "status": "Status",
+      "createdAt": "Added",
+      "updatedAt": "Last updated",
+      "kind": "Partner is",
+      "fullName": "Full name",
+      "legalName": "Legal name",
+      "contactPersonHint": "The person you deal with at this company.",
+      "location": "Location",
+      "locationPlaceholder": "e.g. Douala, Bonabéri industrial zone",
+      "officialIdentifiers": "Official identifiers (optional)",
+      "registrationNumber": "Trade register number (RCCM)",
+      "taxNumber": "Taxpayer number (NIU)",
+      "identifier": "ID / RCCM"
+    },
+    "types": {
+      "BUYER": "Buyer",
+      "FARMER": "Farmer",
+      "COMMERCIAL": "Commercial partner",
+      "LOGISTICS": "Logistics partner",
+      "OTHER": "Other partner"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "trusted": "Trusted for prefinancing",
+    "notTrusted": "Not trusted for prefinancing",
+    "openPrefinancing": "Open prefinancing",
+    "deactivate": "Deactivate",
+    "reactivate": "Reactivate",
+    "deactivateTitle": "Deactivate partner?",
+    "reactivateTitle": "Reactivate partner?",
+    "deactivateDescription": "<bold>{{name}}</bold> will no longer be offered for new purchases, deliveries or prefinances. Existing records are kept, and you can reactivate them from All partners.",
+    "reactivateDescription": "<bold>{{name}}</bold> will be available again for new purchases, deliveries and prefinances.",
+    "sections": {
+      "all": {
+        "title": "All partners",
+        "description": "Every partner of every type, including deactivated ones.",
+        "add": "Add partner",
+        "createTitle": "Add partner",
+        "editTitle": "Edit partner",
+        "formDescription": "Choose the partner type, then fill in their details.",
+        "emptyTitle": "No partners yet",
+        "emptyDescription": "Partners you add will appear here."
+      },
+      "buyer": {
+        "title": "Buyers",
+        "description": "Field buyers you purchase from and may prefinance.",
+        "add": "Add buyer",
+        "createTitle": "Add buyer",
+        "editTitle": "Edit buyer",
+        "formDescription": "Trust status decides whether the buyer can be prefinanced.",
+        "emptyTitle": "No buyers yet",
+        "emptyDescription": "Buyers you add will appear here."
+      },
+      "farmer": {
+        "title": "Farmers",
+        "description": "Farmers you buy cocoa from directly.",
+        "add": "Add farmer",
+        "createTitle": "Add farmer",
+        "editTitle": "Edit farmer",
+        "formDescription": "Farmers can be selected when recording a purchase.",
+        "emptyTitle": "No farmers yet",
+        "emptyDescription": "Farmers you add will appear here."
+      },
+      "commercial": {
+        "title": "Commercial partners",
+        "description": "Companies your trucks deliver cocoa to.",
+        "add": "Add commercial partner",
+        "createTitle": "Add commercial partner",
+        "editTitle": "Edit commercial partner",
+        "formDescription": "Commercial partners can receive deliveries.",
+        "emptyTitle": "No commercial partners yet",
+        "emptyDescription": "Commercial partners you add will appear here."
+      },
+      "logistics": {
+        "title": "Logistics partners",
+        "description": "Transporters and other logistics providers.",
+        "add": "Add logistics partner",
+        "createTitle": "Add logistics partner",
+        "editTitle": "Edit logistics partner",
+        "formDescription": "Record the transporter's contact details.",
+        "emptyTitle": "No logistics partners yet",
+        "emptyDescription": "Logistics partners you add will appear here."
+      },
+      "other": {
+        "title": "Other partners",
+        "description": "Partners that fit no other type.",
+        "add": "Add partner",
+        "createTitle": "Add partner",
+        "editTitle": "Edit partner",
+        "formDescription": "Record the partner's contact details.",
+        "emptyTitle": "No other partners yet",
+        "emptyDescription": "Partners you add will appear here."
+      }
+    },
+    "kinds": {
+      "INDIVIDUAL": "Individual",
+      "COMPANY": "Company"
+    }
+  }
+}

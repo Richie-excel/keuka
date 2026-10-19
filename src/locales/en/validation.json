@@ -1,0 +1,11 @@
+{
+  "validation": {
+    "required": "This field is required.",
+    "nameTooShort_one": "Enter at least {{count}} character.",
+    "nameTooShort_other": "Enter at least {{count}} characters.",
+    "emailInvalid": "Enter a valid email address, e.g. name@example.com.",
+    "phoneInvalid": "Enter a 9-digit Cameroonian number starting with 6 or 2, e.g. 677 099 845.",
+    "idCardInvalid": "Enter a valid ID card number: 9 digits (2016 card) or A + a letter or digit + 8 digits (new card), e.g. AB12345678.",
+    "emailPlaceholder": "e.g. name@example.com"
+  }
+}

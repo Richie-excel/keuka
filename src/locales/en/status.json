@@ -1,0 +1,58 @@
+{
+  "status": {
+    "payable": {
+      "PAID": "Paid",
+      "PARTIAL": "Partially paid",
+      "UNPAID": "Unpaid"
+    },
+    "stock": {
+      "AVAILABLE": "Available",
+      "RESERVED": "Reserved",
+      "LOADED": "Loaded for delivery"
+    },
+    "delivery": {
+      "PLANNED": "Planned",
+      "IN_TRANSIT": "On the way",
+      "DELIVERED": "Delivered"
+    },
+    "contract": {
+      "ACTIVE": "Active",
+      "COMPLETED": "Completed",
+      "DRAFT": "Draft"
+    },
+    "buyer": {
+      "ACTIVE": "Still owing",
+      "SETTLED": "Settled",
+      "UNSETTLED": "Unsettled"
+    },
+    "payroll": {
+      "PAID": "Paid",
+      "PENDING": "Not paid yet"
+    },
+    "subscription": {
+      "TRIAL": "Trial",
+      "ACTIVE": "Active",
+      "PAST_DUE": "Past due",
+      "SUSPENDED": "Suspended",
+      "EXPIRED": "Expired",
+      "CANCELLED": "Cancelled"
+    },
+    "tenant": {
+      "ACTIVE": "Active",
+      "SUSPENDED": "Suspended",
+      "CLOSED": "Closed"
+    },
+    "prefinance": {
+      "OPEN": "Open",
+      "PARTIALLY_SETTLED": "Partially settled",
+      "SETTLED": "Settled",
+      "COMPANY_OWES_BUYER": "Company owes buyer"
+    },
+    "price": {
+      "SCHEDULED": "Starts later",
+      "ACTIVE": "In force",
+      "SUPERSEDED": "Replaced",
+      "CANCELLED": "Cancelled"
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "home": {
+    "eyebrow": "Cocoa operations & finance",
+    "titleLine1": "Every kilo,",
+    "titleLine2": "accounted for.",
+    "subtitle": "Purchases, prefinancing, cash, stock and payroll for cocoa buying stations — on one ledger your whole team can trust.",
+    "ctaPrimary": "Sign in to your workspace",
+    "ctaSecondary": "See what it does",
+    "trust": {
+      "roles": "Roles & permissions",
+      "audit": "Full audit trail",
+      "languages": "French & English"
+    },
+    "mock": {
+      "title": "Purchases · today",
+      "live": "Live",
+      "bought": "Cocoa bought",
+      "paid": "Paid out",
+      "till": "In the till",
+      "week": "This week",
+      "recent": "Recent deliveries",
+      "paidStatus": "Paid",
+      "partStatus": "Part paid",
+      "offsetStatus": "Prefinance",
+      "receipt": "Receipt printed",
+      "receiptNo": "RCP-2026-4F2A91"
+    },
+    "facts": {
+      "ledger": {
+        "value": "1 ledger",
+        "label": "for purchases, cash and stock"
+      },
+      "roles": {
+        "value": "Every action",
+        "label": "signed with a name and a time"
+      },
+      "print": {
+        "value": "5 documents",
+        "label": "printed straight from the app"
+      },
+      "lang": {
+        "value": "FR · EN",
+        "label": "for every screen and document"
+      }
+    },
+    "features": {
+      "eyebrow": "What it does",
+      "title": "Built for the way a buying station really works.",
+      "subtitle": "From the scale to the final report, each step lands in the same record.",
+      "purchases": {
+        "title": "Purchases & weighing",
+        "text": "Gross, humidity, refraction and net for every delivery. Same-day deliveries roll into one purchase, each weighing kept."
+      },
+      "prefinance": {
+        "title": "Prefinancing at the agreed price",
+        "text": "Advance money to trusted buyers. Their cocoa repays the debt at the price you agreed, automatically."
+      },
+      "till": {
+        "title": "Till & provisions",
+        "text": "Open a float, record each provision, pay at the scale. Close with a count and see the variance."
+      },
+      "stock": {
+        "title": "Stock & truck loadings",
+        "text": "Stock moves with every purchase. Load trucks for commercial partners with a printed delivery note."
+      },
+      "payroll": {
+        "title": "Payroll & payslips",
+        "text": "Accrue salaries, pay from the till against a signature, print monthly payslips."
+      },
+      "control": {
+        "title": "Roles, audit & control",
+        "text": "Each person sees only what their role allows. Nothing is deleted quietly: payments are voided, never erased.",
+        "log": {
+          "purchaseCreated": "Purchase recorded",
+          "paymentRecorded": "Payment recorded",
+          "tillClosed": "Till closed",
+          "paymentVoided": "Payment voided",
+          "cashier": "cashier.1",
+          "boss": "boss"
+        }
+      }
+    },
+    "steps": {
+      "eyebrow": "How it works",
+      "title": "Three steps, every day.",
+      "weigh": {
+        "title": "Weigh and record",
+        "text": "The cashier records the delivery at the scale. Stock is received at once."
+      },
+      "pay": {
+        "title": "Price and pay",
+        "text": "The right price is applied, a buyer's prefinance is repaid, the rest is paid now or later."
+      },
+      "reconcile": {
+        "title": "Reconcile and report",
+        "text": "Close the till, print the reports and see every movement of the day."
+      }
+    },
+    "documents": {
+      "eyebrow": "Paperwork",
+      "title": "The paperwork prints itself.",
+      "subtitle": "Branded with your company's letterhead and watermark.",
+      "receipt": "Purchase receipts",
+      "prefinance": "Prefinance receipts",
+      "delivery": "Delivery notes",
+      "till": "Till reports",
+      "payslip": "Payslips"
+    },
+    "final": {
+      "title": "Ready for today's deliveries?",
+      "text": "Sign in with the account your administrator gave you.",
+      "cta": "Sign in",
+      "seePlans": "See plans and prices"
+    },
+    "footer": {
+      "illustrative": "Figures shown on this page are illustrative.",
+      "rights": "All rights reserved."
+    },
+    "ctaPlans": "Plans & prices",
+    "plans": {
+      "back": "Home",
+      "signIn": "Sign in",
+      "title": "Simple yearly plans for cocoa businesses",
+      "subtitle": "Start free for 30 days. Pay once a year. Move to another plan whenever your business grows.",
+      "unavailable": "The plans cannot be shown right now. Please try again in a moment.",
+      "trialTitle": "Free for {{days}} days",
+      "trialText": "Try everything in Pro with your own purchases, stock and staff. No payment needed to start.",
+      "recommended": "Most popular",
+      "perMonth": "about {{amount}} per month",
+      "choose": "Start the free trial",
+      "compareTitle": "Compare every detail",
+      "safeTitle": "Your data is never locked",
+      "safeText": "Reaching a limit only stops adding more. If you change plan or stop paying, everything you recorded stays readable and printable.",
+      "payTitle": "Pay by Mobile Money",
+      "payText": "MTN MoMo or Orange Money, once a year. We set up your account and train your cashier at no extra cost."
+    },
+    "screenshotAlt": "The CoMS dashboard: cocoa price, stock on hand, purchases waiting on payment and salaries due"
+  }
+}

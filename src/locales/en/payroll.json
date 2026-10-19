@@ -1,0 +1,64 @@
+{
+  "payroll": {
+    "title": "Salaries",
+    "description": "Track what the company owes employees and signed cash collections.",
+    "totalDueOnPage": "Salary due on this page",
+    "employeesOwed": "Employees with salary due",
+    "employeeBalances": "Employee salary balances",
+    "owed": "Due",
+    "settled": "Settled",
+    "historyAction": "Collection history",
+    "collectAction": "Collect salary",
+    "employeePayrollDescription": "Accruals record money owed. Collections record signed cash payouts.",
+    "currentDue": "Currently owed",
+    "notes": "Notes",
+    "collectionSaved": "Signed salary collection recorded.",
+    "collectTitle": "Record signed collection",
+    "openTillRequired": "Open a cashier till before recording a cash salary collection.",
+    "tillAvailable": "Available in till: {{amount}}",
+    "amountCollected": "Cash collected",
+    "collectionLimit": "Cannot exceed salary due ({{due}}) or available till balance ({{till}}).",
+    "signatureName": "Employee signature name",
+    "collectSubmit": "Record signed collection",
+    "payoutHistory": "Signed collection history",
+    "noPayouts": "No salary collections recorded for this employee.",
+    "signedBy": "Signed by {{name}}",
+    "totalPayroll": "Total payroll",
+    "paidPayroll": "Paid payroll",
+    "pendingPayroll": "Pending payroll",
+    "payrollRegister": "Payroll register",
+    "filterStatus": "Filter by status",
+    "allStatuses": "All statuses",
+    "columnEmployee": "Employee",
+    "columnPeriod": "Period",
+    "columnAmount": "Amount",
+    "columnStatus": "Status",
+    "emptyTitle": "No payroll records yet",
+    "emptyDescription": "Salary payments will show up here once payroll periods are set up.",
+    "modes": {
+      "history": {
+        "title": "History",
+        "description": "Signed salary collections, and the monthly payslip."
+      },
+      "collect": {
+        "title": "Pay salary",
+        "description": "Pay this employee cash from your till against their signature."
+      }
+    },
+    "advance": {
+      "title": "Pay advance",
+      "amount": "Advance amount",
+      "submit": "Record signed advance",
+      "badge": "Advance",
+      "limit": "Up to {{due}} left of the agreed salary; the till holds {{till}}.",
+      "outstanding": "Outstanding advances: {{amount}} (repaid by the next salary).",
+      "firstMonth": "First month: salary is due from {{date}}. Any payment before then is an advance on the agreed salary.",
+      "hireDateRequired": "Record this employee's hire date before paying them.",
+      "agreedSalaryRequired": "Record this employee's agreed monthly salary before advancing them money."
+    },
+    "automatic": {
+      "next": "Next month of salary ({{amount}}) is added on {{date}}.",
+      "agreedSalaryMissing": "No agreed monthly salary is recorded, so no salary is being added. Edit the employee to set it."
+    }
+  }
+}

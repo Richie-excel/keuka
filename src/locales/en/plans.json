@@ -1,0 +1,126 @@
+{
+  "plans": {
+    "title": "Subscription plans",
+    "description": "What the platform sells: each plan's price, what it includes, and why it is worth choosing.",
+    "emptyTitle": "No plans yet",
+    "emptyDescription": "Create a plan and it will appear here, and on the subscription screen of every company.",
+    "rowActions": "Plan actions",
+    "createPlan": "Create plan",
+    "fields": {
+      "name": "Plan",
+      "code": "Code",
+      "price": "Price",
+      "billingPeriod": "Billed",
+      "features": "Features",
+      "displayOrder": "Order"
+    },
+    "status": {
+      "active": "On offer",
+      "inactive": "Retired"
+    },
+    "billingPeriod": {
+      "MONTHLY": "Monthly",
+      "QUARTERLY": "Quarterly",
+      "YEARLY": "Yearly",
+      "SEASON": "Season pass (Aug–Feb)",
+      "OFF_SEASON": "Off-season pass (Mar–Jul)"
+    },
+    "billingPeriodShort": {
+      "MONTHLY": "per month",
+      "QUARTERLY": "per quarter",
+      "YEARLY": "per year",
+      "SEASON": "for the season",
+      "OFF_SEASON": "for the off-season"
+    },
+    "dialog": {
+      "createTitle": "Create a plan",
+      "createDescription": "Set the name, the price, what the plan includes and what makes it worth choosing — all in one place.",
+      "viewTitle": "{{name}}",
+      "viewDescription": "Everything this plan offers, as it will be shown to companies."
+    },
+    "form": {
+      "name": "Plan name",
+      "nameHint": "What the customer sees, for example \"Standard\" or \"Premium\".",
+      "code": "Plan code",
+      "codeHintCreate": "Generated from the name. This is the code stored on every company subscribed to the plan.",
+      "codeHintEdit": "Fixed. Changing it would break the link for every company already on this plan.",
+      "description": "Short description",
+      "descriptionHint": "One line on who the plan is for. Shown under the price.",
+      "price": "Price",
+      "priceHint": "The amount charged per billing period. Enter 0 for a free plan.",
+      "pricePlaceholder": "0",
+      "currency": "Currency",
+      "currencyHint": "For example XAF.",
+      "billingPeriod": "Billed",
+      "pricePreview": "{{price}} {{period}}",
+      "featuresHeading": "What it includes",
+      "featuresDescription": "One row per thing the plan covers. Comparing these rows is how customers tell the plans apart, so give every plan the same features — untick the ones it does not include rather than leaving them out.",
+      "benefitsHeading": "Why it is worth it",
+      "benefitsDescription": "The selling points, as short statements. Shown as a list on the plan, not compared across plans.",
+      "active": "On offer",
+      "activeHint": "Turn this off to retire the plan: it can no longer be chosen by a new company, but the companies already on it keep it.",
+      "displayOrder": "Position",
+      "displayOrderHint": "Where this plan sits in the list — lowest first. Leave blank for the end.",
+      "create": "Create plan",
+      "allowsHeading": "What it allows",
+      "allowsDescription": "Enforced by the server. Reaching a limit only stops adding more; nothing existing is locked.",
+      "maxWarehouses": "Warehouses",
+      "maxUsers": "User accounts",
+      "unlimited": "Unlimited",
+      "unlimitedHint": "Leave blank for unlimited.",
+      "limitInvalid": "A whole number of at least 1, or blank.",
+      "modules": "Modules included",
+      "coreAlwaysIncluded": "Purchases, stock, partners, cocoa price, till, payments and receipts are in every plan. A module left out is read-only for companies on this plan.",
+      "frenchHeading": "French version",
+      "frenchDescription": "Shown to French-speaking readers. Leave a field blank to show the English text instead.",
+      "nameFr": "Name in French",
+      "descriptionFr": "Description in French",
+      "benefitsFr": "Selling points in French"
+    },
+    "features": {
+      "labelPlaceholder": "Feature, e.g. Warehouses",
+      "valuePlaceholder": "Value, e.g. Up to 2",
+      "included": "Included",
+      "add": "Add feature",
+      "remove": "Remove this feature",
+      "labelFrPlaceholder": "Label in French",
+      "valueFrPlaceholder": "Value in French"
+    },
+    "benefits": {
+      "placeholder": "For example: unlimited purchases and payments",
+      "add": "Add benefit",
+      "remove": "Remove this benefit"
+    },
+    "detail": {
+      "featuresHeading": "What it includes",
+      "noFeatures": "This plan has no features listed yet.",
+      "benefitsHeading": "Why it is worth it",
+      "noBenefits": "This plan has no benefits listed yet.",
+      "included": "included",
+      "notIncluded": "not included"
+    },
+    "compare": {
+      "heading": "Plans side by side",
+      "description": "Every plan and what it covers, aligned row by row, so the difference is visible rather than something to work out.",
+      "featureColumn": "Feature",
+      "benefits": "Why it is worth it",
+      "yourPlan": "Your plan",
+      "noFeatures": "No plan has features listed yet, so there is nothing to compare.",
+      "notIncluded": "not listed"
+    },
+    "mine": {
+      "heading": "What your plan includes",
+      "description": "The plan this company is subscribed to, and how it compares with the others on offer.",
+      "noCatalogue": "The plan catalogue is empty, so there is nothing to describe your plan with. Your subscription itself is unaffected.",
+      "unknownPlan": "This company is on plan \"{{code}}\", which is not in the catalogue any more. Its subscription is unaffected, but there is no description to show."
+    },
+    "modules": {
+      "PREFINANCE": "Buyer prefinance",
+      "LOGISTICS": "Deliveries and delivery notes",
+      "PAYROLL": "Payroll and payslips",
+      "CUSTOM_ROLES": "Custom roles",
+      "AUDIT_LOG": "Audit log",
+      "AI_ANALYSIS": "AI business analysis"
+    }
+  }
+}

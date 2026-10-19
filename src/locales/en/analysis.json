@@ -1,0 +1,60 @@
+{
+  "analysis": {
+    "title": "Business analysis",
+    "description": "Your figures, and a written analysis of them by the AI.",
+    "period": "Period",
+    "lastDays_one": "Last {{count}} day",
+    "lastDays_other": "Last {{count}} days",
+    "periodRange": "From {{from}} to {{to}}, compared with the same number of days before.",
+    "figures": {
+      "bought": "Cocoa bought",
+      "vsPrevious": "{{change}} vs. the previous period",
+      "purchaseCount_one": "{{count}} purchase",
+      "purchaseCount_other": "{{count}} purchases",
+      "spent": "Spent on cocoa",
+      "averagePrice": "Average {{price}} per kg",
+      "stock": "Stock on hand",
+      "stockFlow": "In {{received}} · out {{issued}}",
+      "price": "Current price per kg",
+      "priceChanges_one": "{{count}} change in the period",
+      "priceChanges_other": "{{count}} changes in the period",
+      "owedSuppliers": "Owed to suppliers",
+      "overdue_one": "{{count}} overdue · {{amount}}",
+      "overdue_other": "{{count}} overdue · {{amount}}",
+      "openPayables_one": "{{count}} unpaid purchase",
+      "openPayables_other": "{{count}} unpaid purchases",
+      "prefinance": "Prefinance not yet covered",
+      "openPrefinance_one": "{{count}} open prefinance",
+      "openPrefinance_other": "{{count}} open prefinances",
+      "till": "Till difference",
+      "shortfalls_one": "{{count}} shortfall · largest {{largest}}",
+      "shortfalls_other": "{{count}} shortfalls · largest {{largest}}",
+      "tillsClosed_one": "{{count}} till closed, no shortfall",
+      "tillsClosed_other": "{{count}} tills closed, no shortfall",
+      "salaries": "Salaries owed",
+      "employees_one": "{{count}} active employee",
+      "employees_other": "{{count}} active employees"
+    },
+    "topSuppliers": "Who you bought the most from",
+    "noPurchases": "No purchases in this period.",
+    "prefinanceExposure": "Largest prefinance not yet covered",
+    "noPrefinance": "No open prefinance.",
+    "report": {
+      "title": "AI analysis",
+      "write": "Write the analysis",
+      "refresh": "Write a new analysis",
+      "writing": "The AI is reading your figures and writing. This can take a minute or two…",
+      "emptyTitle": "No analysis yet",
+      "emptyDescription": "Click the ✨ button at the bottom right and the AI will explain the figures above: what went well, what to watch, what to do.",
+      "meta": "Written by {{model}} on {{date}}, about {{from}} to {{to}}.",
+      "disclaimer": "Written by an AI from the figures of that day. Check any number against the figures above before acting on it.",
+      "fabTooltip_one": "The AI reads the figures of the last {{count}} day and writes what went well, what to watch and what to do. Takes a minute or two.",
+      "fabTooltip_other": "The AI reads the figures of the last {{count}} days and writes what went well, what to watch and what to do. Takes a minute or two."
+    }
+  },
+  "ai": {
+    "suggestNote": "Suggest",
+    "suggesting": "Writing…",
+    "suggestNoteHint": "Let the AI propose a short note from this form. You can edit it before saving."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "contracts": {
+    "title": "Contracts",
+    "description": "Commercial commitments with partners.",
+    "totalQuantity": "Contracted quantity",
+    "activeContracts": "Active contracts",
+    "totalValue": "Contracted value",
+    "contractRegister": "Contract register",
+    "filterStatus": "Filter by status",
+    "newContract": "New contract",
+    "allStatuses": "All statuses",
+    "columnPartner": "Partner",
+    "columnQuantity": "Contracted quantity",
+    "columnUnitPrice": "Unit price",
+    "columnEnds": "Ends",
+    "columnStatus": "Status",
+    "emptyTitle": "No contracts yet",
+    "editTitle": "Edit contract",
+    "deleteTitle": "Delete contract",
+    "deleteDescription": "This action cannot be undone once confirmed.",
+    "startDate": "Start date",
+    "quantityHint": "The total quantity agreed in this contract, in kilograms.",
+    "saveChanges": "Save changes",
+    "formDescription": "A commercial commitment with a partner.",
+    "createContract": "Create contract",
+    "emptyDescription": "Contracts you agree with partners will show up here."
+    "apiUnavailableTitle": "Contracts are not connected",
+    "apiUnavailableDescription": "The backend does not currently provide contract endpoints. No contract data is being shown."
+  }
+}

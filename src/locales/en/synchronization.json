@@ -1,0 +1,25 @@
+{
+  "synchronization": {
+    "title": "Synchronization",
+    "description": "The status of syncing this office's data with the central system.",
+    "apiUnavailableTitle": "Synchronization is not connected",
+    "apiUnavailableDescription": "The backend does not currently provide synchronization status endpoints. No sample queue is shown.",
+    "connectedTo": "Currently connected to",
+    "officeServer": "Office server (local network)",
+    "centralServer": "Central server (internet)",
+    "lastSynced": "Last synced",
+    "pendingCount_one": "{{count}} change waiting to sync",
+    "pendingCount_other": "{{count}} changes waiting to sync",
+    "allSynced": "Everything is synced",
+    "queueTitle": "Waiting to sync",
+    "columnWhat": "What",
+    "columnWhen": "Recorded at",
+    "columnStatus": "Status",
+    "emptyTitle": "Nothing waiting",
+    "emptyDescription": "Every change made in the office has reached the central system.",
+    "statusPending": "Waiting",
+    "statusSyncing": "Sending…",
+    "statusFailed": "Couldn't send — will retry",
+    "explainer": "Nothing is ever lost if the internet goes down here. Everything you record is saved on the office computer right away, and sent to the central system as soon as the connection is back."
+  }
+}

@@ -1,0 +1,11 @@
+# Text files are stored with LF in the repository; Git converts on checkout as configured.
+* text=auto
+
+# Binary assets: never touch their bytes.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary

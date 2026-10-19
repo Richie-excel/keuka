@@ -1,0 +1,17 @@
+{
+  "audit": {
+    "title": "Audit log",
+    "description": "A record of every important action taken in the system.",
+    "columnWhat": "What happened",
+    "columnWho": "Who",
+    "columnWhen": "When",
+    "columnEventType": "Event type",
+    "emptyTitle": "Nothing recorded yet",
+    "emptyDescription": "Actions like price changes and permission changes will appear here.",
+    "searchPlaceholder": "Search: action, user, record…",
+    "searchLabel": "Search the audit log",
+    "clearSearch": "Clear the search",
+    "noMatchTitle": "Nothing found",
+    "noMatchDescription": "No event matches “{{term}}”. Try a user name, an action such as PURCHASE, or a record id."
+  }
+}

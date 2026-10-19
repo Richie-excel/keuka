@@ -1,0 +1,28 @@
+{
+  "profile": {
+    "title": "Mon profil",
+    "description": "Les informations de votre compte.",
+    "fullName": "Nom complet",
+    "username": "Nom d'utilisateur",
+    "email": "Courriel",
+    "role": "Rôle",
+    "changePasswordLink": "Changer mon mot de passe"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "Vous êtes à jour. Rien de nouveau pour le moment.",
+    "markAllRead": "Tout marquer comme lu"
+  },
+  "search": {
+    "placeholder": "Rechercher une page…",
+    "noResults": "Aucun résultat pour \"{{query}}\".",
+    "openSearch": "Rechercher"
+  },
+  "help": {
+    "title": "Aide et à propos",
+    "description": "Informations sur cette application.",
+    "appVersion": "Version",
+    "supportTitle": "Besoin d'aide ?",
+    "supportDescription": "Contactez le Patron ou votre Secrétaire Financière pour obtenir de l'aide."
+  }
+}

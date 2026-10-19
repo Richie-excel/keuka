@@ -1,0 +1,64 @@
+{
+  "reporting": {
+    "title": "Rapports",
+    "description": "Chiffres pour l'ensemble de l'entreprise. Les dépenses ici sont globales et ne sont pas réparties par contrat.",
+    "apiUnavailableTitle": "Les rapports ne sont pas connectés",
+    "apiUnavailableDescription": "Le serveur ne fournit pas encore de points d'accès pour les rapports. Aucun chiffre fictif n'est affiché.",
+    "procurement": "Approvisionnement",
+    "inventoryAndPayroll": "Stock et paie",
+    "totalPurchased": "Total acheté",
+    "totalWeightBought": "Poids total acheté",
+    "cocoaInStock": "Cacao en stock",
+    "payrollThisPeriod": "Paie de cette période",
+    "revenue": "Partner sales",
+    "revenueBilled": "Billed",
+    "revenueReceived": "Received",
+    "deliveredLoads": "Delivered loads",
+    "invoiceCount": "Invoices",
+    "period": {
+      "today": "Today",
+      "thisWeek": "Last 7 days",
+      "thisMonth": "This month",
+      "allTime": "All time"
+    },
+    "stat": {
+      "receivedHelper": "{{amount}} received",
+      "netHelper": "Cash received minus cash paid out",
+      "totalRevenue": "Partner revenue",
+      "partnerDeliveries": "From delivered loads",
+      "procurementSpent": "Procurement spent",
+      "expenditures": "Expenditures",
+      "expendituresHelper": "Global company costs",
+      "netPosition": "Net position"
+    },
+    "averagePricePerKg": "Average price per kg",
+    "purchaseCount": "Purchases recorded",
+    "payables": "Payables & payments",
+    "payablesOutstanding": "Outstanding",
+    "payablesPaid": "Paid",
+    "payablesSettlementRate": "Settlement rate",
+    "expenditures": "Expenditures",
+    "expendituresTotal": "Total expenditures",
+    "expendituresEmpty": "No expenditures recorded in this period.",
+    "inventory": "Inventory",
+    "inventoryTotal": "Total in stock",
+    "prefinance": "Buyer prefinance",
+    "prefinanceAdvanced": "Total advanced",
+    "prefinanceOutstanding": "Outstanding balance",
+    "prefinanceActiveBuyers": "Active prefinanced buyers",
+    "payroll": "Payroll",
+    "payrollPaid": "Paid",
+    "payrollPending": "Pending",
+    "payrollDue": "Due",
+    "payrollCount": "Employees on payroll"
+  },
+  "expense": {
+    "categories": {
+      "REPAIRS": "Repairs & maintenance",
+      "FUEL": "Fuel & transport",
+      "UTILITIES": "Utilities",
+      "OFFICE": "Office & supplies",
+      "OTHER": "Other"
+    }
+  }
+}

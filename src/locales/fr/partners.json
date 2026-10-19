@@ -1,0 +1,113 @@
+{
+  "partners": {
+    "fields": {
+      "type": "Type de partenaire",
+      "selectType": "Choisir un type",
+      "name": "Nom",
+      "contactPerson": "Personne à contacter",
+      "phone": "Téléphone",
+      "idNumber": "Numéro d'identité",
+      "address": "Adresse",
+      "notes": "Remarques",
+      "status": "Statut",
+      "createdAt": "Ajouté le",
+      "updatedAt": "Modifié le",
+      "kind": "Le partenaire est",
+      "fullName": "Nom complet",
+      "legalName": "Raison sociale",
+      "contactPersonHint": "La personne avec qui vous traitez dans cette entreprise.",
+      "location": "Localisation",
+      "locationPlaceholder": "ex. Douala, zone industrielle de Bonabéri",
+      "officialIdentifiers": "Identifiants officiels (facultatif)",
+      "registrationNumber": "Numéro RCCM",
+      "taxNumber": "Numéro d'identifiant unique (NIU)",
+      "identifier": "CNI / RCCM"
+    },
+    "types": {
+      "BUYER": "Acheteur",
+      "FARMER": "Producteur",
+      "COMMERCIAL": "Partenaire commercial",
+      "LOGISTICS": "Partenaire logistique",
+      "OTHER": "Autre partenaire"
+    },
+    "status": {
+      "active": "Actif",
+      "inactive": "Inactif"
+    },
+    "trusted": "Éligible au préfinancement",
+    "notTrusted": "Non éligible au préfinancement",
+    "openPrefinancing": "Ouvrir le préfinancement",
+    "deactivate": "Désactiver",
+    "reactivate": "Réactiver",
+    "deactivateTitle": "Désactiver le partenaire ?",
+    "reactivateTitle": "Réactiver le partenaire ?",
+    "deactivateDescription": "<bold>{{name}}</bold> ne sera plus proposé pour les nouveaux achats, livraisons ou préfinancements. Les enregistrements existants sont conservés ; vous pourrez le réactiver depuis Tous les partenaires.",
+    "reactivateDescription": "<bold>{{name}}</bold> sera de nouveau disponible pour les achats, livraisons et préfinancements.",
+    "sections": {
+      "all": {
+        "title": "Tous les partenaires",
+        "description": "Tous les partenaires, de tous types, y compris les désactivés.",
+        "add": "Ajouter un partenaire",
+        "createTitle": "Ajouter un partenaire",
+        "editTitle": "Modifier le partenaire",
+        "formDescription": "Choisissez le type de partenaire, puis renseignez ses informations.",
+        "emptyTitle": "Aucun partenaire",
+        "emptyDescription": "Les partenaires ajoutés apparaîtront ici."
+      },
+      "buyer": {
+        "title": "Acheteurs",
+        "description": "Acheteurs terrain auprès desquels vous achetez et que vous pouvez préfinancer.",
+        "add": "Ajouter un acheteur",
+        "createTitle": "Ajouter un acheteur",
+        "editTitle": "Modifier l'acheteur",
+        "formDescription": "Le statut de confiance détermine si l'acheteur peut être préfinancé.",
+        "emptyTitle": "Aucun acheteur",
+        "emptyDescription": "Les acheteurs ajoutés apparaîtront ici."
+      },
+      "farmer": {
+        "title": "Producteurs",
+        "description": "Producteurs auprès desquels vous achetez directement le cacao.",
+        "add": "Ajouter un producteur",
+        "createTitle": "Ajouter un producteur",
+        "editTitle": "Modifier le producteur",
+        "formDescription": "Les producteurs peuvent être choisis lors d'un achat.",
+        "emptyTitle": "Aucun producteur",
+        "emptyDescription": "Les producteurs ajoutés apparaîtront ici."
+      },
+      "commercial": {
+        "title": "Partenaires commerciaux",
+        "description": "Entreprises auxquelles vos camions livrent le cacao.",
+        "add": "Ajouter un partenaire commercial",
+        "createTitle": "Ajouter un partenaire commercial",
+        "editTitle": "Modifier le partenaire commercial",
+        "formDescription": "Les partenaires commerciaux peuvent recevoir des livraisons.",
+        "emptyTitle": "Aucun partenaire commercial",
+        "emptyDescription": "Les partenaires commerciaux ajoutés apparaîtront ici."
+      },
+      "logistics": {
+        "title": "Partenaires logistiques",
+        "description": "Transporteurs et autres prestataires logistiques.",
+        "add": "Ajouter un partenaire logistique",
+        "createTitle": "Ajouter un partenaire logistique",
+        "editTitle": "Modifier le partenaire logistique",
+        "formDescription": "Renseignez les coordonnées du transporteur.",
+        "emptyTitle": "Aucun partenaire logistique",
+        "emptyDescription": "Les partenaires logistiques ajoutés apparaîtront ici."
+      },
+      "other": {
+        "title": "Autres partenaires",
+        "description": "Partenaires n'entrant dans aucun autre type.",
+        "add": "Ajouter un partenaire",
+        "createTitle": "Ajouter un partenaire",
+        "editTitle": "Modifier le partenaire",
+        "formDescription": "Renseignez les coordonnées du partenaire.",
+        "emptyTitle": "Aucun autre partenaire",
+        "emptyDescription": "Les partenaires ajoutés apparaîtront ici."
+      }
+    },
+    "kinds": {
+      "INDIVIDUAL": "Personne physique",
+      "COMPANY": "Personne morale"
+    }
+  }
+}

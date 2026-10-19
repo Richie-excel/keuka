@@ -1,0 +1,139 @@
+{
+  "home": {
+    "eyebrow": "Opérations & finances du cacao",
+    "titleLine1": "Chaque kilo,",
+    "titleLine2": "bien compté.",
+    "subtitle": "Achats, préfinancement, caisse, stock et paie pour les centres d'achat de cacao — dans un seul registre auquel toute votre équipe peut se fier.",
+    "ctaPrimary": "Accéder à votre espace",
+    "ctaSecondary": "Découvrir les fonctions",
+    "trust": {
+      "roles": "Rôles et autorisations",
+      "audit": "Traçabilité complète",
+      "languages": "Français et anglais"
+    },
+    "mock": {
+      "title": "Achats · aujourd'hui",
+      "live": "En direct",
+      "bought": "Cacao acheté",
+      "paid": "Payé",
+      "till": "En caisse",
+      "week": "Cette semaine",
+      "recent": "Livraisons récentes",
+      "paidStatus": "Payé",
+      "partStatus": "Partiel",
+      "offsetStatus": "Préfinancement",
+      "receipt": "Reçu imprimé",
+      "receiptNo": "RCP-2026-4F2A91"
+    },
+    "facts": {
+      "ledger": {
+        "value": "1 registre",
+        "label": "pour les achats, la caisse et le stock"
+      },
+      "roles": {
+        "value": "Chaque action",
+        "label": "signée d'un nom et d'une heure"
+      },
+      "print": {
+        "value": "5 documents",
+        "label": "imprimés directement depuis l'application"
+      },
+      "lang": {
+        "value": "FR · EN",
+        "label": "pour chaque écran et document"
+      }
+    },
+    "features": {
+      "eyebrow": "Fonctions",
+      "title": "Pensé pour le fonctionnement réel d'un centre d'achat.",
+      "subtitle": "De la balance au rapport final, chaque étape arrive dans le même registre.",
+      "purchases": {
+        "title": "Achats et pesée",
+        "text": "Brut, humidité, réfaction et net pour chaque livraison. Les livraisons du même jour forment un seul achat, chaque pesée conservée."
+      },
+      "prefinance": {
+        "title": "Préfinancement au prix convenu",
+        "text": "Avancez de l'argent aux acheteurs de confiance. Leur cacao rembourse la dette au prix convenu, automatiquement."
+      },
+      "till": {
+        "title": "Caisse et provisions",
+        "text": "Ouvrez un fonds de caisse, enregistrez chaque provision, payez à la balance. Clôturez avec un comptage et voyez l'écart."
+      },
+      "stock": {
+        "title": "Stock et chargements",
+        "text": "Le stock suit chaque achat. Chargez les camions pour vos partenaires commerciaux avec un bordereau imprimé."
+      },
+      "payroll": {
+        "title": "Paie et bulletins",
+        "text": "Constatez les salaires, payez depuis la caisse contre signature, imprimez les bulletins mensuels."
+      },
+      "control": {
+        "title": "Rôles, audit et contrôle",
+        "text": "Chacun ne voit que ce que son rôle permet. Rien n'est effacé en silence : un paiement est annulé, jamais supprimé.",
+        "log": {
+          "purchaseCreated": "Achat enregistré",
+          "paymentRecorded": "Paiement enregistré",
+          "tillClosed": "Caisse clôturée",
+          "paymentVoided": "Paiement annulé",
+          "cashier": "caissier.1",
+          "boss": "patron"
+        }
+      }
+    },
+    "steps": {
+      "eyebrow": "Fonctionnement",
+      "title": "Trois étapes, chaque jour.",
+      "weigh": {
+        "title": "Peser et enregistrer",
+        "text": "Le caissier enregistre la livraison à la balance. Le stock est reçu aussitôt."
+      },
+      "pay": {
+        "title": "Valoriser et payer",
+        "text": "Le bon prix est appliqué, le préfinancement de l'acheteur est remboursé, le reste payé maintenant ou plus tard."
+      },
+      "reconcile": {
+        "title": "Rapprocher et rendre compte",
+        "text": "Clôturez la caisse, imprimez les rapports et voyez chaque mouvement de la journée."
+      }
+    },
+    "documents": {
+      "eyebrow": "Documents",
+      "title": "Les documents s'impriment tout seuls.",
+      "subtitle": "À l'en-tête et au filigrane de votre entreprise.",
+      "receipt": "Reçus d'achat",
+      "prefinance": "Reçus de préfinancement",
+      "delivery": "Bordereaux de livraison",
+      "till": "Rapports de caisse",
+      "payslip": "Bulletins de paie"
+    },
+    "final": {
+      "title": "Prêt pour les livraisons du jour ?",
+      "text": "Connectez-vous avec le compte fourni par votre administrateur.",
+      "cta": "Se connecter",
+      "seePlans": "Voir les offres et tarifs"
+    },
+    "footer": {
+      "illustrative": "Les chiffres affichés sur cette page sont illustratifs.",
+      "rights": "Tous droits réservés."
+    },
+    "ctaPlans": "Offres et tarifs",
+    "plans": {
+      "back": "Accueil",
+      "signIn": "Se connecter",
+      "title": "Des offres annuelles simples pour les entreprises du cacao",
+      "subtitle": "Gratuit pendant 30 jours. Un paiement par an. Changez d’offre quand votre activité grandit.",
+      "unavailable": "Les offres ne peuvent pas être affichées pour le moment. Réessayez dans un instant.",
+      "trialTitle": "Gratuit pendant {{days}} jours",
+      "trialText": "Essayez tout ce que contient Pro avec vos propres achats, votre stock et votre personnel. Aucun paiement pour commencer.",
+      "recommended": "La plus choisie",
+      "perMonth": "environ {{amount}} par mois",
+      "choose": "Commencer l’essai gratuit",
+      "compareTitle": "Tout comparer en détail",
+      "safeTitle": "Vos données ne sont jamais bloquées",
+      "safeText": "Atteindre une limite empêche seulement d’en ajouter. Si vous changez d’offre ou arrêtez de payer, tout ce que vous avez enregistré reste consultable et imprimable.",
+      "payTitle": "Paiement par Mobile Money",
+      "payText": "MTN MoMo ou Orange Money, une fois par an. Nous configurons votre compte et formons votre caissier sans frais."
+    },
+    "screenshotAlt": "Le tableau de bord CoMS : prix du cacao, stock disponible, achats en attente de paiement et salaires dus"
+  }
+}

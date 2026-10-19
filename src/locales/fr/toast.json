@@ -1,0 +1,81 @@
+{
+  "toast": {
+    "genericError": "Une erreur s'est produite. Veuillez réessayer.",
+    "profile": {
+      "updated": "Profil enregistré."
+    },
+    "password": {
+      "changed": "Mot de passe mis à jour."
+    },
+    "users": {
+      "created": "Compte créé. Une invitation a été envoyée par e-mail.",
+      "updated": "Compte utilisateur mis à jour.",
+      "statusChanged": "Accès au compte mis à jour.",
+      "passwordReset": "Mot de passe réinitialisé pour ce compte.",
+      "deactivated": "Compte utilisateur désactivé.",
+      "invitationSent": "Invitation renvoyée. L’ancien lien ne fonctionne plus."
+    },
+    "partners": {
+      "created": "Partenaire ajouté.",
+      "updated": "Partenaire enregistré."
+    },
+    "purchases": {
+      "recorded": "Achat enregistré.",
+      "updated": "Achat mis à jour."
+    },
+    "payments": {
+      "recorded": "Paiement enregistré.",
+      "voided": "Paiement annulé."
+    },
+    "prefinances": {
+      "created": "Avance enregistrée.",
+      "disbursed": "Décaissement enregistré.",
+      "delivered": "Retour de marchandise enregistré."
+    },
+    "cashSessions": {
+      "opened": "Session de caisse ouverte.",
+      "provisioned": "Espèces ajoutées à la caisse.",
+      "closed": "Session de caisse fermée."
+    },
+    "prices": {
+      "published": "Prix du cacao publié."
+    },
+    "employees": {
+      "created": "Employé ajouté.",
+      "updated": "Employé enregistré."
+    },
+    "expenses": {
+      "created": "Dépense enregistrée.",
+      "categoryCreated": "Catégorie de dépense ajoutée.",
+      "cancelled": "Dépense annulée ; l’argent est revenu dans la caisse."
+    },
+    "payroll": {
+      "collected": "Paiement de salaire enregistré."
+    },
+    "inventory": {
+      "adjusted": "Stock ajusté."
+    },
+    "deliveries": {
+      "loaded": "Chargement enregistré.",
+      "delivered": "Livraison marquée comme livrée."
+    },
+    "warehouses": {
+      "created": "Entrepôt ajouté.",
+      "updated": "Entrepôt enregistré."
+    },
+    "enterprises": {
+      "created": "Entreprise créée.",
+      "updated": "Entreprise enregistrée.",
+      "statusChanged": "Accès de l'entreprise mis à jour."
+    },
+    "subscription": {
+      "activated": "Souscription activée.",
+      "suspended": "Souscription suspendue.",
+      "contactSaved": "Informations de l'entreprise enregistrées."
+    },
+    "plans": {
+      "created": "Forfait créé.",
+      "updated": "Forfait enregistré."
+    }
+  }
+}

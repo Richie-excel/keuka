@@ -1,0 +1,84 @@
+{
+  "toast": {
+    "genericError": "Something went wrong. Please try again.",
+    "profile": {
+      "updated": "Profile saved."
+    },
+    "password": {
+      "changed": "Password updated."
+    },
+    "users": {
+      "created": "Account created. An invitation was emailed.",
+      "updated": "User account updated.",
+      "statusChanged": "Account access updated.",
+      "passwordReset": "Password reset for this account.",
+      "deactivated": "User account deactivated.",
+      "invitationSent": "Invitation sent again. The earlier link no longer works."
+    },
+    "partners": {
+      "created": "Partner added.",
+      "updated": "Partner saved."
+    },
+    "purchases": {
+      "recorded": "Purchase recorded.",
+      "updated": "Purchase saved."
+    },
+    "payments": {
+      "recorded": "Payment recorded.",
+      "voided": "Payment voided."
+    },
+    "prefinances": {
+      "created": "Advance recorded.",
+      "disbursed": "Disbursement recorded.",
+      "delivered": "Buyer delivery recorded."
+    },
+    "cashSessions": {
+      "opened": "Cash session opened.",
+      "provisioned": "Cash added to the till.",
+      "closed": "Cash session closed."
+    },
+    "prices": {
+      "published": "Cocoa price published."
+    },
+    "employees": {
+      "created": "Employee added.",
+      "updated": "Employee saved."
+    },
+    "expenses": {
+      "created": "Expense recorded.",
+      "categoryCreated": "Expense category added.",
+      "cancelled": "Expense cancelled; its cash is back in the till."
+    },
+    "payroll": {
+      "collected": "Salary payment recorded."
+    },
+    "inventory": {
+      "adjusted": "Stock adjusted."
+    },
+    "deliveries": {
+      "loaded": "Truck loading recorded.",
+      "delivered": "Delivery marked as delivered."
+    },
+    "warehouses": {
+      "created": "Warehouse added.",
+      "updated": "Warehouse saved."
+    },
+    "enterprises": {
+      "created": "Enterprise created.",
+      "updated": "Enterprise saved.",
+      "statusChanged": "Enterprise access updated."
+    },
+    "subscription": {
+      "activated": "Subscription activated.",
+      "suspended": "Subscription suspended.",
+      "contactSaved": "Company details saved."
+    },
+    "plans": {
+      "created": "Plan created.",
+      "updated": "Plan saved."
+    },
+    "roles": {
+      "rolesAssigned": "Roles updated."
+    }
+  }
+}

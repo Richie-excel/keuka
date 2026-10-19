@@ -1,0 +1,17 @@
+{
+  "audit": {
+    "title": "Journal d'audit",
+    "description": "Un enregistrement de chaque action importante effectuée dans le système.",
+    "columnWhat": "Ce qui s'est passé",
+    "columnWho": "Qui",
+    "columnWhen": "Quand",
+    "columnEventType": "Type d'événement",
+    "emptyTitle": "Rien d'enregistré pour le moment",
+    "emptyDescription": "Les actions comme les changements de prix et de permissions apparaîtront ici.",
+    "searchPlaceholder": "Rechercher : action, utilisateur, élément…",
+    "searchLabel": "Rechercher dans le journal d’audit",
+    "clearSearch": "Effacer la recherche",
+    "noMatchTitle": "Aucun résultat",
+    "noMatchDescription": "Aucun événement ne correspond à « {{term}} ». Essayez un nom d’utilisateur, une action comme PURCHASE, ou l’identifiant d’un élément."
+  }
+}

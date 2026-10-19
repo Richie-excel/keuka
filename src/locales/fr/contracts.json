@@ -1,0 +1,30 @@
+{
+  "contracts": {
+    "title": "Contrats",
+    "description": "Engagements commerciaux avec les partenaires.",
+    "totalQuantity": "Quantité sous contrat",
+    "activeContracts": "Contrats actifs",
+    "totalValue": "Valeur sous contrat",
+    "contractRegister": "Registre des contrats",
+    "filterStatus": "Filtrer par statut",
+    "allStatuses": "Tous les statuts",
+    "newContract": "Nouveau contract",
+    "columnPartner": "Partenaire",
+    "columnQuantity": "Quantité sous contrat",
+    "columnUnitPrice": "Prix unitaire",
+    "columnEnds": "Se termine",
+    "columnStatus": "Statut",
+    "emptyTitle": "Aucun contrat pour le moment",
+    "deleteTitle": "Supprimer contract",
+    "deleteDescription": "Cette action est irreversible une fois confirmée.",
+    "startDate": "Date de début",
+    "saveChanges": "Enregistrer les modifications",
+    "quantityHint": "La quantité totale convenue dans ce contrat, en kilogrammes.",
+    "editTitle": "Modifier le contrat",
+    "formDescription": "Un engagement commercial avec un partenaire.",
+    "createContract": "Créer le contrat",
+    "emptyDescription": "Les contrats que vous concluez avec les partenaires apparaîtront ici."
+    "apiUnavailableTitle": "Les contrats ne sont pas connectés",
+    "apiUnavailableDescription": "Le serveur ne fournit pas encore de points d'accès pour les contrats. Aucune donnée fictive n'est affichée."
+  }
+}

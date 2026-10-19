@@ -1,0 +1,39 @@
+{
+  "enterprises": {
+    "title": "Entreprises & entrepôts",
+    "description": "Toutes les sociétés de ce serveur, et les entrepôts de chacune.",
+    "emptyTitle": "Aucune entreprise trouvée",
+    "emptyDescription": "Les sociétés renvoyées par le serveur apparaîtront ici.",
+    "rowActions": "Actions sur l'entreprise",
+    "viewWarehouses": "Voir ses entrepôts",
+    "warehousesHeading": "Entrepôts",
+    "warehousesFor": "Entrepôts de {{name}}",
+    "warehousesDescription": "Sélectionnez une entreprise ci-dessus pour voir les entrepôts qu'elle exploite. L'entrepôt est l'unité à laquelle tout ce qui se trouve en dessous est rattaché : la caisse, le stock et le personnel.",
+    "selectHint": "Sélectionnez une entreprise ci-dessus pour voir ses entrepôts.",
+    "scopeNotice": "Cette session est connectée avec un autre code société et le point d'accès des entrepôts n'offre pas de filtre par entreprise. Afficher la liste ici risquerait de montrer les données d'une autre société ; elle est donc masquée.",
+    "myTitle": "Mon entreprise",
+    "myDescription": "Les informations de votre société et les entrepôts qu'elle exploite.",
+    "identityHeading": "Informations de la société",
+    "identityDescription": "Ces informations proviennent du dossier de votre société sur le serveur. Contactez l'administrateur système pour modifier le nom ou le forfait.",
+    "noOperationalAccess": "L'accès de cette société est actuellement suspendu : aucun nouvel enregistrement ne peut être sauvegardé. Contactez l'administrateur système.",
+    "myWarehousesHeading": "Entrepôts",
+    "myWarehousesDescription": "L'entrepôt détermine le périmètre de la caisse, du stock et du personnel qui y travaille. Ajoutez-en un pour chaque site exploité par votre société.",
+    "myWarehousesEmpty": "Ajoutez un entrepôt, puis enregistrez-y les achats, le stock et les mouvements de caisse.",
+    "contact": {
+      "heading": "Coordonnées",
+      "description": "Imprimées en en-tête de vos reçus et bulletins de paie.",
+      "edit": "Modifier les informations",
+      "editTitle": "Informations de l'entreprise",
+      "editDescription": "Les noms de votre entreprise et les coordonnées affichées en haut de chaque document imprimé. Laissez un champ facultatif vide pour ne pas l'afficher.",
+      "address": "Adresse",
+      "addressPlaceholder": "ex. Douala, zone industrielle de Bonabéri",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "emailInvalid": "Saisissez une adresse e-mail valide.",
+      "displayName": "Nom de l'entreprise",
+      "displayNameHint": "Affiché dans l'application et sur vos documents.",
+      "legalName": "Raison sociale",
+      "legalNameHint": "Le nom enregistré, s'il est différent. Facultatif."
+    }
+  }
+}

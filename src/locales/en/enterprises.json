@@ -1,0 +1,39 @@
+{
+  "enterprises": {
+    "title": "Enterprises & warehouses",
+    "description": "Every company on this server, and the warehouses each one runs.",
+    "emptyTitle": "No enterprises found",
+    "emptyDescription": "Companies returned by the server will appear here.",
+    "rowActions": "Enterprise actions",
+    "viewWarehouses": "View its warehouses",
+    "warehousesHeading": "Warehouses",
+    "warehousesFor": "Warehouses in {{name}}",
+    "warehousesDescription": "Select an enterprise above to see the warehouses it operates. The warehouse is the unit everything underneath it is scoped to — the till, the stock and the staff.",
+    "selectHint": "Select an enterprise above to see its warehouses.",
+    "scopeNotice": "This session is signed in against a different company code, and the warehouse endpoint has no per-enterprise filter. Listing warehouses here could show another company's records, so the list is withheld.",
+    "myTitle": "My enterprise",
+    "myDescription": "Your company's details, and the warehouses it operates.",
+    "identityHeading": "Company details",
+    "identityDescription": "These come from your company's own record on the server. Contact the system administrator to change the company name or plan.",
+    "noOperationalAccess": "This company's access is currently suspended, so new records cannot be saved. Contact the system administrator.",
+    "myWarehousesHeading": "Warehouses",
+    "myWarehousesDescription": "A warehouse sets the scope of the till, the stock and the staff working in it. Add one for each site your company runs.",
+    "myWarehousesEmpty": "Add a warehouse, then record purchases, stock and till movements against it.",
+    "contact": {
+      "heading": "Contact details",
+      "description": "Printed on the letterhead of your receipts and payslips.",
+      "edit": "Edit company details",
+      "editTitle": "Company details",
+      "editDescription": "Your company's names and the contact details shown at the top of every document you print. Leave an optional field empty to leave it off.",
+      "address": "Address",
+      "addressPlaceholder": "e.g. Douala, Bonabéri industrial zone",
+      "phone": "Phone",
+      "email": "Email",
+      "emailInvalid": "Enter a valid email address.",
+      "displayName": "Company name",
+      "displayNameHint": "Shown in the app and on your documents.",
+      "legalName": "Legal name",
+      "legalNameHint": "The registered name, if different. Optional."
+    }
+  }
+}

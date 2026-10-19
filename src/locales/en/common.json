@@ -1,0 +1,40 @@
+{
+  "appName": "Kabos",
+  "common": {
+    "actions": { "row": "Actions", "view": "View", "edit": "Edit", "delete": "Delete", "create": "Create" },
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "backToDashboard": "Back to dashboard",
+    "pickDate": "Pick a date",
+    "save": "Save",
+    "yes": "Yes",
+    "no": "No",
+    "online": "Online",
+    "close": "Close",
+    "offlineSaving": "Offline — saving locally",
+    "auditNote": "Every change here is recorded in the audit log with your name and the time.",
+    "searchPlaceholder": "Filter by ...",
+    "pagination": {
+      "nav": "Pagination",
+      "previous": "Previous",
+      "next": "Next",
+      "pageOf": "Page {{page}} of {{pageCount}}",
+      "pageLabel": "Page {{page}}"
+    }
+  },
+  "roles": {
+    "BOSS": "Boss",
+    "FINANCIAL_SECRETARY": "Financial Secretary",
+    "CASHIER": "Cashier",
+    "SYSTEM_ADMIN": "System Administrator",
+    "STAFF": "Staff",
+    "BUYER": "Buyer",
+    "INVENTORY": "Inventory",
+    "SYSADMIN": "System Admin"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "fr": "Français"
+  }
+}

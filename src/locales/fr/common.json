@@ -1,0 +1,40 @@
+{
+  "appName": "Kabos",
+  "common": {
+    "actions": { "row": "Actions", "view": "Voir", "edit": "Modifier", "delete": "Supprimer", "create": "Créer" },
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "backToDashboard": "Retour au tableau de bord",
+    "pickDate": "Choisissez une date",
+    "online": "En ligne",
+    "save": "Enregistrer",
+    "yes": "Oui",
+    "no": "Non",
+    "close": "Quitter",
+    "offlineSaving": "Hors ligne — enregistrement local",
+    "auditNote": "Chaque modification ici est enregistrée dans le journal d'audit avec votre nom et l'heure.",
+    "searchPlaceholder": "Trier par ...",
+    "pagination": {
+      "nav": "Pagination",
+      "previous": "Précédent",
+      "next": "Suivant",
+      "pageOf": "Page {{page}} sur {{pageCount}}",
+      "pageLabel": "Page {{page}}"
+    }
+  },
+  "roles": {
+    "BOSS": "Patron",
+    "FINANCIAL_SECRETARY": "Secrétaire Financière",
+    "CASHIER": "Caissier",
+    "SYSTEM_ADMIN": "Administrateur système",
+    "STAFF": "Personnel",
+    "BUYER": "Acheteur",
+    "INVENTORY": "Stock",
+    "SYSADMIN": "Admin système"
+  },
+  "language": {
+    "label": "Langue",
+    "en": "English",
+    "fr": "Français"
+  }
+}

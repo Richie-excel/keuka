@@ -1,0 +1,60 @@
+{
+  "analysis": {
+    "title": "Analyse de l’activité",
+    "description": "Vos chiffres, et leur analyse rédigée par l’IA.",
+    "period": "Période",
+    "lastDays_one": "{{count}} dernier jour",
+    "lastDays_other": "{{count}} derniers jours",
+    "periodRange": "Du {{from}} au {{to}}, comparé au même nombre de jours précédents.",
+    "figures": {
+      "bought": "Cacao acheté",
+      "vsPrevious": "{{change}} par rapport à la période précédente",
+      "purchaseCount_one": "{{count}} achat",
+      "purchaseCount_other": "{{count}} achats",
+      "spent": "Dépensé en cacao",
+      "averagePrice": "En moyenne {{price}} le kg",
+      "stock": "Stock disponible",
+      "stockFlow": "Entrées {{received}} · sorties {{issued}}",
+      "price": "Prix actuel au kg",
+      "priceChanges_one": "{{count}} changement sur la période",
+      "priceChanges_other": "{{count}} changements sur la période",
+      "owedSuppliers": "Dû aux fournisseurs",
+      "overdue_one": "{{count}} en retard · {{amount}}",
+      "overdue_other": "{{count}} en retard · {{amount}}",
+      "openPayables_one": "{{count}} achat non soldé",
+      "openPayables_other": "{{count}} achats non soldés",
+      "prefinance": "Préfinancement non couvert",
+      "openPrefinance_one": "{{count}} préfinancement ouvert",
+      "openPrefinance_other": "{{count}} préfinancements ouverts",
+      "till": "Écart de caisse",
+      "shortfalls_one": "{{count}} manquant · le plus gros {{largest}}",
+      "shortfalls_other": "{{count}} manquants · le plus gros {{largest}}",
+      "tillsClosed_one": "{{count}} caisse clôturée, sans manquant",
+      "tillsClosed_other": "{{count}} caisses clôturées, sans manquant",
+      "salaries": "Salaires dus",
+      "employees_one": "{{count}} employé actif",
+      "employees_other": "{{count}} employés actifs"
+    },
+    "topSuppliers": "Vos plus gros fournisseurs",
+    "noPurchases": "Aucun achat sur cette période.",
+    "prefinanceExposure": "Plus gros préfinancements non couverts",
+    "noPrefinance": "Aucun préfinancement ouvert.",
+    "report": {
+      "title": "Analyse de l’IA",
+      "write": "Rédiger l’analyse",
+      "refresh": "Rédiger une nouvelle analyse",
+      "writing": "L’IA lit vos chiffres et rédige. Cela peut prendre une à deux minutes…",
+      "emptyTitle": "Pas encore d’analyse",
+      "emptyDescription": "Cliquez sur le bouton ✨ en bas à droite et l’IA expliquera les chiffres ci-dessus : ce qui va bien, ce qu’il faut surveiller, ce qu’il faut faire.",
+      "meta": "Rédigée par {{model}} le {{date}}, sur la période du {{from}} au {{to}}.",
+      "disclaimer": "Rédigée par une IA à partir des chiffres de ce jour-là. Vérifiez tout chiffre avec ceux ci-dessus avant d’agir.",
+      "fabTooltip_one": "L’IA lit les chiffres du dernier jour et rédige ce qui va bien, ce qu’il faut surveiller et ce qu’il faut faire. Compter une à deux minutes.",
+      "fabTooltip_other": "L’IA lit les chiffres des {{count}} derniers jours et rédige ce qui va bien, ce qu’il faut surveiller et ce qu’il faut faire. Compter une à deux minutes."
+    }
+  },
+  "ai": {
+    "suggestNote": "Suggérer",
+    "suggesting": "Rédaction…",
+    "suggestNoteHint": "L’IA propose une courte note à partir de ce formulaire. Vous pouvez la modifier avant d’enregistrer."
+  }
+}

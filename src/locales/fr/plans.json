@@ -1,0 +1,126 @@
+{
+  "plans": {
+    "title": "Forfaits d'abonnement",
+    "description": "Ce que la plateforme propose : le prix de chaque forfait, ce qu'il comprend et ce qui le rend intéressant.",
+    "emptyTitle": "Aucun forfait pour le moment",
+    "emptyDescription": "Créez un forfait : il apparaîtra ici et sur l'écran d'abonnement de chaque société.",
+    "rowActions": "Actions sur le forfait",
+    "createPlan": "Créer un forfait",
+    "fields": {
+      "name": "Forfait",
+      "code": "Code",
+      "price": "Prix",
+      "billingPeriod": "Facturation",
+      "features": "Éléments inclus",
+      "displayOrder": "Ordre"
+    },
+    "status": {
+      "active": "Proposé",
+      "inactive": "Retiré"
+    },
+    "billingPeriod": {
+      "MONTHLY": "Mensuelle",
+      "QUARTERLY": "Trimestrielle",
+      "YEARLY": "Annuelle",
+      "SEASON": "Pass campagne (août–fév.)",
+      "OFF_SEASON": "Pass intercampagne (mars–juil.)"
+    },
+    "billingPeriodShort": {
+      "MONTHLY": "par mois",
+      "QUARTERLY": "par trimestre",
+      "YEARLY": "par an",
+      "SEASON": "pour la campagne",
+      "OFF_SEASON": "pour l’intercampagne"
+    },
+    "dialog": {
+      "createTitle": "Créer un forfait",
+      "createDescription": "Définissez le nom, le prix, ce que le forfait comprend et ce qui le rend intéressant — au même endroit.",
+      "viewTitle": "{{name}}",
+      "viewDescription": "Tout ce que ce forfait propose, tel que les sociétés le verront."
+    },
+    "form": {
+      "name": "Nom du forfait",
+      "nameHint": "Ce que le client voit, par exemple « Standard » ou « Premium ».",
+      "code": "Code du forfait",
+      "codeHintCreate": "Généré à partir du nom. C'est le code enregistré sur chaque société abonnée à ce forfait.",
+      "codeHintEdit": "Fixe. Le modifier romprait le lien pour toutes les sociétés déjà sur ce forfait.",
+      "description": "Description courte",
+      "descriptionHint": "Une ligne indiquant à qui le forfait s'adresse. Affichée sous le prix.",
+      "price": "Prix",
+      "priceHint": "Le montant facturé par période. Saisissez 0 pour un forfait gratuit.",
+      "pricePlaceholder": "0",
+      "currency": "Devise",
+      "currencyHint": "Par exemple XAF.",
+      "billingPeriod": "Facturation",
+      "pricePreview": "{{price}} {{period}}",
+      "featuresHeading": "Ce qu'il comprend",
+      "featuresDescription": "Une ligne par élément couvert. C'est en comparant ces lignes que les clients distinguent les forfaits : donnez donc les mêmes éléments à chaque forfait — décochez ceux qu'il ne comprend pas plutôt que de les omettre.",
+      "benefitsHeading": "Ce qui le rend intéressant",
+      "benefitsDescription": "Les arguments, sous forme de phrases courtes. Affichés en liste sur le forfait, sans comparaison entre forfaits.",
+      "active": "Proposé",
+      "activeHint": "Désactivez pour retirer le forfait : une nouvelle société ne pourra plus le choisir, mais celles qui y sont déjà le conservent.",
+      "displayOrder": "Position",
+      "displayOrderHint": "La place de ce forfait dans la liste — le plus petit d'abord. Laissez vide pour le placer à la fin.",
+      "create": "Créer le forfait",
+      "allowsHeading": "Ce qu’il permet",
+      "allowsDescription": "Appliqué par le serveur. Atteindre une limite empêche seulement d’en ajouter ; rien d’existant n’est bloqué.",
+      "maxWarehouses": "Entrepôts",
+      "maxUsers": "Comptes utilisateurs",
+      "unlimited": "Illimité",
+      "unlimitedHint": "Laissez vide pour illimité.",
+      "limitInvalid": "Un nombre entier d’au moins 1, ou vide.",
+      "modules": "Modules inclus",
+      "coreAlwaysIncluded": "Achats, stock, partenaires, prix du cacao, caisse, paiements et reçus sont dans toutes les offres. Un module non coché est en lecture seule pour les entreprises sur cette offre.",
+      "frenchHeading": "Version française",
+      "frenchDescription": "Affichée aux lecteurs francophones. Laissez un champ vide pour afficher le texte anglais à la place.",
+      "nameFr": "Nom en français",
+      "descriptionFr": "Description en français",
+      "benefitsFr": "Arguments en français"
+    },
+    "features": {
+      "labelPlaceholder": "Élément, ex. Entrepôts",
+      "valuePlaceholder": "Valeur, ex. Jusqu'à 2",
+      "included": "Inclus",
+      "add": "Ajouter un élément",
+      "remove": "Retirer cet élément",
+      "labelFrPlaceholder": "Libellé en français",
+      "valueFrPlaceholder": "Valeur en français"
+    },
+    "benefits": {
+      "placeholder": "Par exemple : achats et paiements illimités",
+      "add": "Ajouter un argument",
+      "remove": "Retirer cet argument"
+    },
+    "detail": {
+      "featuresHeading": "Ce qu'il comprend",
+      "noFeatures": "Ce forfait n'a encore aucun élément listé.",
+      "benefitsHeading": "Ce qui le rend intéressant",
+      "noBenefits": "Ce forfait n'a encore aucun argument listé.",
+      "included": "inclus",
+      "notIncluded": "non inclus"
+    },
+    "compare": {
+      "heading": "Forfaits côte à côte",
+      "description": "Chaque forfait et ce qu'il couvre, alignés ligne par ligne : la différence se voit au lieu de se calculer.",
+      "featureColumn": "Élément",
+      "benefits": "Ce qui le rend intéressant",
+      "yourPlan": "Votre forfait",
+      "noFeatures": "Aucun forfait n'a encore d'éléments listés : il n'y a donc rien à comparer.",
+      "notIncluded": "non mentionné"
+    },
+    "mine": {
+      "heading": "Ce que votre forfait comprend",
+      "description": "Le forfait auquel cette société est abonnée, et comment il se situe par rapport aux autres.",
+      "noCatalogue": "Le catalogue des forfaits est vide : il n'y a donc rien pour décrire votre forfait. Votre abonnement lui-même n'est pas affecté.",
+      "unknownPlan": "Cette société est sur le forfait « {{code}} », qui n'est plus au catalogue. Son abonnement n'est pas affecté, mais il n'y a aucune description à afficher."
+    },
+    "modules": {
+      "PREFINANCE": "Préfinancement des acheteurs",
+      "LOGISTICS": "Livraisons et bons de livraison",
+      "PAYROLL": "Paie et bulletins",
+      "CUSTOM_ROLES": "Rôles personnalisés",
+      "AUDIT_LOG": "Journal d’audit",
+      "AI_ANALYSIS": "Analyse de l’activité par IA"
+    }
+  }
+}

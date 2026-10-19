@@ -1,0 +1,64 @@
+{
+  "payroll": {
+    "title": "Salaires",
+    "description": "Suivez les sommes dues aux employés et les paiements en espèces signés.",
+    "totalDueOnPage": "Total dû sur cette page",
+    "employeesOwed": "Employés avec un salaire dû",
+    "employeeBalances": "Soldes de salaire des employés",
+    "owed": "Dû",
+    "settled": "Réglé",
+    "historyAction": "Historique des paiements",
+    "collectAction": "Enregistrer un paiement",
+    "employeePayrollDescription": "Les charges constatent les sommes dues. Les retraits enregistrent les paiements signés.",
+    "currentDue": "Somme actuellement due",
+    "notes": "Notes",
+    "collectionSaved": "Paiement de salaire signé enregistré.",
+    "collectTitle": "Enregistrer un retrait signé",
+    "openTillRequired": "Ouvrez une caisse avant d'enregistrer un paiement de salaire en espèces.",
+    "tillAvailable": "Disponible en caisse : {{amount}}",
+    "amountCollected": "Montant retiré en espèces",
+    "collectionLimit": "Le montant ne peut dépasser le salaire dû ({{due}}) ni le solde disponible en caisse ({{till}}).",
+    "signatureName": "Nom signé par l'employé",
+    "collectSubmit": "Enregistrer le paiement signé",
+    "payoutHistory": "Historique des paiements signés",
+    "noPayouts": "Aucun paiement de salaire enregistré pour cet employé.",
+    "signedBy": "Signé par {{name}}",
+    "totalPayroll": "Masse salariale totale",
+    "paidPayroll": "Salaires payés",
+    "pendingPayroll": "Salaires en attente",
+    "payrollRegister": "Registre de paie",
+    "filterStatus": "Filtrer par statut",
+    "allStatuses": "Tous les statuts",
+    "columnEmployee": "Employé",
+    "columnPeriod": "Période",
+    "columnAmount": "Montant",
+    "columnStatus": "Statut",
+    "emptyTitle": "Aucun enregistrement de paie",
+    "emptyDescription": "Les paiements de salaire apparaîtront ici une fois les périodes de paie configurées.",
+    "modes": {
+      "history": {
+        "title": "Historique",
+        "description": "Les retraits de salaire signés et le bulletin mensuel."
+      },
+      "collect": {
+        "title": "Payer le salaire",
+        "description": "Payez cet employé en espèces depuis votre caisse, contre sa signature."
+      }
+    },
+    "advance": {
+      "title": "Verser une avance",
+      "amount": "Montant de l'avance",
+      "submit": "Enregistrer l'avance signée",
+      "badge": "Avance",
+      "limit": "Jusqu'à {{due}} restant sur le salaire convenu ; la caisse contient {{till}}.",
+      "outstanding": "Avances en cours : {{amount}} (déduites du prochain salaire).",
+      "firstMonth": "Premier mois : le salaire est dû à partir du {{date}}. Tout paiement avant cette date est une avance sur le salaire convenu.",
+      "hireDateRequired": "Enregistrez la date d'embauche de cet employé avant de le payer.",
+      "agreedSalaryRequired": "Enregistrez le salaire mensuel convenu de cet employé avant de lui verser une avance."
+    },
+    "automatic": {
+      "next": "Le prochain mois de salaire ({{amount}}) sera ajouté le {{date}}.",
+      "agreedSalaryMissing": "Aucun salaire mensuel convenu n’est enregistré : aucun salaire n’est ajouté. Modifiez l’employé pour le renseigner."
+    }
+  }
+}

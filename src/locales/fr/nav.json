@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "purchases": "Achats",
+    "payments": "Paiement achats",
+    "inventory": "Stock",
+    "logistics": "Logistique",
+    "profile": "Profil utilisateur",
+    "enterprises": "Entreprises & Entrepôts",
+    "plans": "Forfaits d'abonnement",
+    "buyers": "Acheteurs & Préfinancements",
+    "contracts": "Contrats",
+    "pricing": "Prix du cacao",
+    "payroll": "Salaires",
+    "personnel": "Personnel",
+    "reporting": "Rapports",
+    "permissions": "Permissions",
+    "roles": "Rôles",
+    "users": "Utilisateurs",
+    "audit": "Journal d'audit",
+    "logout": "Se déconnecter",
+    "subscription": "Souscriptions",
+    "synchronization": "Synchronisation",
+    "group": {
+      "workspace": "Espace de travail",
+      "operations": "Opérations",
+      "finance": "Finance",
+      "admin": "Administration",
+      "account": "Compte"
+    },
+    "partners": "Partenaires",
+    "partnerSections": {
+      "all": "Tous les partenaires",
+      "buyer": "Acheteurs & Préfinancement",
+      "farmer": "Producteurs",
+      "commercial": "Commerciaux",
+      "logistics": "Logistiques",
+      "other": "Autres"
+    },
+    "till": "Caisse",
+    "analysis": "Analyse de l’activité",
+    "expenses": "Dépenses"
+  }
+}

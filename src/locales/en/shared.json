@@ -1,0 +1,28 @@
+{
+  "profile": {
+    "title": "My profile",
+    "description": "Your account information.",
+    "fullName": "Full name",
+    "username": "Username",
+    "email": "Email",
+    "role": "Role",
+    "changePasswordLink": "Change my password"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "You're all caught up. Nothing new right now.",
+    "markAllRead": "Mark all as read"
+  },
+  "search": {
+    "placeholder": "Search for a page…",
+    "noResults": "Nothing matches \"{{query}}\".",
+    "openSearch": "Search"
+  },
+  "help": {
+    "title": "Help & about",
+    "description": "Information about this application.",
+    "appVersion": "Version",
+    "supportTitle": "Need help?",
+    "supportDescription": "Contact the Boss or your Financial Secretary for help using the app."
+  }
+}

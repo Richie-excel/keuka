@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "purchases": "Purchases",
+    "payments": "Purchase payments",
+    "inventory": "Inventory",
+    "logistics": "Logistics",
+    "profile": "User profile",
+    "enterprises": "Enterprises & Warehouses",
+    "plans": "Subscription plans",
+    "buyers": "Buyers & Prefinancing",
+    "contracts": "Contracts",
+    "pricing": "Cocoa Price",
+    "payroll": "Salaries",
+    "personnel": "Personnel",
+    "reporting": "Reports",
+    "permissions": "Permissions",
+    "roles": "Roles",
+    "users": "Users",
+    "audit": "Audit Log",
+    "logout": "Log out",
+    "subscription": "Subscriptions",
+    "synchronization": "Synchronization",
+    "group": {
+      "workspace": "Workspace",
+      "operations": "Operations",
+      "finance": "Finance",
+      "admin": "Administration",
+      "account": "Account"
+    },
+    "partners": "Partners",
+    "partnerSections": {
+      "all": "All partners",
+      "buyer": "Buyers & Prefinancing",
+      "farmer": "Farmers",
+      "commercial": "Commercial",
+      "logistics": "Logistics",
+      "other": "Other"
+    },
+    "till": "Cash balance",
+    "analysis": "Business analysis",
+    "expenses": "Expenses"
+  }
+}
