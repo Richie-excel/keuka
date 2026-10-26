@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { publicUrl } from "@/constants";
 import { HomeMockup } from "./home-mockup";
 
 /** The real dashboard, one capture per language (public/screenshots). */
 const SCREENSHOTS = {
-  en: { src: "/screenshots/dashboard-en.png", width: 1920, height: 681 },
-  fr: { src: "/screenshots/dashboard-fr.png", width: 1916, height: 694 },
+  en: { src: publicUrl("screenshots/dashboard-en.png"), width: 1920, height: 681 },
+  fr: { src: publicUrl("screenshots/dashboard-fr.png"), width: 1916, height: 694 },
 } as const;
 
 /**

@@ -1,3 +1,4 @@
+import { BASE_PATH } from "@/constants";
 import type { ReactNode } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { RootLayout } from "@/shared/layout/root-layout";
@@ -290,4 +291,4 @@ export const router = createBrowserRouter([
       { path: "*", element: <ErrorPage status={404} /> },
     ],
   },
-]);
+], { basename: BASE_PATH });

@@ -1,3 +1,4 @@
+import { APP_ICON_URL } from "@/constants";
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -25,12 +26,12 @@ export function Navbar({ leading, actions, className }: NavbarProps) {
         <Link to="/" className="flex items-center gap-2 text-cocoa-900">
           <Avatar className="size-8 bg-cocoa-700 ring-1 ring-cocoa-100">
             <AvatarImage
-              src="/cocoa.svg"
+              src={APP_ICON_URL}
               alt={t("appName")}
               className="size-full object-cover"
             />
             <AvatarFallback className="bg-cocoa-700 text-sm font-bold text-white">
-              C
+              K
             </AvatarFallback>
           </Avatar>
           <span className="truncate font-semibold">{t("appName")}</span>

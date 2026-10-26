@@ -1,6 +1,6 @@
-# Kabos: frontend
+# Keuka: frontend
 
-The web app for Kabos, a cocoa operations and financial management system for
+The web app for Keuka, a cocoa operations and financial management system for
 Cameroonian cocoa companies. It handles purchases from farmers and field
 buyers, buyer prefinancing, stock, deliveries, the till, expenses, payroll and
 the audit log. A platform side covers enterprises, subscriptions and plans.
@@ -45,7 +45,7 @@ with it, create an enterprise, and its boss receives an invitation email.
 | `npm run build` | Type-checks, then builds to `dist/` with the service worker and manifest |
 | `npm run preview` | Serves the production build locally |
 | `npm run lint` | ESLint |
-| `npm run generate-pwa-assets` | Regenerates the app icons from `public/cocoa.svg` |
+| `npm run generate-pwa-assets` | Regenerates the app icons from `public/favicon.svg` (see `pwa-assets.config.ts`) |
 
 ## Configuration
 

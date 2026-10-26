@@ -1,7 +1,13 @@
 {
-  "appName": "Kabos",
+  "appName": "Keuka",
   "common": {
-    "actions": { "row": "Actions", "view": "Voir", "edit": "Modifier", "delete": "Supprimer", "create": "Créer" },
+    "actions": {
+      "row": "Actions",
+      "view": "Voir",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "create": "Créer"
+    },
     "cancel": "Annuler",
     "confirm": "Confirmer",
     "backToDashboard": "Retour au tableau de bord",

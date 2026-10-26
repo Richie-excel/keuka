@@ -19,7 +19,7 @@ import {
   Wallet,
   type LucideIcon,
 } from "lucide-react";
-import { APP_FULL_NAME, APP_NAME } from "@/constants";
+import { APP_FULL_NAME, APP_ICON_URL, APP_NAME } from "@/constants";
 import { HeroScreenshot } from "./hero-screenshot";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -556,9 +556,9 @@ function Home() {
           <footer className="mt-10 flex flex-col gap-4 border-t border-cocoa-100 pt-8 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
               <img
-                src="/cocoa.svg"
+                src={APP_ICON_URL}
                 alt=""
-                className="size-8 rounded-lg bg-cocoa-700 p-1"
+                className="size-8 rounded-lg"
               />
               <div>
                 <p className="text-sm font-semibold text-cocoa-900">

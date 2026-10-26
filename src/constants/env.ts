@@ -45,10 +45,17 @@ function readString(key: EnvKey, fallback: string): string {
 }
 
 // ── App identity ────────────────────────────────────────────────────────────
-export const APP_NAME = readString("VITE_APP_NAME", "Kabos");
+export const APP_NAME = readString("VITE_APP_NAME", "Keuka");
 export const APP_FULL_NAME = readString("VITE_APP_FULL_NAME", "Cocoa Management System");
 export const APP_VERSION = readString("VITE_APP_VERSION", "0.1.0");
 export const DEFAULT_CURRENCY = readString("VITE_DEFAULT_CURRENCY", "XAF");
+
+// ── Base path ───────────────────────────────────────────────────────────────
+/** Path the app is served under (Vite's `base`), without the trailing slash. */
+export const BASE_PATH = import.meta.env.BASE_URL.replace(/\/+$/, "");
+/** URL of a file in `public/`, prefixed with the base path. */
+export const publicUrl = (path: string) => `${BASE_PATH}/${path.replace(/^\/+/, "")}`;
+export const APP_ICON_URL = publicUrl("brand/keuka-app-icon.svg");
 
 // ── Loading skeletons ───────────────────────────────────────────────────────
 /** Minimum time a page shows its skeleton, even when data arrives sooner. */

@@ -1,3 +1,4 @@
+import { APP_ICON_URL } from "@/constants";
 import { type ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -127,10 +128,10 @@ export function AppShell({ children }: { children: ReactNode }) {
       >
         <SidebarHeader className="rounded-tl-xl border-b border-cocoa-100">
           <PageSkeleton loading={isLoading}>
-          <div className="flex items-center justify-between gap-2 px-2 py-1 group-data-[collapsible=icon]:justify-center">
+          <div className="flex items-center justify-between gap-2 px-0.5 py-1 group-data-[collapsible=icon]:justify-center">
             <Avatar className="size-8 bg-cocoa-700 ring-1 ring-cocoa-100">
               <AvatarImage
-                src="/cocoa.svg"
+                src={APP_ICON_URL}
                 alt={t("appName")}
                 className="size-full object-cover"
               />

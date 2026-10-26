@@ -5,20 +5,23 @@ import path from "path";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  // Every route and asset is served under /keuka/ (e.g. /keuka/login).
+  base: "/keuka/",
   plugins: [
     react(),
     tailwindcss(),
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        name: 'Cocoa Management System',
-        short_name: 'Cocoa MS',
+        name: 'Keuka',
+        short_name: 'Keuka',
         description:
           'Local-first cocoa trading operations and financial management',
         theme_color: '#1f2a1f',
         background_color: '#f7f5f0',
         display: 'standalone',
-        start_url: '/',
+        start_url: '/keuka/',
+        scope: '/keuka/',
 
         icons: [
           {
@@ -45,7 +48,7 @@ export default defineConfig({
         ],
       },
       workbox: {
-        navigateFallback: '/index.html',
+        navigateFallback: '/keuka/index.html',
         globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
       },
       devOptions: {

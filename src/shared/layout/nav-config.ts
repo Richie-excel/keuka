@@ -7,7 +7,6 @@ import {
   BriefcaseBusiness,
   ClipboardList,
   FileText,
-  Home,
   Layers,
   Building2,
   Package,
@@ -23,6 +22,7 @@ import {
   WalletCards,
   Wallet,
   CreditCard,
+  LayoutGrid,
 } from "lucide-react";
 import {
   ALL_PARTNERS_SECTION,
@@ -60,7 +60,7 @@ export const NAV_GROUPS: NavGroup[] = [
   {
     labelKey: "nav.group.workspace",
     items: [
-      { labelKey: "nav.dashboard", path: "/dashboard", icon: Home },
+      { labelKey: "nav.dashboard", path: "/dashboard", icon: LayoutGrid },
     ],
   },
   {

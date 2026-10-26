@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import type { PlanResponse } from "@/api/plans";
 import Loader from "@/components/loader";
-import { APP_NAME } from "@/constants";
+import { APP_ICON_URL, APP_NAME } from "@/constants";
 import { cn, formatMoney } from "@/lib/utils";
 import { usePublicPlans } from "@/shared/hooks/use-plans";
 import { PlanComparison } from "@/features/subscription/plan-comparison";
@@ -102,7 +102,7 @@ export function PublicPlansPage() {
     <div className="min-h-svh bg-paper text-cocoa-900">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6">
         <Link to="/" className="flex items-center gap-2 font-semibold">
-          <img src="/cocoa.svg" alt="" className="size-8 rounded-lg bg-cocoa-700 p-1" />
+          <img src={APP_ICON_URL} alt="" className="size-8 rounded-lg" />
           {APP_NAME}
         </Link>
         <div className="flex items-center gap-2">
