@@ -5,6 +5,7 @@
     { "source": "/", "destination": "/keuka/", "permanent": false }
   ],
   "rewrites": [
+    { "source": "/favicon.ico", "destination": "/keuka/favicon.ico" },
     { "source": "/keuka/:path*", "destination": "/keuka/index.html" }
   ],
   "headers": [
