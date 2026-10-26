@@ -7,6 +7,9 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   // Every route and asset is served under /keuka/ (e.g. /keuka/login).
   base: "/keuka/",
+  // Build into dist/keuka so the files sit at the same path the app is served
+  // from; vercel.json serves dist/ as the site root.
+  build: { outDir: "dist/keuka" },
   plugins: [
     react(),
     tailwindcss(),
