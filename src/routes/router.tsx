@@ -11,7 +11,6 @@ import { SessionExpiredPage } from "@/features/identity/session-expired-page";
 import { ForbiddenPage } from "@/features/identity/forbidden-page";
 import { ProfilePage } from "@/features/identity/profile-page";
 import { HelpPage } from "@/shared/help-page";
-import { SyncStatusPage } from "@/features/synchronization/sync-page";
 import { DashboardHome } from "@/features/reporting/dashboard-home";
 import { PermissionKey, SystemRole } from "@/enums";
 import { ErrorPage } from "@/shared/errors/error-page";
@@ -22,7 +21,6 @@ import { PurchasePage } from "@/features/procurement/purchase-page";
 import { PurchaseDetailsPage } from "@/features/procurement/purchase-details";
 import { InventoryPage } from "@/features/inventory/inventory-page";
 import { LogisticsPage } from "@/features/logistics/logistics-page";
-// import { ContractsPage } from "@/features/contracts/contracts-page";
 import { PricingPage } from "@/features/pricing/pricing-page";
 import { PermissionsPage } from "@/features/access/permissions-page";
 import { RolesPage } from "@/features/access/roles-page";
@@ -71,7 +69,6 @@ function withPermissions(
   );
 }
 
-/** A company's business page: also closed to the platform operator, who has no company. */
 function forEnterprise(requiredPermissions: PermissionKey[], page: ReactNode) {
   return (
     <ProtectedRoute requiredPermissions={requiredPermissions} enterpriseOnly>
@@ -86,10 +83,8 @@ export const router = createBrowserRouter([
     errorElement: <RouteErrorPage />,
     children: [
       { path: "/", element: <HomePage /> },
-      // The price list for visitors, linked from the home page: no sign-in.
       { path: "/offers", element: <PublicPlansPage /> },
       { path: "/login", element: <LoginPage /> },
-      // Opened from an invitation email: choose a password, no sign-in yet.
       { path: "/accept-invite", element: <AcceptInvitePage /> },
       { path: "/session-expired", element: <SessionExpiredPage /> },
       {
@@ -118,13 +113,6 @@ export const router = createBrowserRouter([
               [PermissionKey.TENANT_READ, PermissionKey.WAREHOUSE_READ],
               <EnterpriseConsole />,
               true,
-            ),
-          },
-          {
-            path: "/sync-status",
-            element: withPermissions(
-              [PermissionKey.SYNC_READ],
-              <SyncStatusPage />,
             ),
           },
           {
