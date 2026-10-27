@@ -19,6 +19,7 @@
     "users": "Users",
     "audit": "Audit Log",
     "logout": "Log out",
+    "loggingOut": "Logging out…",
     "subscription": "Subscriptions",
     "synchronization": "Synchronization",
     "group": {

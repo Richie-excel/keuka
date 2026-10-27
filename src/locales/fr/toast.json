@@ -1,6 +1,10 @@
 {
   "toast": {
     "genericError": "Une erreur s'est produite. Veuillez réessayer.",
+    "session": {
+      "signedOut": "Vous êtes déconnecté.",
+      "signedOutLocally": "Vous êtes déconnecté de cet appareil. Le serveur n'a pas pu être joint."
+    },
     "profile": {
       "updated": "Profil enregistré."
     },

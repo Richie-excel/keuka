@@ -1,6 +1,10 @@
 {
   "toast": {
     "genericError": "Something went wrong. Please try again.",
+    "session": {
+      "signedOut": "You are signed out.",
+      "signedOutLocally": "You are signed out on this device. The server could not be reached."
+    },
     "profile": {
       "updated": "Profile saved."
     },

@@ -4,10 +4,11 @@ import { useTranslation } from 'react-i18next'
 import { RoleBadges } from "@/components/role-badge";
 import { User, KeyRound, HelpCircle, LogOut } from 'lucide-react'
 import { useAuth } from '../hooks/useAuth'
+import Loader from '@/components/loader'
 
 export function UserMenu() {
   const { t } = useTranslation()
-  const { user, logout } = useAuth()
+  const { user, logout, isLoggingOut } = useAuth()
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -64,15 +65,15 @@ export function UserMenu() {
             <HelpCircle className="h-4 w-4" />
             {t('help.title')}
           </Link>
+          {/* The menu stays open while signing out, so the progress is visible; it goes away with the user. */}
           <button
-            onClick={() => {
-              setOpen(false)
-              logout()
-            }}
-            className="flex w-full items-center gap-2 rounded-md px-2.5 py-2 text-left text-sm text-rust-700 hover:bg-rust-100"
+            onClick={() => void logout()}
+            disabled={isLoggingOut}
+            aria-busy={isLoggingOut}
+            className="flex w-full items-center gap-2 rounded-md px-2.5 py-2 text-left text-sm text-rust-700 hover:bg-rust-100 disabled:cursor-wait disabled:opacity-80"
           >
-            <LogOut className="h-4 w-4" />
-            {t('nav.logout')}
+            {isLoggingOut ? <Loader className="h-4 w-4" /> : <LogOut className="h-4 w-4" />}
+            {t(isLoggingOut ? 'nav.loggingOut' : 'nav.logout')}
           </button>
         </div>
       )}

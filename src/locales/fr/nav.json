@@ -19,6 +19,7 @@
     "users": "Utilisateurs",
     "audit": "Journal d'audit",
     "logout": "Se déconnecter",
+    "loggingOut": "Déconnexion…",
     "subscription": "Souscriptions",
     "synchronization": "Synchronisation",
     "group": {

@@ -25,6 +25,8 @@ export interface AuthContextValue {
   isLoading: boolean;
   login: (credentials: Credentials) => Promise<void>;
   logout: () => Promise<void>;
+  /** A logout is on its way to the server: the buttons show it and cannot be pressed twice. */
+  isLoggingOut: boolean;
   hasPermission: (permission: PermissionKey) => boolean;
   hasAnyRole: (...roles: SystemRole[]) => boolean;
   /**
@@ -80,7 +82,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   const logout = useCallback(async () => {
-    await logoutMutation.mutateAsync();
+    try {
+      await logoutMutation.mutateAsync();
+    } catch {
+      // Signed out on this device anyway (tokens cleared); the mutation already told the user.
+    }
   }, [logoutMutation]);
 
   const hasPermission = useCallback(
@@ -105,11 +111,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       isLoading: session.isPending,
       login,
       logout,
+      isLoggingOut: logoutMutation.isPending,
       hasPermission,
       hasAnyRole,
       isPlatform,
     }),
-    [user, session.isPending, login, logout, hasPermission, hasAnyRole, isPlatform],
+    [user, session.isPending, login, logout, logoutMutation.isPending, hasPermission, hasAnyRole, isPlatform],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -4,6 +4,7 @@ import { qk } from "@/shared/hooks/query-keys";
 import type { UserResponse } from "@/interfaces";
 import type { SystemRole } from "@/enums";
 import { SESSION_STALE_MS } from "@/constants";
+import { notifyInfo } from "@/lib/toast";
 
 export function useSession() {
   return useQuery({
@@ -68,6 +69,8 @@ export function useLogout() {
     onSettled: () => {
       queryClient.clear();
     },
+    onError: () => notifyInfo("toast.session.signedOutLocally"),
+    meta: { success: "toast.session.signedOut", silent: true },
   });
 }
 

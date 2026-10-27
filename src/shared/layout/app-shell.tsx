@@ -112,7 +112,7 @@ function NavSubMenu({
  * selectors the inset relies on.
  */
 export function AppShell({ children }: { children: ReactNode }) {
-  const { user, isLoading, logout } = useAuth();
+  const { user, isLoading, logout, isLoggingOut } = useAuth();
   const location = useLocation();
   const { t } = useTranslation();
 
@@ -215,13 +215,15 @@ export function AppShell({ children }: { children: ReactNode }) {
             </div>
             <SidebarMenuButton
               type="button"
-              tooltip={t("nav.logout")}
+              tooltip={t(isLoggingOut ? "nav.loggingOut" : "nav.logout")}
               onClick={() => void logout()}
-              className="mx-auto size-8 cursor-pointer text-rust-700 hover:bg-rust-100 hover:text-rust-700 group-data-[collapsible=icon]:mx-0"
+              disabled={isLoggingOut}
+              aria-busy={isLoggingOut}
+              className="mx-auto size-8 cursor-pointer text-rust-700 hover:bg-rust-100 hover:text-rust-700 disabled:cursor-wait group-data-[collapsible=icon]:mx-0"
             >
-              <LogOut />
+              {isLoggingOut ? <Loader className="size-4 shrink-0" /> : <LogOut />}
               <span className="group-data-[collapsible=icon]:hidden">
-                {t("nav.logout")}
+                {t(isLoggingOut ? "nav.loggingOut" : "nav.logout")}
               </span>
             </SidebarMenuButton>
           </div>
