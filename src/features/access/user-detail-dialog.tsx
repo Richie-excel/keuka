@@ -36,6 +36,8 @@ export function UserDetailDialog({
 }: UserDetailDialogProps) {
   const { t } = useTranslation();
 
+  console.log(user);
+  
   return (
     <Dialog
       open={Boolean(user)}
