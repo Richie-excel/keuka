@@ -140,8 +140,8 @@ export function AppShell({ children }: { children: ReactNode }) {
               </AvatarFallback>
             </Avatar>
             <div className="min-w-fit pt-2 pb-0 space-y-2 group-data-[collapsible=icon]:hidden">
-              <p className="truncate font-semibold text-cocoa-900 text-center">
-                {user.enterpriseName ? user?.enterpriseName : t("appName")}
+              <p className="truncate font-semibold text-cocoa-900 text-center uppercase">
+                {user.enterpriseName ? user?.enterpriseName : user?.username}
               </p>
               <div className="flex items-center gap-2">
                 <RoleBadges roles={user.roles} className="min-w-0" />
