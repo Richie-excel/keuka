@@ -2,11 +2,6 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
-// English resources, one file per feature — see src/locales/en/*.json.
-// Organizing the SOURCE files this way (rather than one giant en.json) is
-// what actually matters for maintainability; they're merged into a single
-// i18next resource bundle below so every existing t('feature.key') call
-// keeps working unchanged regardless of which file a key lives in.
 import enCommon from '@/locales/en/common.json'
 import enNav from '@/locales/en/nav.json'
 import enAuth from '@/locales/en/auth.json'
@@ -89,19 +84,23 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: { translation: en },
       fr: { translation: fr },
+      en: { translation: en },
     },
     fallbackLng: 'fr',
-    supportedLngs: ['en', 'fr'],
+    supportedLngs: ['fr', 'en'],
     detection: {
-      order: ['localStorage', 'navigator'],
+      order: ['localStorage'],
       caches: ['localStorage'],
-      lookupLocalStorage: 'cocoa-ms-language',
+      lookupLocalStorage: 'cocoa-ms-lang',
     },
     interpolation: {
       escapeValue: false,
     },
   })
+
+const syncHtmlLang = (lng: string) => document.documentElement.setAttribute('lang', lng)
+syncHtmlLang(i18n.resolvedLanguage ?? 'fr')
+i18n.on('languageChanged', syncHtmlLang)
 
 export default i18n

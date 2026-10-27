@@ -123,7 +123,7 @@ export function LoginPage() {
               <InputGroupInput
                 id="password"
                 type={showPassword ? "text" : "password"}
-                placeholder="* * * * * * * * * * * * * * * *"
+                placeholder="*  *  *  *  *  *  *  *  *"
                 autoComplete="current-password"
                 required
                 aria-invalid={showPasswordRules}

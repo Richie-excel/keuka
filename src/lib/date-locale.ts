@@ -4,6 +4,6 @@ import { useTranslation } from "react-i18next";
 
 export function useDateLocale(): Locale {
   const { i18n } = useTranslation();
-  const language = i18n.resolvedLanguage ?? i18n.language ?? "en";
+  const language = i18n.resolvedLanguage ?? i18n.language ?? "fr";
   return language.startsWith("fr") ? fr : enUS;
 }
