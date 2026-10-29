@@ -40,7 +40,9 @@
       "description": "Chaque entreprise de ce serveur et l'état actuel de son forfait.",
       "noTenant": "Le point d'accès de souscription ne répond que pour l'entreprise connectée, et ce compte n'est rattaché à aucune. Toutes les entreprises et leur forfait sont listés ci-dessous.",
       "emptyTitle": "Aucune entreprise pour le moment",
-      "emptyDescription": "Ajoutez une entreprise et sa souscription apparaîtra ici."
+      "emptyDescription": "Ajoutez une entreprise et sa souscription apparaîtra ici.",
+      "manage": "Gérer",
+      "actions": "Actions"
     }
   }
 }

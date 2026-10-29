@@ -40,7 +40,9 @@
       "description": "Every company on this server and the current state of its plan.",
       "noTenant": "The subscription endpoint answers for the signed-in company only, and this account is not scoped to one. Every company and its plan are listed below instead.",
       "emptyTitle": "No enterprises yet",
-      "emptyDescription": "Onboard an enterprise and its subscription will appear here."
+      "emptyDescription": "Onboard an enterprise and its subscription will appear here.",
+      "manage": "Manage",
+      "actions": "Actions"
     }
   }
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import type { SubscriptionStatus } from "@/enums";
+import { Settings2 } from "lucide-react";
+import { PermissionKey, type SubscriptionStatus } from "@/enums";
 import type { EnterpriseResponse } from "@/api/enterprises";
 import { useEnterprises } from "@/shared/hooks/use-enterprises";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,6 +10,9 @@ import Loader from "@/components/loader";
 import { DataPagination } from "@/components/pagination";
 import { formatDate } from "@/lib/utils";
 import { PLATFORM_SUBSCRIPTIONS_PAGE_SIZE } from "@/constants";
+import { Button } from "@/components/ui/button";
+import { useAuth } from "@/shared/hooks/useAuth";
+import { EnterpriseDialog } from "@/features/enterprises/enterprise-dialog";
 import {
   SubscriptionStatusBadge,
   TenantStatusBadge,
@@ -24,10 +28,16 @@ import {
  * plainly have plans. The register (`GET /enterprises`) carries each tenant's
  * `planCode`/`subscriptionStatus`, so it is the correct source for a
  * platform-wide view.
+ *
+ * Each row opens the company's dialog, where the operator changes its plan,
+ * renews or suspends it — on the boss's behalf, e.g. once the company has paid.
  */
 export function PlatformSubscriptions() {
   const { t } = useTranslation();
+  const { hasPermission } = useAuth();
+  const canManage = hasPermission(PermissionKey.TENANT_UPDATE);
   const [page, setPage] = useState(1);
+  const [dialog, setDialog] = useState<{ mode: "view" | "edit"; item: EnterpriseResponse } | null>(null);
   const enterprises = useEnterprises({
     page,
     size: PLATFORM_SUBSCRIPTIONS_PAGE_SIZE,
@@ -99,6 +109,19 @@ export function PlatformSubscriptions() {
               rowKey={(row) => row.tenantId}
               emptyTitle={t("subscription.platform.emptyTitle")}
               emptyDescription={t("subscription.platform.emptyDescription")}
+              actionsLabel={t("subscription.platform.actions")}
+              onRowClick={(row) => setDialog({ mode: "view", item: row })}
+              rowActions={(row) => (
+                <Button
+                  type="button"
+                  size="sm"
+                  variant="outline"
+                  onClick={() => setDialog({ mode: "view", item: row })}
+                >
+                  <Settings2 />
+                  <span className="hidden sm:inline">{t("subscription.platform.manage")}</span>
+                </Button>
+              )}
             />
             <DataPagination
               page={page}
@@ -109,6 +132,18 @@ export function PlatformSubscriptions() {
           </>
         )}
       </CardContent>
+      {dialog && (
+        <EnterpriseDialog
+          key={`${dialog.mode}-${dialog.item.tenantId}`}
+          open
+          mode={dialog.mode}
+          enterprise={dialog.item}
+          canEdit={canManage}
+          canManageStatus={canManage}
+          onEdit={() => setDialog({ mode: "edit", item: dialog.item })}
+          onOpenChange={(open) => !open && setDialog(null)}
+        />
+      )}
     </Card>
   );
 }
