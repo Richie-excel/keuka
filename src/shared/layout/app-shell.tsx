@@ -220,7 +220,9 @@ export function AppShell({ children }: { children: ReactNode }) {
         <SidebarRail />
       </Sidebar>
 
-      <SidebarInset>
+      {/* min-w-0: a flex item will not shrink below its content otherwise, and a wide
+          table pushes the whole page off the right edge instead of scrolling in its box. */}
+      <SidebarInset className="min-w-0">
         <div className="flex items-center gap-2 border-b border-cocoa-100 bg-white px-4 py-2 md:hidden">
           <SidebarTrigger className="text-cocoa-700" />
           <span className="text-sm font-medium text-cocoa-700">{t("nav.menu")}</span>

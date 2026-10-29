@@ -57,6 +57,11 @@
     "permissionNotGranted": "non accordée",
     "permissionsSummary_one": "{{count}} permission dans {{modules}} module(s)",
     "permissionsSummary_other": "{{count}} permissions dans {{modules}} module(s)",
-    "viewAllPermissions": "Voir toutes les permissions"
+    "viewAllPermissions": "Voir toutes les permissions",
+    "temporaryPassword": "Mot de passe temporaire",
+    "temporaryPasswordHint": "Facultatif. Si l'e-mail d'invitation n'arrive pas : la personne se connecte avec ce mot de passe, puis en choisit un nouveau.",
+    "temporaryPasswordEditHint": "Facultatif. Remplace le mot de passe actuel ; la personne devra en choisir un nouveau à sa prochaine connexion.",
+    "temporaryPasswordInvalid": "Le mot de passe ne respecte pas les règles ci-dessous.",
+    "temporaryPasswordNotice": "Aucun e-mail ne sera envoyé : communiquez ce mot de passe à la personne. Elle devra le changer à sa première connexion."
   }
 }

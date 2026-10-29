@@ -31,6 +31,7 @@ import {
   useCreateUser,
   useRemoveUser,
   useResendInvitation,
+  useResetUserPassword,
   useSetUserEnabled,
   useUpdateUser,
   useUsers,
@@ -41,6 +42,7 @@ import { UserForm } from "./user-form";
 import { RoleBadges } from "@/components/role-badge";
 import { PAGE_SIZE } from "@/constants";
 import { StatusBadge } from "@/components/status-badge";
+import { hasChanged } from "@/lib/utils";
 import {
   Select,
   SelectContent,
@@ -75,6 +77,8 @@ export function UsersPage() {
     isPlatform && company !== ALL_COMPANIES ? company : undefined,
   );
   const createUser = useCreateUser();
+  const createUserWithPassword = useCreateUser("toast.users.createdWithPassword");
+  const resetPassword = useResetUserPassword();
   const updateUser = useUpdateUser();
   const setUserEnabled = useSetUserEnabled();
   const removeUser = useRemoveUser();
@@ -88,13 +92,23 @@ export function UsersPage() {
 
   async function saveUser(values: CreateUserRequest) {
     if (formDialog?.mode === "edit") {
+      const { user } = formDialog;
       const patch: UpdateUserRequest = {
         fullName: values.fullName,
         email: values.email,
         roles: values.roles,
         ...(values.employeeId ? { employeeId: values.employeeId } : {}),
       };
-      await updateUser.mutateAsync({ id: formDialog.user.id, patch });
+      // Only the temporary password changed: there is no update to send.
+      if (hasChanged(user, patch)) {
+        await updateUser.mutateAsync({ id: user.id, patch });
+      }
+      if (values.password) {
+        await resetPassword.submitAsync({ id: user.id, input: { password: values.password } });
+      }
+    } else if (values.password) {
+      // The platform admin handed over a temporary password: no invitation is emailed.
+      await createUserWithPassword.submitAsync(values);
     } else {
       // No password to hand over: the server emails the person an invitation.
       await createUser.submitAsync(values);

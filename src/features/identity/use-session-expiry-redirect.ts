@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useQueryClient } from "@tanstack/react-query";
 import { onSessionExpired } from "@/lib/api-client";
+import { notifyInfo } from "@/lib/toast";
 import {
   LOGIN_PATH,
   SESSION_EXPIRED_REASON,
@@ -42,6 +43,11 @@ export function useSessionExpiryRedirect(): void {
       // served the previous user's partners, purchases or cash from a warm
       // cache.
       queryClient.clear();
+      // Said right here, not only by the notice on the sign-in screen: that notice
+      // needs this navigation's state, and the protected page's own redirect to
+      // /login (without it) can win the race once the cache is cleared. The toast
+      // lives at the app root, so it survives the move to the sign-in screen.
+      notifyInfo("toast.session.expired");
 
       // Already on the sign-in screen — usually because a background request
       // died while the form was open. A second navigation would achieve nothing

@@ -34,13 +34,13 @@ export function useAvailableEmployees(enabled = true) {
   });
 }
 
-export function useCreateUser() {
+export function useCreateUser(successKey = "toast.users.created") {
   const queryClient = useQueryClient();
 
   return useIdempotentMutation<CreateUserRequest, UserResponse>({
     mutationFn: (input, idempotencyKey) => usersApi.create(input, idempotencyKey),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: qk.users.all }),
-    meta: { success: "toast.users.created" },
+    meta: { success: successKey },
   });
 }
 

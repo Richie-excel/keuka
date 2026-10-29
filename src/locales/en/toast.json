@@ -3,7 +3,8 @@
     "genericError": "Something went wrong. Please try again.",
     "session": {
       "signedOut": "You are signed out.",
-      "signedOutLocally": "You are signed out on this device. The server could not be reached."
+      "signedOutLocally": "You are signed out on this device. The server could not be reached.",
+      "expired": "Your session has expired. Sign in again to continue."
     },
     "profile": {
       "updated": "Profile saved."
@@ -17,7 +18,8 @@
       "statusChanged": "Account access updated.",
       "passwordReset": "Password reset for this account.",
       "deactivated": "User account deactivated.",
-      "invitationSent": "Invitation sent again. The earlier link no longer works."
+      "invitationSent": "Invitation sent again. The earlier link no longer works.",
+      "createdWithPassword": "Account created with a temporary password."
     },
     "partners": {
       "created": "Partner added.",

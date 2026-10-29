@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { EmployeeTypeBadge, RoleBadge } from "@/components/role-badge";
@@ -12,8 +12,12 @@ import { useRoles } from "@/shared/hooks/use-roles";
 import { useAvailableEmployees } from "@/shared/hooks/use-users";
 import {
   fallbackRoleOptions,
+  isPlatformActor,
   roleOptions,
 } from "@/features/access/assignable-roles";
+import { meetsPasswordPolicy } from "@/constants";
+import { PasswordRequirements } from "@/components/password-requirements";
+import { PasswordToggleButton } from "@/components/password-toggle-button";
 import { Field } from "@/components/field";
 import {
   InputGroup,
@@ -33,7 +37,7 @@ import { SubmitButton } from "@/components/submit-button";
 import { useDialogBusy } from "@/components/ui/dialog-busy";
 import { DialogFooter } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
-import { Mail, MailCheck, User, UserRound } from "lucide-react";
+import { KeyRound, Lock, Mail, MailCheck, User, UserRound } from "lucide-react";
 
 interface UserFormProps {
   user: CreateUserRequest | null;
@@ -48,7 +52,11 @@ interface UserFormValues {
   email: string;
   employeeId: string;
   roles: string[];
+  /** Platform admin only; empty: no password is set (an invitation is emailed on create). */
+  temporaryPassword: string;
 }
+
+const TEMP_PASSWORD_RULES_ID = "user-temporary-password-rules";
 
 const notBlank = (value: string) => value.trim().length > 0;
 
@@ -63,8 +71,10 @@ function toggleRole(current: string[], role: string, checked: boolean) {
  * A company's accounts are its employees' sign-ins: on create, the boss picks
  * the employee, and their name, email, the role their job suggests and a
  * username (first name + warehouse code) are filled in, all still editable.
- * There is no password field: the server emails the person an invitation to
- * choose their own, which also proves the email address is theirs.
+ * Normally there is no password: the server emails the person an invitation to
+ * choose their own, which also proves the email address is theirs. The platform
+ * admin may instead set a temporary password (when the email does not reach the
+ * person), on create or later; the person must replace it at their first sign-in.
  */
 export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
   const { t } = useTranslation();
@@ -76,6 +86,8 @@ export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
   // The platform operator has no company and so no employees to pick from.
   const picksEmployee = !isEdit && Boolean(actor?.enterpriseId);
   const employeesQuery = useAvailableEmployees(picksEmployee);
+  const setsPassword = isPlatformActor(actor);
+  const [showPassword, setShowPassword] = useState(false);
   const rules = useFieldRules();
   const currentRoles = user?.roles ?? [];
   const catalogue = rolesQuery.data ?? [];
@@ -103,15 +115,17 @@ export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
       email: user?.email ?? "",
       employeeId: user?.employeeId ?? "",
       roles: user?.roles ?? [],
+      temporaryPassword: "",
     },
   });
 
-  const [fullName, email, roles] = useWatch({
+  const [fullName, email, roles, temporaryPassword] = useWatch({
     control,
-    name: ["fullName", "email", "roles"],
+    name: ["fullName", "email", "roles", "temporaryPassword"],
   });
 
-  const hasChanges = !user || hasChanged(user, { fullName, email, roles });
+  const hasChanges =
+    !user || hasChanged(user, { fullName, email, roles }) || temporaryPassword !== "";
 
   // While saving: loader on the submit button, Cancel disabled, dialog locked.
   const pending = saving || isSubmitting;
@@ -146,6 +160,9 @@ export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
         email: values.email.trim(),
         roles: values.roles,
         employeeId: values.employeeId || undefined,
+        ...(values.temporaryPassword
+          ? { password: values.temporaryPassword, temporaryPassword: true }
+          : {}),
       });
     } catch (cause) {
       setError("root.serverError", {
@@ -275,11 +292,56 @@ export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
         </InputGroup>
       </Field>
 
-      {!isEdit && (
+      {setsPassword && (
+        <Field
+          label={t("users.temporaryPassword")}
+          htmlFor="user-temporary-password"
+          hint={t(isEdit ? "users.temporaryPasswordEditHint" : "users.temporaryPasswordHint")}
+          error={
+            errors.temporaryPassword ? t("users.temporaryPasswordInvalid") : undefined
+          }
+        >
+          <InputGroup>
+            <InputGroupAddon align="inline-start">
+              <Lock />
+            </InputGroupAddon>
+            <InputGroupInput
+              id="user-temporary-password"
+              type={showPassword ? "text" : "password"}
+              autoComplete="new-password"
+              maxLength={72}
+              aria-describedby={temporaryPassword ? TEMP_PASSWORD_RULES_ID : undefined}
+              aria-invalid={Boolean(errors.temporaryPassword)}
+              {...register("temporaryPassword", {
+                validate: (value) => value === "" || meetsPasswordPolicy(value),
+              })}
+            />
+            <InputGroupAddon align="inline-end">
+              <PasswordToggleButton
+                visible={showPassword}
+                onToggle={() => setShowPassword((shown) => !shown)}
+                controls="user-temporary-password"
+              />
+            </InputGroupAddon>
+          </InputGroup>
+          {temporaryPassword && (
+            <PasswordRequirements id={TEMP_PASSWORD_RULES_ID} value={temporaryPassword} />
+          )}
+        </Field>
+      )}
+
+      {temporaryPassword ? (
         <p className="mb-3 flex items-start gap-2 rounded-md bg-cocoa-50 px-3 py-2 text-xs text-cocoa-700">
-          <MailCheck className="mt-0.5 size-3.5 shrink-0" aria-hidden="true" />
-          {t("users.invitationNotice")}
+          <KeyRound className="mt-0.5 size-3.5 shrink-0" aria-hidden="true" />
+          {t("users.temporaryPasswordNotice")}
         </p>
+      ) : (
+        !isEdit && (
+          <p className="mb-3 flex items-start gap-2 rounded-md bg-cocoa-50 px-3 py-2 text-xs text-cocoa-700">
+            <MailCheck className="mt-0.5 size-3.5 shrink-0" aria-hidden="true" />
+            {t("users.invitationNotice")}
+          </p>
+        )
       )}
 
       <fieldset className="mb-4">

@@ -3,7 +3,8 @@
     "genericError": "Une erreur s'est produite. Veuillez réessayer.",
     "session": {
       "signedOut": "Vous êtes déconnecté.",
-      "signedOutLocally": "Vous êtes déconnecté de cet appareil. Le serveur n'a pas pu être joint."
+      "signedOutLocally": "Vous êtes déconnecté de cet appareil. Le serveur n'a pas pu être joint.",
+      "expired": "Votre session a expiré. Reconnectez-vous pour continuer."
     },
     "profile": {
       "updated": "Profil enregistré."
@@ -17,7 +18,8 @@
       "statusChanged": "Accès au compte mis à jour.",
       "passwordReset": "Mot de passe réinitialisé pour ce compte.",
       "deactivated": "Compte utilisateur désactivé.",
-      "invitationSent": "Invitation renvoyée. L’ancien lien ne fonctionne plus."
+      "invitationSent": "Invitation renvoyée. L’ancien lien ne fonctionne plus.",
+      "createdWithPassword": "Compte créé avec un mot de passe temporaire."
     },
     "partners": {
       "created": "Partenaire ajouté.",

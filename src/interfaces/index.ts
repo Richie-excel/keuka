@@ -180,6 +180,8 @@ export interface CreateUserRequest {
   roles: string[];
   /** The employee this sign-in belongs to (required when the boss creates one). */
   employeeId?: string;
+  /** `password` is a temporary one the person must replace at their first sign-in. */
+  temporaryPassword?: boolean;
 }
 
 /** `identity.dto.UpdateUserRequest`. */

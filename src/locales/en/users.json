@@ -57,6 +57,11 @@
     "permissionNotGranted": "not granted",
     "permissionsSummary_one": "{{count}} permission across {{modules}} module(s)",
     "permissionsSummary_other": "{{count}} permissions across {{modules}} module(s)",
-    "viewAllPermissions": "View all permissions"
+    "viewAllPermissions": "View all permissions",
+    "temporaryPassword": "Temporary password",
+    "temporaryPasswordHint": "Optional. If the invitation email does not arrive: the person signs in with this password, then chooses a new one.",
+    "temporaryPasswordEditHint": "Optional. Replaces the current password; the person must choose a new one at their next sign-in.",
+    "temporaryPasswordInvalid": "The password does not meet the rules below.",
+    "temporaryPasswordNotice": "No email will be sent: give this password to the person. They must change it at their first sign-in."
   }
 }
