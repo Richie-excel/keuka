@@ -49,6 +49,11 @@
     "hireDate": "Hire date",
     "hireDateHint": "Salary is due one month after this date.",
     "monthlySalary": "Agreed monthly salary",
-    "monthlySalaryHint": "Caps the advances paid in the first month."
+    "monthlySalaryHint": "Caps the advances paid in the first month.",
+    "active": "Active",
+    "columnActions": "Actions",
+    "email": "Email",
+    "idCardNumber": "ID card number",
+    "notes": "Notes"
   }
 }

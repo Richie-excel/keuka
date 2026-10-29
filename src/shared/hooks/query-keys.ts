@@ -169,6 +169,14 @@ export const qk = {
       listKey([...qk.payroll.all, employeeId] as const, input),
   },
 
+  purge: {
+    get all() {
+      return scoped("purge");
+    },
+    lists: () => [...qk.purge.all, "list"] as const,
+    list: (input?: object) => listKey(qk.purge.lists(), input),
+  },
+
   audit: {
     get all() {
       return scoped("audit");
@@ -192,6 +200,7 @@ export const qk = {
     lists: () => [...qk.enterprises.all, "list"] as const,
     list: (input?: object) => listKey(qk.enterprises.lists(), input),
     warehouses: (id: string) => [...qk.enterprises.all, "warehouses", id] as const,
+    stats: () => [...qk.enterprises.all, "stats"] as const,
   },
 
   subscription: {

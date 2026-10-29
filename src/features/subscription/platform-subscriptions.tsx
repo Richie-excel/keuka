@@ -1,19 +1,18 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import type { PageParams } from "@/interfaces";
 import type { SubscriptionStatus } from "@/enums";
 import type { EnterpriseResponse } from "@/api/enterprises";
 import { useEnterprises } from "@/shared/hooks/use-enterprises";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DataTable, type Column } from "@/components/data-table";
 import Loader from "@/components/loader";
+import { DataPagination } from "@/components/pagination";
 import { formatDate } from "@/lib/utils";
 import { PLATFORM_SUBSCRIPTIONS_PAGE_SIZE } from "@/constants";
 import {
   SubscriptionStatusBadge,
   TenantStatusBadge,
 } from "@/features/subscription/subscription-status-badge";
-
-const PAGE: PageParams = { page: 1, size: PLATFORM_SUBSCRIPTIONS_PAGE_SIZE };
 
 /**
  * Subscriptions across every enterprise, read from the tenant register.
@@ -28,7 +27,11 @@ const PAGE: PageParams = { page: 1, size: PLATFORM_SUBSCRIPTIONS_PAGE_SIZE };
  */
 export function PlatformSubscriptions() {
   const { t } = useTranslation();
-  const enterprises = useEnterprises(PAGE);
+  const [page, setPage] = useState(1);
+  const enterprises = useEnterprises({
+    page,
+    size: PLATFORM_SUBSCRIPTIONS_PAGE_SIZE,
+  });
 
   const columns: Column<EnterpriseResponse>[] = [
     {
@@ -89,13 +92,21 @@ export function PlatformSubscriptions() {
             {enterprises.error.message}
           </p>
         ) : (
-          <DataTable
-            columns={columns}
-            rows={enterprises.data.content}
-            rowKey={(row) => row.tenantId}
-            emptyTitle={t("subscription.platform.emptyTitle")}
-            emptyDescription={t("subscription.platform.emptyDescription")}
-          />
+          <>
+            <DataTable
+              columns={columns}
+              rows={enterprises.data.content}
+              rowKey={(row) => row.tenantId}
+              emptyTitle={t("subscription.platform.emptyTitle")}
+              emptyDescription={t("subscription.platform.emptyDescription")}
+            />
+            <DataPagination
+              page={page}
+              pageCount={enterprises.data.totalPages}
+              onPageChange={setPage}
+              totalItems={enterprises.data.totalElements}
+            />
+          </>
         )}
       </CardContent>
     </Card>

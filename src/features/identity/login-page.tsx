@@ -103,7 +103,7 @@ export function LoginPage() {
               </InputGroupAddon>
               <InputGroupInput
                 id="username"
-                placeholder="e.g. john.doe"
+                placeholder={t("login.usernamePlaceholder")}
                 autoComplete="username"
                 required
                 {...register("username", {

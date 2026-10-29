@@ -49,6 +49,14 @@
     },
     "invitationPending": "Invitation envoyée",
     "resendInvitation": "Renvoyer l’invitation",
-    "invitationNotice": "L’employé reçoit un e-mail pour confirmer son adresse et choisir son propre mot de passe. Personne d’autre ne le voit."
+    "invitationNotice": "L’employé reçoit un e-mail pour confirmer son adresse et choisir son propre mot de passe. Personne d’autre ne le voit.",
+    "company": "Entreprise",
+    "allCompanies": "Toutes les entreprises",
+    "platformAccount": "Plateforme",
+    "permissionGranted": "accordée",
+    "permissionNotGranted": "non accordée",
+    "permissionsSummary_one": "{{count}} permission dans {{modules}} module(s)",
+    "permissionsSummary_other": "{{count}} permissions dans {{modules}} module(s)",
+    "viewAllPermissions": "Voir toutes les permissions"
   }
 }

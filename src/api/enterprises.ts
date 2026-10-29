@@ -2,7 +2,7 @@ import { ApiRoutes } from "@/api/routes";
 import { withPageQuery } from "@/api/paging";
 import { apiClient } from "@/lib/api-client";
 import type { PageParams, PageResponse } from "@/interfaces";
-import type { EnterpriseStatus } from "@/enums";
+import type { EnterpriseStatus, SubscriptionStatus } from "@/enums";
 import type { WarehouseSummary } from "./warehouses";
 
 export interface EnterpriseResponse {
@@ -36,6 +36,19 @@ export interface CreateEnterpriseInput {
   adminEmail: string;
 }
 
+/** `tenancy.dto.PlatformStatsResponse`: the platform at a glance. */
+export interface PlatformStats {
+  enterprises: number;
+  /** Companies per subscription status as shown to them (a lapsed period counts as EXPIRED). */
+  byStatus: Record<SubscriptionStatus, number>;
+  closed: number;
+  /** Running trials and paid periods that end within `endingSoonDays`. */
+  endingSoon: number;
+  endingSoonDays: number;
+  users: number;
+  activeUsers: number;
+}
+
 export type UpdateEnterpriseInput = Partial<CreateEnterpriseInput> & {
   displayName?: string;
 }
@@ -51,18 +64,11 @@ export const enterprisesApi = {
     input: CreateEnterpriseInput,
     idempotencyKey?: string,
   ): Promise<EnterpriseResponse> {
-    try {
-      const result = await apiClient.post<EnterpriseResponse>(
-        ApiRoutes.enterprises.all,
-        input,
-        idempotencyKey,
-      );
-      console.log("Enterprise create result:", result);
-      return result;
-    } catch (error) {
-      console.error("Enterprise create error:", error);
-      throw error; // Re-throw so the caller (e.g. TanStack Query) still catches it
-    }
+    return apiClient.post<EnterpriseResponse>(
+      ApiRoutes.enterprises.all,
+      input,
+      idempotencyKey,
+    );
   },
 
   update(
@@ -81,6 +87,14 @@ export const enterprisesApi = {
         ? ApiRoutes.enterprises.activate(companyCode)
         : ApiRoutes.enterprises.suspend(companyCode),
     );
+  },
+
+  changePlan(companyCode: string, planCode: string): Promise<EnterpriseResponse> {
+    return apiClient.post<EnterpriseResponse>(ApiRoutes.enterprises.plan(companyCode), { planCode });
+  },
+
+  stats(): Promise<PlatformStats> {
+    return apiClient.get<PlatformStats>(ApiRoutes.enterprises.stats);
   },
 
   /** One enterprise's warehouses (the platform operator's view of a tenant). */

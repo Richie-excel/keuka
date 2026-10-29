@@ -53,6 +53,11 @@
       "payrollPrepare": "Préparer la paie",
       "reportingView": "Voir les rapports de l'entreprise",
       "synchronizationView": "Voir l'état de la synchronisation"
-    }
+    },
+    "chooseUserHint": "Choisissez un utilisateur pour gérer ses accès.",
+    "discardChanges": "Abandonner les modifications non enregistrées ?",
+    "selectAllIn": "Tout sélectionner dans {{module}}",
+    "selectUser": "Choisir un utilisateur",
+    "viaRolesNotice": "Les permissions viennent des rôles : elles sont en lecture seule ici. Modifiez les rôles ci-dessus, ou modifiez un rôle sur la page Rôles."
   }
 }

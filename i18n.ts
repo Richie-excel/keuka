@@ -31,6 +31,7 @@ import enSubscription from '@/locales/en/subscription.json'
 import enPlans from '@/locales/en/plans.json'
 import enDocuments from '@/locales/en/documents.json'
 import enErrors from '@/locales/en/errors.json'
+import enRetention from '@/locales/en/retention.json'
 
 import frCommon from '@/locales/fr/common.json'
 import frNav from '@/locales/fr/nav.json'
@@ -61,13 +62,14 @@ import frSubscription from '@/locales/fr/subscription.json'
 import frPlans from '@/locales/fr/plans.json'
 import frDocuments from '@/locales/fr/documents.json'
 import frErrors from '@/locales/fr/errors.json'
+import frRetention from '@/locales/fr/retention.json'
 
 const en = {
   ...enCommon, ...enNav, ...enAuth, ...enDashboard, ...enPurchases, ...enFinance,
   ...enInventory, ...enBuyers, ...enPartners, ...enHome, ...enLogistics, ...enPricing,
   ...enPayroll, ...enPersonnel, ...enReporting, ...enSettings, ...enUsers, ...enAudit, ...enStatus,
   ...enShared, ...enValidation, ...enAnalysis, ...enSynchronization, ...enToast, ...enEnterprises, ...enSubscription,
-  ...enPlans, ...enDocuments, ...enErrors,
+  ...enPlans, ...enDocuments, ...enErrors, ...enRetention,
 }
 
 const fr = {
@@ -75,7 +77,7 @@ const fr = {
   ...frInventory, ...frBuyers, ...frPartners, ...frHome, ...frLogistics, ...frPricing,
   ...frPayroll, ...frPersonnel, ...frReporting, ...frSettings, ...frUsers, ...frAudit, ...frStatus,
   ...frShared, ...frValidation, ...frAnalysis, ...frSynchronization, ...frToast, ...frEnterprises, ...frSubscription,
-  ...frPlans, ...frDocuments, ...frErrors,
+  ...frPlans, ...frDocuments, ...frErrors, ...frRetention,
 }
 
 

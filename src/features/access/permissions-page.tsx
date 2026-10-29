@@ -21,7 +21,7 @@ import { useAssignUserRoles, useUsers } from "@/shared/hooks/use-users";
 import { useRoles } from "@/shared/hooks/use-roles";
 import { useAuth } from "@/shared/hooks/useAuth";
 import { hasChanged } from "@/lib/utils";
-import { roleOptions } from "@/features/access/assignable-roles";
+import { describeRole, roleOptions } from "@/features/access/assignable-roles";
 import { PermissionMatrix } from "@/features/identity/permission-matrix";
 // import { apiErrorMessage } from "@/lib/api-error-message";
 // import { useApiErrorMessage } from "@/shared/hooks/use-api-error-message";
@@ -184,7 +184,7 @@ export function PermissionsPage() {
                           <span>
                             <RoleBadge role={option.name} />
                             <span className="block text-xs text-cocoa-500">
-                              {option.description}
+                              {describeRole(option, t)}
                             </span>
                           </span>
                         </Label>

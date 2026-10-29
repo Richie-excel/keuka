@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 /**
  * One label/value pair inside a dialog's `<dl>`.
  *
@@ -5,7 +7,7 @@
  * of read-only detail, and two copies of this would drift apart the first time
  * one of them is restyled.
  */
-export function Detail({ label, value }: { label: string; value: string }) {
+export function Detail({ label, value }: { label: string; value: ReactNode }) {
   return (
     <div>
       <dt className="text-cocoa-500">{label}</dt>

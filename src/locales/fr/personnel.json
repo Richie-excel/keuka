@@ -49,6 +49,11 @@
     "hireDate": "Date d'embauche",
     "hireDateHint": "Le salaire est dû un mois après cette date.",
     "monthlySalary": "Salaire mensuel convenu",
-    "monthlySalaryHint": "Plafonne les avances versées le premier mois."
+    "monthlySalaryHint": "Plafonne les avances versées le premier mois.",
+    "active": "Actif",
+    "columnActions": "Actions",
+    "email": "E-mail",
+    "idCardNumber": "Numéro de CNI",
+    "notes": "Notes"
   }
 }

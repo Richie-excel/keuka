@@ -49,6 +49,14 @@
     },
     "invitationPending": "Invitation sent",
     "resendInvitation": "Resend invitation",
-    "invitationNotice": "The employee receives an email to confirm their address and choose their own password. Nobody else ever sees it."
+    "invitationNotice": "The employee receives an email to confirm their address and choose their own password. Nobody else ever sees it.",
+    "company": "Company",
+    "allCompanies": "All companies",
+    "platformAccount": "Platform",
+    "permissionGranted": "granted",
+    "permissionNotGranted": "not granted",
+    "permissionsSummary_one": "{{count}} permission across {{modules}} module(s)",
+    "permissionsSummary_other": "{{count}} permissions across {{modules}} module(s)",
+    "viewAllPermissions": "View all permissions"
   }
 }

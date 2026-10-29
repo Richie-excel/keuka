@@ -23,6 +23,7 @@ import {
   Wallet,
   CreditCard,
   LayoutGrid,
+  Hourglass,
 } from "lucide-react";
 import {
   ALL_PARTNERS_SECTION,
@@ -106,6 +107,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { labelKey: "nav.enterprises", path: "/enterprises", icon: Building2, permissions: [PermissionKey.TENANT_READ, PermissionKey.WAREHOUSE_READ], requireAny: true },
       { labelKey: "nav.plans", path: "/plans", icon: Layers, permissions: [PermissionKey.TENANT_READ] },
       { labelKey: "nav.audit", path: "/audit", icon: FileText, permissions: [PermissionKey.AUDIT_READ] },
+      { labelKey: "nav.retention", path: "/retention", icon: Hourglass, roles: [SystemRole.SYSADMIN, SystemRole.BOSS] },
       { labelKey: "nav.analysis", path: "/analysis", icon: BrainCircuit, roles: [SystemRole.BOSS], enterpriseOnly: true },
       { labelKey: "nav.reporting", path: "/reporting", icon: BarChart3, permissions: [PermissionKey.REPORT_READ], enterpriseOnly: true },
     ],

@@ -40,6 +40,9 @@
     },
     "till": "Cash balance",
     "analysis": "Business analysis",
-    "expenses": "Expenses"
+    "expenses": "Expenses",
+    "retention": "Data retention",
+    "menu": "Menu",
+    "language": "Language"
   }
 }

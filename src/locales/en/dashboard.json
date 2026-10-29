@@ -51,7 +51,19 @@
     "admin": {
       "title": "Platform administration, {{name}}",
       "description": "Every company on this server, its warehouses, its subscription and the audit trail.",
-      "openEnterprises": "Open the enterprise register"
+      "openEnterprises": "Open the enterprise register",
+      "stats": {
+        "paying": "Paying subscriptions",
+        "trials": "On trial",
+        "endingSoon": "Ending soon",
+        "endingSoonHelper_one": "Within {{count}} day: follow up",
+        "endingSoonHelper_other": "Within {{count}} days: follow up",
+        "blocked": "Access blocked",
+        "blockedHelper": "Expired or suspended",
+        "accounts": "Active accounts",
+        "accountsHelper_one": "Of {{count}} account",
+        "accountsHelper_other": "Of {{count}} accounts"
+      }
     },
     "client": {
       "noAccessTitle": "No operational data for your role",
@@ -104,7 +116,15 @@
       "adminEmail": "Initial admin email",
       "suspend": "Suspend access",
       "activate": "Activate access",
-      "invitationNotice": "The boss receives an email to confirm their address and choose their own password."
+      "invitationNotice": "The boss receives an email to confirm their address and choose their own password.",
+      "renew": "Renew period",
+      "periodEnd": "Period ends",
+      "changePlan": "Change plan",
+      "changePlanHint": "Once payment is received: the new period starts today.",
+      "choosePlan": "Choose a plan",
+      "changePlanTitle": "Change plan?",
+      "changePlanDescription": "{{company}} moves to the {{plan}} plan. A new period starts today and access is restored.",
+      "companyCodeHint": "Generated from the company name."
     },
     "warehouse": {
       "createTitle": "Create warehouse",
@@ -118,7 +138,8 @@
       "location": "Location",
       "status": "Status",
       "active": "Active",
-      "inactive": "Inactive"
+      "inactive": "Inactive",
+      "codeHint": "Generated automatically"
     },
     "greetingBoss": "Here's how the business is doing.",
     "greetingFinSec": "Here's what needs attention today.",

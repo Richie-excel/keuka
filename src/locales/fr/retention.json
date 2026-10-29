@@ -1,0 +1,35 @@
+{
+  "retention": {
+    "title": "Conservation des données",
+    "description": "Les enregistrements désactivés sont supprimés définitivement à la date indiquée, sauf si vous les conservez.",
+    "record": "Enregistrement",
+    "type": "Type",
+    "deactivatedAt": "Désactivé le",
+    "purgeAt": "Suppression le",
+    "inDays_zero": "Aujourd'hui",
+    "inDays_one": "Dans {{count}} jour",
+    "inDays_other": "Dans {{count}} jours",
+    "status": "État",
+    "statuses": {
+      "WATCHING": "Programmé",
+      "NOTIFIED": "Prévenu",
+      "CANCELLED": "Conservé",
+      "PURGED": "Supprimé"
+    },
+    "types": {
+      "UserAccount": "Compte utilisateur",
+      "BusinessPartner": "Partenaire",
+      "Employee": "Employé",
+      "Warehouse": "Entrepôt"
+    },
+    "actions": "Actions",
+    "keep": "Conserver",
+    "keepTitle": "Conserver cet enregistrement ?",
+    "keepDescription": "« {{label}} » ne sera pas supprimé. Il reste désactivé.",
+    "purgeNow": "Supprimer maintenant",
+    "purgeTitle": "Supprimer définitivement ?",
+    "purgeDescription": "« {{label}} » sera effacé tout de suite. Cette action est irréversible.",
+    "emptyTitle": "Aucune suppression programmée",
+    "emptyDescription": "Les enregistrements désactivés apparaîtront ici avant d'être supprimés."
+  }
+}

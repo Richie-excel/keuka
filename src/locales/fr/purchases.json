@@ -86,6 +86,7 @@
       "deliveries_other": "Livraisons ({{count}})",
       "deliveriesHint": "Les livraisons du même jour par ce partenaire sont regroupées en un seul achat. Les poids et le montant ci-dessus sont les totaux du jour.",
       "noDeliveries": "Aucune livraison"
-    }
+    },
+    "datePlaceholder": "Choisir une date"
   }
 }

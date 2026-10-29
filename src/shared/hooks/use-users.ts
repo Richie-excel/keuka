@@ -10,10 +10,10 @@ import type {
   UserResponse,
 } from "@/interfaces";
 
-export function useUsers(page?: PageParams) {
+export function useUsers(page?: PageParams, enterpriseId?: string) {
   return useQuery({
-    queryKey: qk.users.list(page),
-    queryFn: () => usersApi.list(page),
+    queryKey: qk.users.list({ ...page, enterpriseId }),
+    queryFn: () => usersApi.list(page, enterpriseId),
   });
 }
 

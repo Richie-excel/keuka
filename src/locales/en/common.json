@@ -1,7 +1,13 @@
 {
   "appName": "Keuka",
   "common": {
-    "actions": { "row": "Actions", "view": "View", "edit": "Edit", "delete": "Delete", "create": "Create" },
+    "actions": {
+      "row": "Actions",
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete",
+      "create": "Create"
+    },
     "cancel": "Cancel",
     "confirm": "Confirm",
     "backToDashboard": "Back to dashboard",
@@ -20,7 +26,11 @@
       "next": "Next",
       "pageOf": "Page {{page}} of {{pageCount}}",
       "pageLabel": "Page {{page}}"
-    }
+    },
+    "delete": "Delete",
+    "empty": "Nothing to show yet.",
+    "reset": "Reset",
+    "rowsPerPage": "Rows per page"
   },
   "roles": {
     "BOSS": "Boss",
@@ -30,11 +40,39 @@
     "STAFF": "Staff",
     "BUYER": "Buyer",
     "INVENTORY": "Inventory",
-    "SYSADMIN": "System Admin"
+    "SYSADMIN": "System Admin",
+    "builtIn": "Built-in",
+    "builtInNotice": "Built-in roles can’t be edited. Duplicate this role to make a version with different permissions.",
+    "chooseHint": "Choose a role to view or edit its permissions.",
+    "confirmDelete": "Delete the role “{{name}}”? This cannot be undone.",
+    "custom": "Custom",
+    "description": "Create roles with exactly the permissions a job needs, then assign them to users.",
+    "descriptionLabel": "Description",
+    "discardChanges": "Discard your unsaved changes?",
+    "duplicate": "Duplicate",
+    "duplicateDescription": "Starts with the permissions of {{name}}. You can change them after creating it.",
+    "duplicateTitle": "Duplicate role",
+    "name": "Name",
+    "namePlaceholder": "e.g. Admin – Finance",
+    "new": "New role",
+    "newDescription": "Starts with no permissions. Tick what the role needs after creating it.",
+    "newTitle": "New role",
+    "role": "Role",
+    "selectedCount": "{{selected}} of {{total}} permissions selected",
+    "selectRole": "Select a role…",
+    "title": "Roles"
   },
   "language": {
     "label": "Language",
     "en": "English",
     "fr": "Français"
+  },
+  "roleDescriptions": {
+    "SYSTEM_ADMIN": "Platform operator: companies and subscriptions",
+    "BOSS": "Company administrator: all of its warehouses",
+    "STAFF": "Office staff at one warehouse",
+    "BUYER": "Field buyer at one warehouse: sees their own records",
+    "INVENTORY": "Inventory operator at one warehouse",
+    "CASHIER": "Cashier: one till at one warehouse"
   }
 }

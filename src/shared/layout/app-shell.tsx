@@ -37,13 +37,6 @@ import { useAuth } from "../hooks/useAuth";
 import Loader from "@/components/loader";
 import { PageSkeleton } from "@/components/page-skeleton";
 
-/**
- * A nav item with children, shown as a collapsible sub-menu that starts open
- * while one of its pages is showing.
- *
- * In icon-only mode there is no room for a sub-menu, so the parent becomes a
- * plain link to its first child instead of a toggle that would do nothing.
- */
 function NavSubMenu({
   item,
   isActive,
@@ -105,12 +98,7 @@ function NavSubMenu({
   );
 }
 
-/**
- * The skeletons sit INSIDE the header, content and footer rather than around
- * `<Sidebar>`: the skeleton adds wrapper divs, and one between `<Sidebar>` and
- * `<SidebarInset>` would break the provider's flex row and the `peer-data-*`
- * selectors the inset relies on.
- */
+
 export function AppShell({ children }: { children: ReactNode }) {
   const { user, isLoading, logout, isLoggingOut } = useAuth();
   const location = useLocation();
@@ -235,7 +223,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <SidebarInset>
         <div className="flex items-center gap-2 border-b border-cocoa-100 bg-white px-4 py-2 md:hidden">
           <SidebarTrigger className="text-cocoa-700" />
-          <span className="text-sm font-medium text-cocoa-700">Menu</span>
+          <span className="text-sm font-medium text-cocoa-700">{t("nav.menu")}</span>
         </div>
         <main className="flex-1 p-4 md:p-4 min-h-screen">{children}</main>
       </SidebarInset>

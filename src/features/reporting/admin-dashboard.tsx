@@ -3,9 +3,14 @@ import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 import {
   ArrowUpRight,
+  BadgeCheck,
+  Ban,
   Building2,
+  CalendarClock,
+  Hourglass,
   Plus,
   ShieldCheck,
+  UsersRound,
   Warehouse as WarehouseIcon,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -14,7 +19,7 @@ import { PermissionKey } from "@/enums";
 import { auditApi } from "@/api/audit";
 import { qk } from "@/shared/hooks/query-keys";
 import { useAuth } from "@/shared/hooks/useAuth";
-import { useEnterprises } from "@/shared/hooks/use-enterprises";
+import { useEnterprises, usePlatformStats } from "@/shared/hooks/use-enterprises";
 import { useWarehouses } from "@/shared/hooks/use-warehouses";
 import { PageHeader } from "@/shared/layout/page-header";
 import { StatCard } from "@/components/stat-card";
@@ -29,6 +34,7 @@ import type { WarehouseSummary } from "@/api/warehouses";
 import { EnterpriseDialog } from "@/features/enterprises/enterprise-dialog";
 import { WarehouseDialog } from "@/features/enterprises/warehouse-dialog";
 import { PlatformSubscriptions } from "@/features/subscription/platform-subscriptions";
+import { TenantStatusBadge } from "@/features/subscription/subscription-status-badge";
 import { formatDateTime } from "@/lib/utils";
 
 const FIRST_PAGE: PageParams = { page: 1, size: ADMIN_DASHBOARD_PAGE_SIZE };
@@ -59,6 +65,9 @@ export function AdminDashboard() {
   const canReadAudit = hasPermission(PermissionKey.AUDIT_READ);
 
   const enterprises = useEnterprises(FIRST_PAGE, canReadEnterprises);
+  // Subscription health across every company: who pays, who is trying, who to call.
+  const stats = usePlatformStats(canReadEnterprises);
+  const count = (value: number | undefined) => (value === undefined ? "…" : String(value));
   const warehouses = useWarehouses(FIRST_PAGE, canReadWarehouses);
   const audit = useQuery<PageResponse<AuditEvent>>({
     queryKey: qk.audit.list(FIRST_PAGE),
@@ -128,6 +137,55 @@ export function AdminDashboard() {
                 }
                 icon={WarehouseIcon}
               />
+            )}
+            {canReadEnterprises && (
+              <>
+                <StatCard
+                  label={t("dashboard.admin.stats.paying")}
+                  value={count(stats.data?.byStatus.ACTIVE)}
+                  icon={BadgeCheck}
+                  tone="positive"
+                />
+                <StatCard
+                  label={t("dashboard.admin.stats.trials")}
+                  value={count(stats.data?.byStatus.TRIAL)}
+                  icon={Hourglass}
+                />
+                <StatCard
+                  label={t("dashboard.admin.stats.endingSoon")}
+                  value={count(stats.data?.endingSoon)}
+                  icon={CalendarClock}
+                  tone={stats.data && stats.data.endingSoon > 0 ? "pending" : "neutral"}
+                  helper={
+                    stats.data
+                      ? t("dashboard.admin.stats.endingSoonHelper", { count: stats.data.endingSoonDays })
+                      : undefined
+                  }
+                />
+                <StatCard
+                  label={t("dashboard.admin.stats.blocked")}
+                  value={count(
+                    stats.data ? stats.data.byStatus.EXPIRED + stats.data.byStatus.SUSPENDED : undefined,
+                  )}
+                  icon={Ban}
+                  tone={
+                    stats.data && stats.data.byStatus.EXPIRED + stats.data.byStatus.SUSPENDED > 0
+                      ? "negative"
+                      : "neutral"
+                  }
+                  helper={t("dashboard.admin.stats.blockedHelper")}
+                />
+                <StatCard
+                  label={t("dashboard.admin.stats.accounts")}
+                  value={count(stats.data?.activeUsers)}
+                  icon={UsersRound}
+                  helper={
+                    stats.data
+                      ? t("dashboard.admin.stats.accountsHelper", { count: stats.data.users })
+                      : undefined
+                  }
+                />
+              </>
             )}
           </section>
 
@@ -300,7 +358,7 @@ function enterpriseColumns(
     { header: t("dashboard.companyCode"), cell: (row) => row.companyCode },
     { header: t("dashboard.company"), cell: (row) => row.displayName },
     { header: t("dashboard.enterprise.plan"), cell: (row) => row.planCode },
-    { header: t("dashboard.status"), cell: (row) => row.tenantStatus },
+    { header: t("dashboard.status"), cell: (row) => <TenantStatusBadge status={row.tenantStatus} /> },
   ];
 }
 

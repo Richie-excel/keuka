@@ -1,7 +1,7 @@
 {
   "apiErrors": {
     "unknown": "Something went wrong. Please try again.",
-    "network": "Cannot reach the server. Check the office network connection.",
+    "network": "Cannot reach the server. Check your network connection.",
     "timeout": "The server took too long to respond. Check the connection and try again.",
     "server": "The server ran into a problem. Try again in a moment; if it keeps happening, contact the system administrator.",
     "http": {

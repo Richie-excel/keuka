@@ -1,0 +1,35 @@
+{
+  "retention": {
+    "title": "Data retention",
+    "description": "Deactivated records are deleted for good on the date shown, unless you keep them.",
+    "record": "Record",
+    "type": "Type",
+    "deactivatedAt": "Deactivated",
+    "purgeAt": "Deleted on",
+    "inDays_zero": "Today",
+    "inDays_one": "In {{count}} day",
+    "inDays_other": "In {{count}} days",
+    "status": "Status",
+    "statuses": {
+      "WATCHING": "Scheduled",
+      "NOTIFIED": "Notified",
+      "CANCELLED": "Kept",
+      "PURGED": "Deleted"
+    },
+    "types": {
+      "UserAccount": "User account",
+      "BusinessPartner": "Partner",
+      "Employee": "Employee",
+      "Warehouse": "Warehouse"
+    },
+    "actions": "Actions",
+    "keep": "Keep",
+    "keepTitle": "Keep this record?",
+    "keepDescription": "\"{{label}}\" will not be deleted. It stays deactivated.",
+    "purgeNow": "Delete now",
+    "purgeTitle": "Delete for good?",
+    "purgeDescription": "\"{{label}}\" will be erased right away. This cannot be undone.",
+    "emptyTitle": "No deletions scheduled",
+    "emptyDescription": "Deactivated records will show up here before they are deleted."
+  }
+}

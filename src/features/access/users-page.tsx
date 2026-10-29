@@ -41,6 +41,19 @@ import { UserForm } from "./user-form";
 import { RoleBadges } from "@/components/role-badge";
 import { PAGE_SIZE } from "@/constants";
 import { StatusBadge } from "@/components/status-badge";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useEnterprises } from "@/shared/hooks/use-enterprises";
+
+/** The platform admin's company filter: "every account". */
+const ALL_COMPANIES = "all";
+/** Enough companies for the filter list. */
+const COMPANY_FILTER_SIZE = 200;
 
 type FormDialogState =
   | { mode: "create" }
@@ -48,13 +61,19 @@ type FormDialogState =
 
 export function UsersPage() {
   const { t } = useTranslation();
-  const { user: currentUser, hasPermission } = useAuth();
+  const { user: currentUser, hasPermission, isPlatform } = useAuth();
   const [page, setPage] = useState(1);
+  // The platform admin sees every company's accounts: say whose each one is, and let them narrow it.
+  const [company, setCompany] = useState(ALL_COMPANIES);
+  const companies = useEnterprises({ page: 1, size: COMPANY_FILTER_SIZE }, isPlatform);
   const [selectedUser, setSelectedUser] = useState<UserResponse | null>(null);
   const [formDialog, setFormDialog] = useState<FormDialogState | null>(null);
   const [userToRemove, setUserToRemove] = useState<UserResponse | null>(null);
   const [removeError, setRemoveError] = useState<string>();
-  const query = useUsers({ page, size: PAGE_SIZE });
+  const query = useUsers(
+    { page, size: PAGE_SIZE },
+    isPlatform && company !== ALL_COMPANIES ? company : undefined,
+  );
   const createUser = useCreateUser();
   const updateUser = useUpdateUser();
   const setUserEnabled = useSetUserEnabled();
@@ -133,6 +152,17 @@ export function UsersPage() {
       cell: (row) => row.email,
       hideOnMobile: true,
     },
+    ...(isPlatform
+      ? [
+          {
+            header: t("users.company"),
+            cell: (row: UserResponse) =>
+              row.enterpriseName ?? (
+                <span className="text-cocoa-500">{t("users.platformAccount")}</span>
+              ),
+          },
+        ]
+      : []),
     {
       header: t("users.roles"),
       cell: (row) => <RoleBadges roles={row.roles} />,
@@ -173,6 +203,32 @@ export function UsersPage() {
               ) : undefined
             }
           />
+          {isPlatform && (
+            <div className="mb-4 flex items-center gap-2">
+              <label htmlFor="users-company" className="text-sm text-cocoa-700">
+                {t("users.company")}
+              </label>
+              <Select
+                value={company}
+                onValueChange={(value) => {
+                  setCompany(value);
+                  setPage(1);
+                }}
+              >
+                <SelectTrigger id="users-company" className="w-64">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value={ALL_COMPANIES}>{t("users.allCompanies")}</SelectItem>
+                  {(companies.data?.content ?? []).map((enterprise) => (
+                    <SelectItem key={enterprise.tenantId} value={enterprise.tenantId}>
+                      {enterprise.displayName}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          )}
           {setUserEnabled.isError && !selectedUser && (
             <p role="alert" className="mb-4 text-sm text-destructive">
               {setUserEnabled.error instanceof Error

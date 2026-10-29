@@ -40,6 +40,9 @@
     },
     "till": "Caisse",
     "analysis": "Analyse de l’activité",
-    "expenses": "Dépenses"
+    "expenses": "Dépenses",
+    "retention": "Conservation des données",
+    "menu": "Menu",
+    "language": "Langue"
   }
 }

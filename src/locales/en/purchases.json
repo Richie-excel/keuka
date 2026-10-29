@@ -86,6 +86,7 @@
       "deliveries_other": "Deliveries ({{count}})",
       "deliveriesHint": "Same-day deliveries by this partner are added to one purchase. The weights and amount above are the day's totals.",
       "noDeliveries": "No deliveries"
-    }
+    },
+    "datePlaceholder": "Select date"
   }
 }

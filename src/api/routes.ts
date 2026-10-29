@@ -131,6 +131,10 @@ export const ApiRoutes = {
       `${API}/enterprises/${companyCode}/suspend`,
     activate: (companyCode: string) =>
       `${API}/enterprises/${companyCode}/activate`,
+    /** Moves the company onto a plan (once it has paid); the period starts today. */
+    plan: (companyCode: string) => `${API}/enterprises/${encodeURIComponent(companyCode)}/plan`,
+    /** Platform health for the operator's dashboard. */
+    stats: `${API}/enterprises/stats`,
     listWarehouses: (id: string) => `${API}/warehouses/enterprise/${id}/warehouses`,
   },
 

@@ -1,6 +1,7 @@
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { describeRole } from "@/features/access/assignable-roles";
 import { RoleBadge } from "@/components/role-badge";
 import { ShieldCheck, FileText } from "lucide-react";
 import { Field } from "@/components/field";
@@ -96,7 +97,8 @@ export function RolesPage() {
   function load(role: RoleResponse | undefined) {
     reset({
       roleId: role?.id ?? "",
-      description: role?.description ?? "",
+      // Built-in roles cannot be edited, so showing their description translated is safe.
+      description: role ? describeRole(role, t) : "",
       permissions: [...(role?.permissions ?? [])],
     });
   }
@@ -422,7 +424,7 @@ function NewRoleForm({
     formState: { errors, isValid, isSubmitting },
   } = useForm<NewRoleFormValues>({
     mode: "onChange",
-    defaultValues: { name: "", description: source?.description ?? "" },
+    defaultValues: { name: "", description: source ? describeRole(source, t) : "" },
   });
 
   const onSubmit = handleSubmit(async (values) => {

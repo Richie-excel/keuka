@@ -26,7 +26,11 @@
       "next": "Suivant",
       "pageOf": "Page {{page}} sur {{pageCount}}",
       "pageLabel": "Page {{page}}"
-    }
+    },
+    "delete": "Supprimer",
+    "empty": "Rien à afficher pour le moment.",
+    "reset": "Réinitialiser",
+    "rowsPerPage": "Lignes par page"
   },
   "roles": {
     "BOSS": "Patron",
@@ -36,11 +40,39 @@
     "STAFF": "Personnel",
     "BUYER": "Acheteur",
     "INVENTORY": "Stock",
-    "SYSADMIN": "Admin système"
+    "SYSADMIN": "Admin système",
+    "builtIn": "Intégré",
+    "builtInNotice": "Les rôles intégrés ne peuvent pas être modifiés. Dupliquez ce rôle pour en créer une version avec d’autres permissions.",
+    "chooseHint": "Choisissez un rôle pour voir ou modifier ses permissions.",
+    "confirmDelete": "Supprimer le rôle « {{name}} » ? Cette action est irréversible.",
+    "custom": "Personnalisé",
+    "description": "Créez des rôles avec exactement les permissions dont un poste a besoin, puis attribuez-les aux utilisateurs.",
+    "descriptionLabel": "Description",
+    "discardChanges": "Abandonner les modifications non enregistrées ?",
+    "duplicate": "Dupliquer",
+    "duplicateDescription": "Reprend les permissions de {{name}}. Vous pourrez les modifier après la création.",
+    "duplicateTitle": "Dupliquer le rôle",
+    "name": "Nom",
+    "namePlaceholder": "ex. Admin – Finances",
+    "new": "Nouveau rôle",
+    "newDescription": "Commence sans aucune permission. Cochez ce dont le rôle a besoin après sa création.",
+    "newTitle": "Nouveau rôle",
+    "role": "Rôle",
+    "selectedCount": "{{selected}} permission(s) sur {{total}} sélectionnée(s)",
+    "selectRole": "Choisir un rôle…",
+    "title": "Rôles"
   },
   "language": {
     "label": "Langue",
     "en": "English",
     "fr": "Français"
+  },
+  "roleDescriptions": {
+    "SYSTEM_ADMIN": "Opérateur de la plateforme : entreprises et abonnements",
+    "BOSS": "Administrateur de l'entreprise : tous ses entrepôts",
+    "STAFF": "Employé de bureau dans un entrepôt",
+    "BUYER": "Acheteur terrain dans un entrepôt : voit ses propres opérations",
+    "INVENTORY": "Gestionnaire de stock dans un entrepôt",
+    "CASHIER": "Caissier : une caisse dans un entrepôt"
   }
 }

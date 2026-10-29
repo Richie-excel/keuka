@@ -53,6 +53,11 @@
       "payrollPrepare": "Prepare payroll",
       "reportingView": "View company reports",
       "synchronizationView": "View synchronization status"
-    }
+    },
+    "chooseUserHint": "Choose a user to manage their access.",
+    "discardChanges": "Discard your unsaved changes?",
+    "selectAllIn": "Select all {{module}}",
+    "selectUser": "Select a user",
+    "viaRolesNotice": "Permissions come from roles, so they are read-only here. Change the roles above, or edit a role on the Roles page."
   }
 }

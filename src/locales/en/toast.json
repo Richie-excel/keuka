@@ -70,7 +70,8 @@
     "enterprises": {
       "created": "Enterprise created.",
       "updated": "Enterprise saved.",
-      "statusChanged": "Enterprise access updated."
+      "statusChanged": "Enterprise access updated.",
+      "planChanged": "Company's plan changed."
     },
     "subscription": {
       "activated": "Subscription activated.",
@@ -83,6 +84,10 @@
     },
     "roles": {
       "rolesAssigned": "Roles updated."
+    },
+    "retention": {
+      "kept": "Record kept: it will not be deleted.",
+      "deleted": "Record deleted for good."
     }
   }
 }

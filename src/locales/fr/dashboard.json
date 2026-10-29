@@ -51,7 +51,19 @@
     "admin": {
       "title": "Administration de la plateforme, {{name}}",
       "description": "Chaque entreprise de ce serveur, ses entrepôts, sa souscription et le journal d'audit.",
-      "openEnterprises": "Ouvrir le registre des entreprises"
+      "openEnterprises": "Ouvrir le registre des entreprises",
+      "stats": {
+        "paying": "Abonnements payants",
+        "trials": "En période d'essai",
+        "endingSoon": "Fin de période proche",
+        "endingSoonHelper_one": "Dans {{count}} jour : à relancer",
+        "endingSoonHelper_other": "Dans les {{count}} jours : à relancer",
+        "blocked": "Accès bloqué",
+        "blockedHelper": "Expirés ou suspendus",
+        "accounts": "Comptes actifs",
+        "accountsHelper_one": "Sur {{count}} compte",
+        "accountsHelper_other": "Sur {{count}} comptes"
+      }
     },
     "client": {
       "noAccessTitle": "Aucune donnée opérationnelle pour votre rôle",
@@ -104,7 +116,15 @@
       "adminEmail": "Courriel de l'administrateur initial",
       "suspend": "Suspendre l'accès",
       "activate": "Activer l'accès",
-      "invitationNotice": "Le patron reçoit un e-mail pour confirmer son adresse et choisir son propre mot de passe."
+      "invitationNotice": "Le patron reçoit un e-mail pour confirmer son adresse et choisir son propre mot de passe.",
+      "renew": "Renouveler la période",
+      "periodEnd": "Fin de la période",
+      "changePlan": "Changer de formule",
+      "changePlanHint": "Une fois le paiement reçu : la nouvelle période commence aujourd'hui.",
+      "choosePlan": "Choisir une formule",
+      "changePlanTitle": "Changer de formule ?",
+      "changePlanDescription": "{{company}} passe à la formule {{plan}}. Une nouvelle période commence aujourd'hui et l'accès est rétabli.",
+      "companyCodeHint": "Généré à partir du nom de l'entreprise."
     },
     "warehouse": {
       "createTitle": "Créer un entrepôt",
@@ -118,7 +138,8 @@
       "location": "Emplacement",
       "status": "Statut",
       "active": "Actif",
-      "inactive": "Inactif"
+      "inactive": "Inactif",
+      "codeHint": "Généré automatiquement"
     },
     "greetingBoss": "Voici comment se porte l'entreprise.",
     "greetingFinSec": "Voici ce qui demande votre attention aujourd'hui.",

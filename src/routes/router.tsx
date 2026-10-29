@@ -50,6 +50,7 @@ import { AnalysisPage } from "@/features/analysis/analysis-page";
 import { EnterpriseConsole } from "@/features/enterprises/enterprise-console";
 import { SubscriptionPage } from "@/features/subscription/subscription-page";
 import { PlansPage } from "@/features/subscription/plans-page";
+import { RetentionPage } from "@/features/retention/retention-page";
 
 
 function withPermissions(
@@ -266,6 +267,14 @@ export const router = createBrowserRouter([
           {
             path: "/plans",
             element: withPermissions([PermissionKey.TENANT_READ], <PlansPage />),
+          },
+          {
+            // The server lets a boss review their company's, the platform admin everyone's.
+            path: "/retention",
+            element: withPermissions(undefined, <RetentionPage />, false, [
+              SystemRole.SYSADMIN,
+              SystemRole.BOSS,
+            ]),
           },
           {
             path: "/audit",

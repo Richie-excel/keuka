@@ -1,6 +1,6 @@
 import { ApiRoutes } from "@/api/routes";
 import { apiClient } from "@/lib/api-client";
-import { withPageQuery } from "@/api/paging";
+import { withPageQuery, withQueryParam } from "@/api/paging";
 import type {
   AvailableEmployee,
   CreateUserRequest,
@@ -30,9 +30,10 @@ import type {
  * simply stops being able to sign in.
  */
 export const usersApi = {
-  list(page?: PageParams): Promise<PageResponse<UserResponse>> {
+  /** `enterpriseId` narrows the platform admin's list to one company; others always get their own. */
+  list(page?: PageParams, enterpriseId?: string): Promise<PageResponse<UserResponse>> {
     return apiClient.get<PageResponse<UserResponse>>(
-      withPageQuery(ApiRoutes.users.all, page),
+      withPageQuery(withQueryParam(ApiRoutes.users.all, "enterpriseId", enterpriseId), page),
     );
   },
 

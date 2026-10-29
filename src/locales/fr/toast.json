@@ -70,7 +70,8 @@
     "enterprises": {
       "created": "Entreprise créée.",
       "updated": "Entreprise enregistrée.",
-      "statusChanged": "Accès de l'entreprise mis à jour."
+      "statusChanged": "Accès de l'entreprise mis à jour.",
+      "planChanged": "Formule de l'entreprise changée."
     },
     "subscription": {
       "activated": "Souscription activée.",
@@ -80,6 +81,10 @@
     "plans": {
       "created": "Forfait créé.",
       "updated": "Forfait enregistré."
+    },
+    "retention": {
+      "kept": "Enregistrement conservé : il ne sera pas supprimé.",
+      "deleted": "Enregistrement supprimé définitivement."
     }
   }
 }

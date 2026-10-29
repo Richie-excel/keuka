@@ -18,6 +18,7 @@ import {
   useListEnterpriseWarehouses,
 } from "@/shared/hooks/use-enterprises";
 import { EnterpriseDialog } from "@/features/enterprises/enterprise-dialog";
+import { TenantStatusBadge } from "@/features/subscription/subscription-status-badge";
 import { WarehouseDialog } from "@/features/enterprises/warehouse-dialog";
 
 type DialogState =
@@ -84,7 +85,7 @@ export function EnterprisesPage() {
     },
     {
       header: t("dashboard.status"),
-      cell: (row) => row.tenantStatus,
+      cell: (row) => <TenantStatusBadge status={row.tenantStatus} />,
     },
     {
       header: t("dashboard.enterprise.access"),

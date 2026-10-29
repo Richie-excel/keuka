@@ -55,6 +55,30 @@ export function useSetEnterpriseActive() {
   });
 }
 
+/**
+ * Puts a company on a plan once it has paid. Invalidates the whole enterprise
+ * tree, so the register, the stats and the subscription views all follow.
+ */
+export function useChangeEnterprisePlan() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (variables: { companyCode: string; planCode: string }) =>
+      enterprisesApi.changePlan(variables.companyCode, variables.planCode),
+    onSuccess: () =>
+      queryClient.invalidateQueries({ queryKey: qk.enterprises.all }),
+    meta: { success: "toast.enterprises.planChanged" },
+  });
+}
+
+/** Platform health for the operator's dashboard (SYSTEM_ADMIN only). */
+export function usePlatformStats(enabled = true) {
+  return useQuery({
+    queryKey: qk.enterprises.stats(),
+    queryFn: () => enterprisesApi.stats(),
+    enabled,
+  });
+}
+
 export function useListEnterpriseWarehouses(enterpriseId?: string, page?: PageParams) {
   return useQuery({
     queryKey: [...qk.enterprises.warehouses(enterpriseId ?? ""), page ?? {}],

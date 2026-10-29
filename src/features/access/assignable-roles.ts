@@ -1,5 +1,18 @@
+import type { TFunction } from "i18next";
 import { SystemRole } from "@/enums";
 import type { RoleResponse, UserResponse } from "@/interfaces";
+
+/**
+ * A role's description in the reader's language. The server writes the built-in
+ * roles' descriptions in English; a custom role's is whatever its author typed.
+ */
+export function describeRole(
+  role: { name: string; builtIn: boolean; description?: string | null },
+  t: TFunction,
+): string {
+  const own = role.description ?? "";
+  return role.builtIn ? t(`roleDescriptions.${role.name}`, { defaultValue: own }) : own;
+}
 
 /**
  * Which roles the signed-in actor may hand out — computed before the checkbox
@@ -32,6 +45,8 @@ const NO_ACTOR: Actor = { roles: [], permissions: [] };
 export interface RoleOption {
   name: string;
   description?: string;
+  /** Its description is the server's English; see describeRole. */
+  builtIn: boolean;
   /**
    * The account ALREADY holds this role, but the actor is not allowed to grant
    * it, so the box is ticked and cannot be changed.
@@ -93,6 +108,7 @@ export function roleOptions(
       options.push({
         name: role.name,
         description: role.description,
+        builtIn: role.builtIn,
         locked,
       });
     }
@@ -100,7 +116,7 @@ export function roleOptions(
 
   const known = new Set(roles.map((role) => role.name));
   for (const name of currentRoleNames) {
-    if (!known.has(name)) options.push({ name, locked: true });
+    if (!known.has(name)) options.push({ name, builtIn: false, locked: true });
   }
 
   return options;
@@ -128,5 +144,5 @@ export function fallbackRoleOptions(
       (name) =>
         platform || name !== SystemRole.SYSADMIN || current.has(name),
     )
-    .map((name) => ({ name, locked: false }));
+    .map((name) => ({ name, builtIn: true, locked: false }));
 }

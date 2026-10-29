@@ -9,10 +9,10 @@ import { cn } from '@/lib/utils'
  * both simpler to scan and faster to use.
  */
 export function LanguageSwitcher() {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   return (
-    <div role="group" aria-label="Language" className="inline-flex items-center gap-0.5 rounded-xl border border-cocoa-100 bg-cocoa-50 p-0.5">
+    <div role="group" aria-label={t('nav.language')} className="inline-flex items-center gap-0.5 rounded-xl border border-cocoa-100 bg-cocoa-50 p-0.5">
       {(['fr', 'en'] as const).map((lng) => (
         <Button
           key={lng}
