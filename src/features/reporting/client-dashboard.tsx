@@ -22,6 +22,7 @@ import {
 import { useClientDashboard } from "@/features/reporting/use-client-dashboard";
 import { DashboardQuickActions } from "@/features/reporting/dashboard-quick-actions";
 import { AnalysisFab } from "@/features/analysis/analysis-fab";
+import { useAiAvailable } from "@/shared/hooks/use-ai";
 
 /**
  * The client dashboard — where the BOSS and every warehouse-scoped user lands
@@ -40,6 +41,7 @@ export function ClientDashboard() {
   const dashboard = useClientDashboard();
   const { flags } = dashboard;
   const navigate = useNavigate();
+  const aiAvailable = useAiAvailable();
 
   const greetingKey = hasAnyRole(SystemRole.BOSS)
     ? "dashboard.greetingBoss"
@@ -123,8 +125,9 @@ export function ClientDashboard() {
       </div>
     </PageSkeleton>
 
-    {/* The BOSS launches the AI analysis from here too: it opens the analysis page writing. */}
-    {hasAnyRole(SystemRole.BOSS) && (
+    {/* The BOSS launches the AI analysis from here too: it opens the analysis page writing.
+        Only when the plan includes it (Entreprise). */}
+    {hasAnyRole(SystemRole.BOSS) && aiAvailable && (
       <AnalysisFab
         title={t("analysis.report.write")}
         description={t("analysis.report.fabTooltip", { count: 30 })}

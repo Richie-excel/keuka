@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { RoleBadges } from "@/components/role-badge";
 import { ChevronRight, LogOut } from "lucide-react";
 import { navGroupsForUser, type NavItem } from "@/shared/layout/nav-config";
+import { useAiAvailable } from "@/shared/hooks/use-ai";
 import { ConnectionBadge } from "@/shared/layout/connection-badge";
 
 import {
@@ -103,10 +104,11 @@ export function AppShell({ children }: { children: ReactNode }) {
   const { user, isLoading, logout, isLoggingOut } = useAuth();
   const location = useLocation();
   const { t } = useTranslation();
+  const aiAvailable = useAiAvailable();
 
   if (!user) return <>{children}</>;
 
-  const groups = navGroupsForUser(user);
+  const groups = navGroupsForUser(user, { aiAvailable });
 
   return (
     <>

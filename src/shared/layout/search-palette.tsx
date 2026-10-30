@@ -13,15 +13,9 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import { navItemsForUser } from '@/shared/layout/nav-config'
+import { useAiAvailable } from '@/shared/hooks/use-ai'
 import { useAuth } from '../hooks/useAuth'
 
-/**
- * SHARED-03 "Application Search" in the PRD. This searches PAGES the
- * person can navigate to, not business records (purchases, farmers) — that
- * kind of data search needs a real backend and belongs on each list
- * screen's own search/filter bar (per the PRD's "Search and Filtering"
- * section), not bolted onto this global shell search.
- */
 export function SearchPalette() {
   const { t } = useTranslation()
   const { user } = useAuth()
@@ -29,7 +23,11 @@ export function SearchPalette() {
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
 
-  const items = useMemo(() => (user ? navItemsForUser(user) : []), [user])
+  const aiAvailable = useAiAvailable()
+  const items = useMemo(
+    () => (user ? navItemsForUser(user, { aiAvailable }) : []),
+    [user, aiAvailable],
+  )
   const results = useMemo(
     () => items.filter((item) => t(item.labelKey).toLowerCase().includes(query.toLowerCase())),
     [items, query, t],

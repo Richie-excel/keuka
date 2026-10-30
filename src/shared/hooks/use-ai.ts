@@ -12,6 +12,15 @@ export function useAiStatus() {
   });
 }
 
+/**
+ * Whether this company may use the AI analysis: the server runs a model AND the
+ * company's plan includes it (only Entreprise does). False while still asking,
+ * so nothing AI-related flashes up and then disappears.
+ */
+export function useAiAvailable(): boolean {
+  return useAiStatus().data?.enabled === true;
+}
+
 export function useSuggestNote() {
   return useMutation({
     mutationFn: (input: { context: NoteContext; details: Record<string, string>; language: string }) =>

@@ -51,6 +51,7 @@ import { EnterpriseConsole } from "@/features/enterprises/enterprise-console";
 import { SubscriptionPage } from "@/features/subscription/subscription-page";
 import { PlansPage } from "@/features/subscription/plans-page";
 import { RetentionPage } from "@/features/retention/retention-page";
+import { AiGate } from "@/features/analysis/ai-gate";
 
 
 function withPermissions(
@@ -228,7 +229,14 @@ export const router = createBrowserRouter([
           {
             // The whole business at once, with the AI analysis: the BOSS only.
             path: "/analysis",
-            element: withPermissions(undefined, <AnalysisPage />, false, [SystemRole.BOSS]),
+            element: withPermissions(
+              undefined,
+              <AiGate>
+                <AnalysisPage />
+              </AiGate>,
+              false,
+              [SystemRole.BOSS],
+            ),
           },
           {
             path: "/reporting",
