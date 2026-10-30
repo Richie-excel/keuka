@@ -1,4 +1,5 @@
 import { Controller, useForm, useWatch } from "react-hook-form";
+import { format, isToday } from "date-fns";
 import { Coins, Banknote } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Field } from "@/components/field";
@@ -53,7 +54,8 @@ export function PrefinanceForm({
     formState: { isValid, isSubmitting },
   } = useForm<PrefinanceFieldValues>({
     mode: "onChange",
-    defaultValues: { amount: "", pricePerKg: "", advanceDate: "", notes: "" },
+    // The advance is recorded the day it is given: today, and no other day.
+    defaultValues: { amount: "", pricePerKg: "", advanceDate: format(new Date(), "yyyy-MM-dd"), notes: "" },
   });
 
   const amount = useWatch({ control, name: "amount" });
@@ -152,6 +154,7 @@ export function PrefinanceForm({
               id="prefinance-advance-date"
               value={field.value}
               onValueChange={field.onChange}
+              disabledDates={(day) => !isToday(day)}
             />
           )}
         />
