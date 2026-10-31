@@ -35,7 +35,7 @@ export function PurchaseFormDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="max-h-[90svh] hide-scrollbar overflow-y-auto sm:max-w-md">
         <DialogHeader>
           <DialogTitle>
             {t(isEdit ? "purchases.editPurchaseTitle" : "purchases.newPurchaseTitle")}
