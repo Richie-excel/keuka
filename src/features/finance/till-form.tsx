@@ -25,6 +25,10 @@ export interface TillFormProps {
   allowZero?: boolean;
   /** Extra lines under the amount, computed from what was typed (e.g. variance). */
   renderSummary?: (amount: number | undefined) => ReactNode;
+  /** Fields above the amount (e.g. which cashier a provision goes to). */
+  header?: ReactNode;
+  /** False while something outside the form is still missing (e.g. no cashier chosen). */
+  canSubmit?: boolean;
   saving: boolean;
   onSubmit: (amount: number, notes: string | undefined) => Promise<unknown>;
   onClose: () => void;
@@ -52,6 +56,8 @@ export function TillForm({
   submitLabel,
   allowZero = false,
   renderSummary,
+  header,
+  canSubmit = true,
   saving,
   onSubmit,
   onClose,
@@ -94,6 +100,7 @@ export function TillForm({
 
   return (
     <form onSubmit={onFormSubmit} className="grid gap-1">
+      {header}
       <Field label={amountLabel} htmlFor="till-amount" required hint={amountHint}>
         <InputGroup>
           <InputGroupAddon>
@@ -137,7 +144,7 @@ export function TillForm({
         <Button type="button" variant="outline" onClick={onClose} disabled={pending}>
           {t("common.cancel")}
         </Button>
-        <SubmitButton pending={pending} disabled={!isValid}>
+        <SubmitButton pending={pending} disabled={!isValid || !canSubmit}>
           {submitLabel}
         </SubmitButton>
       </DialogFooter>

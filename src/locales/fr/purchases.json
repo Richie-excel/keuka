@@ -53,12 +53,12 @@
       "amount": "Montant payé maintenant",
       "leftToPay": "Reste à payer : {{amount}}",
       "reference": "Référence",
-      "tillAvailable": "Espèces disponibles dans votre caisse : {{amount}}",
-      "noTill": "Vous n'avez pas de caisse ouverte.",
-      "openTill": "En ouvrir une",
+      "tillAvailable": "Espèces disponibles dans la caisse : {{amount}}",
+      "noTill": "Aucune caisse n'est ouverte : le caissier doit d'abord ouvrir la sienne.",
+      "openTill": "Voir la caisse",
       "amountRequired": "Saisissez le montant payé.",
       "exceedsToPay": "Supérieur au reste à payer.",
-      "exceedsTill": "Plus d'espèces que dans votre caisse.",
+      "exceedsTill": "Plus d'espèces que dans la caisse.",
       "submit": "Enregistrer et payer"
     },
     "details": {

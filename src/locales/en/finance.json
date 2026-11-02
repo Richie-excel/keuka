@@ -47,12 +47,12 @@
   },
   "till": {
     "title": "Till",
-    "description": "Your cash till: the float you start with, every provision added, and all cash paid out.",
+    "description": "The till: what it held at its last closing, every provision received and every cash payment out.",
     "openTill": "Open till",
     "closeTill": "Close till",
     "addProvision": "Add provision",
-    "openDescription": "Count the cash you start with. Cash payments, expenses and salaries come out of this till.",
-    "provisionDescription": "Record cash added to your till. Each provision is kept in the till's history.",
+    "openDescription": "The till opens with the cash counted at its last closing, plus the provisions the boss gave you.",
+    "provisionDescription": "Give a cashier cash. If their till is closed, the provision waits until they open it: it does not open it.",
     "closeDescription": "Count the cash in the till. Any difference with the expected amount is recorded as a variance.",
     "openingFloat": "Opening float",
     "openingFloatHint": "The cash physically in the till now. It can be 0.",
@@ -69,8 +69,8 @@
     "available": "Available now",
     "openedAt": "Opened {{date}}",
     "closedTitle": "Your till is closed",
-    "closedDescription": "Open your till with the float you start with to record cash payments and provisions.",
-    "closedNoPermission": "You don't have permission to open a till. Ask your manager.",
+    "closedDescription": "Open your till to receive the waiting provisions and record cash payments.",
+    "closedNoPermission": "Only a cashier opens the till. Cash payments are possible once they have opened it.",
     "provisionsHeading": "Provisions",
     "noProvisions": "No provisions added yet",
     "movementsHeading": "All movements",
@@ -89,7 +89,8 @@
       "cashier": "Cashier",
       "opened": "Opened",
       "status": "Status",
-      "balance": "Cash in till"
+      "balance": "Cash in till",
+      "from": "Given by"
     },
     "referenceTypes": {
       "PROVISION": "Provision",
@@ -103,7 +104,19 @@
       "title": "Till of {{name}}",
       "description": "Opened {{opened}} · closed {{closed}}",
       "closedBy": "Closed by {{name}}"
-    }
+    },
+    "closedForBoss": "No till is open. You can already give a provision: it goes into the till when the cashier opens it.",
+    "pendingToReceive": "Provisions going into the till",
+    "providedBy": "From {{name}}, {{date}}",
+    "noPendingProvisions": "No provision waiting.",
+    "carryOverHint": "The cash counted at the last closing stays in the till and is added to it.",
+    "cashier": "Cashier",
+    "chooseCashier": "Choose the cashier",
+    "noCashiers": "No active cashier. First create an account with the Cashier role.",
+    "cashierTillOpen": "Their till is open: the provision goes in at once.",
+    "cashierTillClosed": "Their till is closed: the provision waits until they open it.",
+    "viewingCashierTill": "{{name}}'s till, which your cash payments come from.",
+    "pendingHeading": "Provisions waiting for the till to open"
   },
   "expenses": {
     "title": "Expenses",

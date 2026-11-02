@@ -79,6 +79,14 @@
       "nothingOwed": "Nothing owed",
       "carriedOver": "This buyer still owes {{amount}} from earlier advances. It carries over.",
       "totalAfter": "Total owed after this advance: {{amount}}"
+    },
+    "advanceFromTill": "The advance is handed over in cash from the till (available: {{amount}}).",
+    "disburse": {
+      "action": "Hand over advance",
+      "title": "Hand over the advance",
+      "description": "This advance was recorded without being handed over. The cash leaves the till and the buyer owes it.",
+      "amount": "To hand over",
+      "submit": "Hand over in cash"
     }
   }
 }

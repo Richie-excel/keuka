@@ -3,14 +3,14 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { TrendingUp, Vault } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PermissionKey } from "@/enums";
+import { PermissionKey, SystemRole } from "@/enums";
 import { useAuth } from "@/shared/hooks/useAuth";
-import { useOpenCashSession, useOpenTill } from "@/shared/hooks/use-cash-sessions";
+import { useOpenCashSession } from "@/shared/hooks/use-cash-sessions";
 import {
   useCurrentCocoaPrice,
   usePublishCocoaPrice,
 } from "@/shared/hooks/use-cocoa-prices";
-import { TillAmountDialog } from "@/features/finance/till-dialogs";
+import { OpenTillDialog } from "@/features/finance/till-dialogs";
 import { PricingDialog } from "@/features/pricing/pricing-dialog";
 
 type QuickAction = "openTill" | "publishPrice" | null;
@@ -23,14 +23,15 @@ type QuickAction = "openTill" | "publishPrice" | null;
  */
 export function DashboardQuickActions() {
   const { t } = useTranslation();
-  const { hasPermission } = useAuth();
+  const { hasPermission, hasAnyRole } = useAuth();
   const [action, setAction] = useState<QuickAction>(null);
 
-  const canOpenTill = hasPermission(PermissionKey.CASH_SESSION_CREATE);
+  // Only a cashier opens a till.
+  const canOpenTill =
+    hasAnyRole(SystemRole.CASHIER) && hasPermission(PermissionKey.CASH_SESSION_CREATE);
   const canPublishPrice = hasPermission(PermissionKey.PRICE_CREATE);
 
   const till = useOpenCashSession(canOpenTill);
-  const openTill = useOpenTill();
   const currentPrice = useCurrentCocoaPrice(canPublishPrice);
   const publishPrice = usePublishCocoaPrice();
 
@@ -70,19 +71,9 @@ export function DashboardQuickActions() {
       </div>
 
       {canOpenTill && (
-        <TillAmountDialog
+        <OpenTillDialog
           open={action === "openTill"}
           onOpenChange={(open) => !open && setAction(null)}
-          title={t("till.openTill")}
-          description={t("till.openDescription")}
-          amountLabel={t("till.openingFloat")}
-          amountHint={t("till.openingFloatHint")}
-          submitLabel={t("till.openTill")}
-          allowZero
-          saving={openTill.isPending}
-          onSubmit={(amount, notes) =>
-            openTill.submitAsync({ openingBalance: amount, notes })
-          }
         />
       )}
       {canPublishPrice && (

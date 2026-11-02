@@ -1,13 +1,13 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { PlusCircle, Printer } from "lucide-react";
+import { Banknote, PlusCircle, Printer } from "lucide-react";
 import { DataTable, type Column } from "@/components/data-table";
 import { PageHeader } from "@/shared/layout/page-header";
 import { StatusBadge } from "@/components/status-badge";
 import { PageSkeleton } from "@/components/page-skeleton";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/shared/hooks/useAuth";
-import { PermissionKey } from "@/enums";
+import { PermissionKey, PrefinanceStatus } from "@/enums";
 import { usePartner } from "@/shared/hooks/use-partners";
 import {
   useBuyerBalance,
@@ -27,6 +27,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DataPagination } from "@/components/pagination";
 import { usePartnerDeliveries } from "@/shared/hooks/use-purchases";
 import { PrefinanceDialog } from "./prefinance-dialog";
+import { DisburseDialog } from "./disburse-dialog";
 import { TableRowActions } from "@/components/table-row-actions";
 import { PrefinanceReceipt } from "@/components/documents/prefinance-receipt";
 import { useDocumentPrinter } from "@/components/documents/print-context";
@@ -42,6 +43,7 @@ export function BuyerDetailsPage() {
   const { hasPermission } = useAuth();
   const { id } = useParams<{ id: string }>();
   const [createOpen, setCreateOpen] = useState(false);
+  const [disbursing, setDisbursing] = useState<PrefinanceResponse | null>(null);
   const [historyPage, setHistoryPage] = useState(1);
   const canReadPurchases = hasPermission(PermissionKey.PURCHASE_READ);
   // Every cocoa delivery this buyer made, across all days.
@@ -94,6 +96,11 @@ export function BuyerDetailsPage() {
   }
 
   const buyer = buyerQuery.data;
+  // An advance recorded but not (fully) handed over yet, still open: pay it out.
+  const canDisburse = (row: PrefinanceResponse) =>
+    hasPermission(PermissionKey.PREFINANCE_CREATE) &&
+    row.disbursedAmount < row.amount &&
+    (row.status === PrefinanceStatus.OPEN || row.status === PrefinanceStatus.PARTIALLY_SETTLED);
   const canCreatePrefinance =
     hasPermission(PermissionKey.PREFINANCE_CREATE) && (buyer?.trusted ?? false);
 
@@ -173,6 +180,13 @@ export function BuyerDetailsPage() {
             onView={() => id && navigate(prefinanceDetailsPath(id, row.id))}
             extraActions={[
               {
+                id: "disburse-prefinance",
+                label: t("buyers.disburse.action"),
+                icon: Banknote,
+                visible: canDisburse(row),
+                onClick: () => setDisbursing(row),
+              },
+              {
                 id: "print-prefinance",
                 label: t("documents.actions.printPrefinance"),
                 icon: Printer,
@@ -222,6 +236,10 @@ export function BuyerDetailsPage() {
       )}
     </div>
     </PageSkeleton>
+      <DisburseDialog
+        prefinance={disbursing}
+        onOpenChange={(open) => !open && setDisbursing(null)}
+      />
       {buyer && canCreatePrefinance && (
         <PrefinanceDialog
           open={createOpen}

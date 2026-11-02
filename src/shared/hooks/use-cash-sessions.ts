@@ -4,7 +4,9 @@ import { qk } from "@/shared/hooks/query-keys";
 import { useIdempotentMutation } from "@/shared/hooks/use-idempotent-mutation";
 import type {
   AddCashProvisionRequest,
+  CashProvisionResponse,
   CashSessionResponse,
+  CreateCashProvisionRequest,
   CloseCashSessionRequest,
   OpenCashSessionRequest,
   PageParams,
@@ -37,7 +39,8 @@ export function useCashSession(id: string | undefined) {
 }
 
 /**
- * The caller's OWN open till, if any (`GET /cash-sessions/current`).
+ * The open till the caller's cash goes through (`GET /cash-sessions/current`):
+ * a cashier's own; for anyone else, the cashier till their cash payments come from.
  *
  * Kept as its own hook because "is there an open session?" gates most of the
  * cashier UI — pay buttons, expense entry, salary payouts. It used to scan the
@@ -78,6 +81,36 @@ export function useAddCashProvision() {
   >({
     mutationFn: ({ id, input }, idempotencyKey) =>
       cashSessionsApi.provision(id, input, idempotencyKey),
+    onSuccess: () =>
+      queryClient.invalidateQueries({ queryKey: qk.cashSessions.all }),
+    meta: { success: "toast.cashSessions.provisioned" },
+  });
+}
+
+/** Provisions waiting for a till to open: a cashier's own, or all of them for the boss. */
+export function usePendingProvisions(enabled = true) {
+  return useQuery({
+    queryKey: qk.cashSessions.pendingProvisions(),
+    queryFn: cashSessionsApi.pendingProvisions,
+    enabled,
+  });
+}
+
+/** The company's cashiers: who the boss can give a provision to. */
+export function useCashiers(enabled = true) {
+  return useQuery({
+    queryKey: qk.cashSessions.cashiers(),
+    queryFn: cashSessionsApi.cashiers,
+    enabled,
+  });
+}
+
+/** The boss gives a cashier cash. It never opens the till. */
+export function useProvideCash() {
+  const queryClient = useQueryClient();
+
+  return useIdempotentMutation<CreateCashProvisionRequest, CashProvisionResponse>({
+    mutationFn: (input, idempotencyKey) => cashSessionsApi.provide(input, idempotencyKey),
     onSuccess: () =>
       queryClient.invalidateQueries({ queryKey: qk.cashSessions.all }),
     meta: { success: "toast.cashSessions.provisioned" },

@@ -1,6 +1,7 @@
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { format, isToday } from "date-fns";
-import { Coins, Banknote } from "lucide-react";
+import { Coins, Banknote, Info } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Field } from "@/components/field";
 import {
@@ -20,6 +21,8 @@ import { dateToInstant, formatMoney } from "@/lib/utils";
 import { parseAmount, sanitizeAmountInput, isPositiveAmount } from "@/lib/amount";
 import { useCurrentCocoaPrice } from "@/shared/hooks/use-cocoa-prices";
 import { useBuyerBalance } from "@/shared/hooks/use-prefinances";
+import { useOpenCashSession } from "@/shared/hooks/use-cash-sessions";
+import { PaymentMethod } from "@/enums";
 
 interface PrefinanceFieldValues {
   amount: string;
@@ -61,6 +64,11 @@ export function PrefinanceForm({
   const amount = useWatch({ control, name: "amount" });
   const newAdvance = parseAmount(amount || "0");
 
+  // The advance is handed over in cash as it is recorded: it leaves the till.
+  const tillQuery = useOpenCashSession();
+  const till = tillQuery.openSession;
+  const exceedsTill = Boolean(till && newAdvance > till.availableBalance);
+
   // While saving: loader on the submit button, Cancel disabled, dialog locked.
   const pending = saving || isSubmitting;
   useDialogBusy(pending);
@@ -73,6 +81,7 @@ export function PrefinanceForm({
       pricePerKg: Number(values.pricePerKg),
       ...(values.advanceDate && { advanceDate: dateToInstant(values.advanceDate) }),
       ...(notes && { notes }),
+      disbursementMethod: PaymentMethod.CASH,
     });
   });
 
@@ -159,6 +168,28 @@ export function PrefinanceForm({
           )}
         />
       </Field>
+      <p
+        role="status"
+        className={`flex items-start gap-2 rounded-md px-3 py-2 text-xs ${
+          till && !exceedsTill ? "bg-pod-100 text-pod-700" : "bg-amber-100 text-amber-700"
+        }`}
+      >
+        <Info className="mt-0.5 size-3.5 shrink-0" aria-hidden="true" />
+        {tillQuery.isPending ? (
+          "…"
+        ) : till ? (
+          t(exceedsTill ? "purchases.paidNow.exceedsTill" : "buyers.advanceFromTill", {
+            amount: formatMoney(till.availableBalance),
+          })
+        ) : (
+          <span>
+            {t("purchases.paidNow.noTill")}{" "}
+            <Link to="/finance/till" className="font-medium underline">
+              {t("purchases.paidNow.openTill")}
+            </Link>
+          </span>
+        )}
+      </p>
       <Field label={t("buyers.prefinanceNotes")} htmlFor="prefinance-notes">
         <NoteSuggestButton
           context="PREFINANCE"
@@ -179,7 +210,7 @@ export function PrefinanceForm({
         <Button type="button" variant="outline" onClick={onCancel} disabled={pending}>
           {t("common.cancel")}
         </Button>
-        <SubmitButton pending={pending} disabled={!isValid}>
+        <SubmitButton pending={pending} disabled={!isValid || !till || exceedsTill}>
           {t("buyers.addPrefinance")}
         </SubmitButton>
       </DialogFooter>

@@ -92,7 +92,10 @@
       "EMPLOYEE_REQUIRED": "Choisissez l’employé à qui appartient ce compte.",
       "PASSWORD_CHANGE_REQUIRED": "Choisissez votre propre mot de passe avant de continuer.",
       "PLAN_FEATURE_UNAVAILABLE": "Ceci n’est pas inclus dans votre offre. Les données restent visibles, mais en ajouter demande une offre supérieure.",
-      "PLAN_LIMIT_REACHED": "La limite de votre offre est atteinte. Passez à une offre supérieure pour en ajouter."
+      "PLAN_LIMIT_REACHED": "La limite de votre offre est atteinte. Passez à une offre supérieure pour en ajouter.",
+      "TILL_CASHIER_ONLY": "Seul le caissier ouvre et clôture sa caisse.",
+      "PROVISION_NOT_ALLOWED": "Les provisions sont remises par le patron, pas par le caissier.",
+      "CASHIER_NOT_FOUND": "Ce caissier n'existe pas ou n'est plus actif."
     }
   }
 }

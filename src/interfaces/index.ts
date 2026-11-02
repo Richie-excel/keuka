@@ -508,10 +508,47 @@ export interface CashSessionResponse {
   closedByName?: string | null;
 }
 
-/** `finance.dto.OpenCashSessionRequest`. */
+/**
+ * `finance.dto.OpenCashSessionRequest`. No amount: the till opens with what was
+ * counted at its last closing plus the provisions waiting for the cashier.
+ */
 export interface OpenCashSessionRequest {
-  openingBalance: number;
   notes?: string;
+}
+
+/** `finance.dto.CreateCashProvisionRequest`: cash the boss gives one cashier. */
+export interface CreateCashProvisionRequest {
+  cashierId: string;
+  amount: number;
+  notes?: string;
+}
+
+/**
+ * `finance.dto.CashProvisionResponse`. `sessionId` is null while the provision
+ * waits for the cashier to open their till.
+ */
+export interface CashProvisionResponse {
+  id: string;
+  cashierId: string;
+  cashierName: string | null;
+  amount: number;
+  notes: string | null;
+  providedBy: string;
+  providedByName: string | null;
+  providedAt: string;
+  sessionId: string | null;
+  appliedAt: string | null;
+}
+
+/** `finance.dto.CashierResponse`: a cashier a provision can go to. */
+export interface CashierResponse {
+  id: string;
+  name: string;
+  warehouseId: string | null;
+  /** Their open till, or null when it is closed. */
+  openSessionId: string | null;
+  /** Provisions waiting for their till to open. */
+  pendingAmount: number;
 }
 
 /** `finance.dto.CloseCashSessionRequest`. */
@@ -626,6 +663,11 @@ export interface CreatePrefinanceRequest {
   pricePerKg?: number;
   advanceDate?: string;
   notes?: string;
+  /**
+   * Handed over now, in full, this way: CASH leaves the till (refused with no
+   * open till). Omitted, the advance is only agreed and is no debt yet.
+   */
+  disbursementMethod?: PaymentMethod;
 }
 
 /** `prefinance.dto.CreateDisbursementRequest`. */

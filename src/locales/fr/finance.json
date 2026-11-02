@@ -47,12 +47,12 @@
   },
   "till": {
     "title": "Caisse",
-    "description": "Votre caisse : le fonds de départ, chaque provision ajoutée et toutes les sorties d'espèces.",
+    "description": "La caisse : ce qu'elle contenait à la dernière clôture, chaque provision reçue et toutes les sorties d'espèces.",
     "openTill": "Ouvrir la caisse",
     "closeTill": "Clôturer la caisse",
     "addProvision": "Ajouter une provision",
-    "openDescription": "Comptez les espèces de départ. Les paiements en espèces, dépenses et salaires sortent de cette caisse.",
-    "provisionDescription": "Enregistrez les espèces ajoutées à votre caisse. Chaque provision est conservée dans l'historique.",
+    "openDescription": "La caisse s'ouvre avec les espèces comptées à sa dernière clôture, plus les provisions que le patron vous a remises.",
+    "provisionDescription": "Remettez des espèces à un caissier. Si sa caisse est fermée, la provision attend qu'il l'ouvre : elle ne l'ouvre pas.",
     "closeDescription": "Comptez les espèces en caisse. Tout écart avec le montant attendu est enregistré.",
     "openingFloat": "Fonds de caisse",
     "openingFloatHint": "Les espèces présentes dans la caisse maintenant. Peut être 0.",
@@ -69,8 +69,8 @@
     "available": "Disponible",
     "openedAt": "Ouverte le {{date}}",
     "closedTitle": "Votre caisse est fermée",
-    "closedDescription": "Ouvrez votre caisse avec le fonds de départ pour enregistrer paiements en espèces et provisions.",
-    "closedNoPermission": "Vous n'avez pas le droit d'ouvrir une caisse. Demandez à votre responsable.",
+    "closedDescription": "Ouvrez votre caisse pour recevoir les provisions en attente et enregistrer les paiements en espèces.",
+    "closedNoPermission": "Seul un caissier ouvre la caisse. Les paiements en espèces seront possibles dès qu'il l'aura ouverte.",
     "provisionsHeading": "Provisions",
     "noProvisions": "Aucune provision ajoutée",
     "movementsHeading": "Tous les mouvements",
@@ -89,7 +89,8 @@
       "cashier": "Caissier",
       "opened": "Ouverture",
       "status": "Statut",
-      "balance": "Espèces en caisse"
+      "balance": "Espèces en caisse",
+      "from": "Remise par"
     },
     "referenceTypes": {
       "PROVISION": "Provision",
@@ -103,7 +104,19 @@
       "title": "Caisse de {{name}}",
       "description": "Ouverte le {{opened}} · clôturée le {{closed}}",
       "closedBy": "Clôturée par {{name}}"
-    }
+    },
+    "closedForBoss": "Aucune caisse n'est ouverte. Vous pouvez déjà remettre une provision : elle entrera dans la caisse quand le caissier l'ouvrira.",
+    "pendingToReceive": "Provisions qui entreront dans la caisse",
+    "providedBy": "De {{name}}, le {{date}}",
+    "noPendingProvisions": "Aucune provision en attente.",
+    "carryOverHint": "Les espèces comptées à la dernière clôture restent dans la caisse et s'y ajoutent.",
+    "cashier": "Caissier",
+    "chooseCashier": "Choisir le caissier",
+    "noCashiers": "Aucun caissier actif. Créez d'abord un compte avec le rôle Caissier.",
+    "cashierTillOpen": "Sa caisse est ouverte : la provision y entre tout de suite.",
+    "cashierTillClosed": "Sa caisse est fermée : la provision attendra qu'il l'ouvre.",
+    "viewingCashierTill": "La caisse de {{name}}, d'où sortent vos paiements en espèces.",
+    "pendingHeading": "Provisions en attente d'ouverture"
   },
   "expenses": {
     "title": "Dépenses",

@@ -88,6 +88,9 @@ export const ApiRoutes = {
     byId: (id: string) => `${API}/cash-sessions/${id}`,
     provisions: (id: string) => `${API}/cash-sessions/${id}/provisions`,
     close: (id: string) => `${API}/cash-sessions/${id}/close`,
+    /** Provisions given to a cashier; GET lists those waiting for a till to open. */
+    pendingProvisions: `${API}/cash-sessions/provisions`,
+    cashiers: `${API}/cash-sessions/cashiers`,
   },
 
   expenses: {

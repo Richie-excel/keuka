@@ -74,6 +74,14 @@
       "nothingOwed": "Rien à régler",
       "carriedOver": "Cet acheteur doit encore {{amount}} sur ses avances précédentes. Ce montant est reporté.",
       "totalAfter": "Total dû après cette avance : {{amount}}"
+    },
+    "advanceFromTill": "L'avance est remise en espèces depuis la caisse (disponible : {{amount}}).",
+    "disburse": {
+      "action": "Remettre l'avance",
+      "title": "Remettre l'avance",
+      "description": "Cette avance a été enregistrée sans être remise. Les espèces sortent de la caisse et l'acheteur les doit.",
+      "amount": "À remettre",
+      "submit": "Remettre en espèces"
     }
   }
 }

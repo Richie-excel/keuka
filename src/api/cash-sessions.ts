@@ -3,7 +3,10 @@ import { apiClient } from "@/lib/api-client";
 import { withPageQuery } from "@/api/paging";
 import type {
   AddCashProvisionRequest,
+  CashierResponse,
+  CashProvisionResponse,
   CashSessionResponse,
+  CreateCashProvisionRequest,
   CloseCashSessionRequest,
   OpenCashSessionRequest,
   PageParams,
@@ -16,6 +19,12 @@ import type {
  * The rules this module exists to respect — all enforced server-side, listed
  * here because the UI has to anticipate them or the cashier hits walls:
  *
+ * - **Only a cashier opens and closes a till**, and only their own
+ *   (`TILL_CASHIER_ONLY`, 403). It opens with what was counted at its last
+ *   closing plus the provisions waiting for them.
+ * - **Provisions come from the boss** (`PROVISION_NOT_ALLOWED` for a cashier).
+ *   Given while the till is closed, a provision waits; it never opens the till.
+ * - **Anyone else pays cash from a cashier's open till**: `current` returns it.
  * - **One OPEN session per user.** Opening a second is `OPEN_CASH_SESSION_EXISTS`
  *   (409). The UI should therefore offer "open" only when there is no open till.
  * - **Cash operations need an open till.** A CASH payment, expense, disbursement
@@ -38,8 +47,9 @@ export const cashSessionsApi = {
   },
 
   /**
-   * The caller's OWN open till, or `undefined` (204) when they have none. Use
-   * this, not the list: the list holds every till in the company.
+   * The open till the caller's cash goes through (a cashier's own; for anyone
+   * else, the cashier till their cash payments come from), or `null` (204).
+   * Use this, not the list: the list holds every till in the company.
    */
   async current(): Promise<CashSessionResponse | null> {
     return (await apiClient.get<CashSessionResponse | undefined>(ApiRoutes.cashSessions.current)) ?? null;
@@ -70,6 +80,27 @@ export const cashSessionsApi = {
       input,
       idempotencyKey,
     );
+  },
+
+  /** The boss gives a cashier cash: into their open till, or waiting for it to open. */
+  provide(
+    input: CreateCashProvisionRequest,
+    idempotencyKey?: string,
+  ): Promise<CashProvisionResponse> {
+    return apiClient.post<CashProvisionResponse>(
+      ApiRoutes.cashSessions.pendingProvisions,
+      input,
+      idempotencyKey,
+    );
+  },
+
+  /** Provisions waiting for a till to open (a cashier sees their own). */
+  pendingProvisions(): Promise<CashProvisionResponse[]> {
+    return apiClient.get<CashProvisionResponse[]>(ApiRoutes.cashSessions.pendingProvisions);
+  },
+
+  cashiers(): Promise<CashierResponse[]> {
+    return apiClient.get<CashierResponse[]>(ApiRoutes.cashSessions.cashiers);
   },
 
   close(

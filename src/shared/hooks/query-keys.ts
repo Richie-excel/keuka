@@ -146,8 +146,10 @@ export const qk = {
     list: (input?: object) => listKey(qk.cashSessions.lists(), input),
     details: () => [...qk.cashSessions.all, "detail"] as const,
     detail: (id: string) => [...qk.cashSessions.details(), id] as const,
-    /** The caller's currently open till, if any. */
+    /** The open till the caller's cash goes through, if any. */
     open: () => [...qk.cashSessions.all, "open"] as const,
+    pendingProvisions: () => [...qk.cashSessions.all, "pending-provisions"] as const,
+    cashiers: () => [...qk.cashSessions.all, "cashiers"] as const,
   },
 
   expenses: {

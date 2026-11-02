@@ -53,12 +53,12 @@
       "amount": "Amount paid now",
       "leftToPay": "Left to pay: {{amount}}",
       "reference": "Reference",
-      "tillAvailable": "Cash available in your till: {{amount}}",
-      "noTill": "You have no open till.",
-      "openTill": "Open one",
+      "tillAvailable": "Cash available in the till: {{amount}}",
+      "noTill": "No till is open: the cashier must open theirs first.",
+      "openTill": "See the till",
       "amountRequired": "Enter the amount paid.",
       "exceedsToPay": "More than what is left to pay.",
-      "exceedsTill": "More cash than is in your till.",
+      "exceedsTill": "More cash than the till holds.",
       "submit": "Record and pay"
     },
     "details": {

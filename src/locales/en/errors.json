@@ -92,7 +92,10 @@
       "EMPLOYEE_REQUIRED": "Choose the employee this account is for.",
       "PASSWORD_CHANGE_REQUIRED": "Choose your own password before continuing.",
       "PLAN_FEATURE_UNAVAILABLE": "This is not included in your plan. Its records stay visible, but adding new ones needs an upgrade.",
-      "PLAN_LIMIT_REACHED": "Your plan's limit is reached. Upgrade your plan to add more."
+      "PLAN_LIMIT_REACHED": "Your plan's limit is reached. Upgrade your plan to add more.",
+      "TILL_CASHIER_ONLY": "Only the cashier opens and closes their till.",
+      "PROVISION_NOT_ALLOWED": "Provisions are given by the boss, not by the cashier.",
+      "CASHIER_NOT_FOUND": "This cashier does not exist or is no longer active."
     }
   }
 }
