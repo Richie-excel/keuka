@@ -83,7 +83,7 @@ function PurchaseDialogBody({
       );
     }
   }
-
+  
   return (
     <PurchaseForm
       purchase={purchase}

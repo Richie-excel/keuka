@@ -36,8 +36,6 @@ export function UserDetailDialog({
 }: UserDetailDialogProps) {
   const { t } = useTranslation();
 
-  console.log(user);
-  
   return (
     <Dialog
       open={Boolean(user)}
@@ -73,7 +71,7 @@ export function UserDetailDialog({
             />
             <Detail
               label={t("users.permissions")}
-              value={<UserPermissions permissions={user.permissions}/>}
+              value={<UserPermissions permissions={user.permissions} />}
               wide
             />
           </dl>

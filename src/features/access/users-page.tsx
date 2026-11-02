@@ -67,7 +67,10 @@ export function UsersPage() {
   const [page, setPage] = useState(1);
   // The platform admin sees every company's accounts: say whose each one is, and let them narrow it.
   const [company, setCompany] = useState(ALL_COMPANIES);
-  const companies = useEnterprises({ page: 1, size: COMPANY_FILTER_SIZE }, isPlatform);
+  const companies = useEnterprises(
+    { page: 1, size: COMPANY_FILTER_SIZE },
+    isPlatform,
+  );
   const [selectedUser, setSelectedUser] = useState<UserResponse | null>(null);
   const [formDialog, setFormDialog] = useState<FormDialogState | null>(null);
   const [userToRemove, setUserToRemove] = useState<UserResponse | null>(null);
@@ -77,7 +80,9 @@ export function UsersPage() {
     isPlatform && company !== ALL_COMPANIES ? company : undefined,
   );
   const createUser = useCreateUser();
-  const createUserWithPassword = useCreateUser("toast.users.createdWithPassword");
+  const createUserWithPassword = useCreateUser(
+    "toast.users.createdWithPassword",
+  );
   const resetPassword = useResetUserPassword();
   const updateUser = useUpdateUser();
   const setUserEnabled = useSetUserEnabled();
@@ -104,7 +109,10 @@ export function UsersPage() {
         await updateUser.mutateAsync({ id: user.id, patch });
       }
       if (values.password) {
-        await resetPassword.submitAsync({ id: user.id, input: { password: values.password } });
+        await resetPassword.submitAsync({
+          id: user.id,
+          input: { password: values.password },
+        });
       }
     } else if (values.password) {
       // The platform admin handed over a temporary password: no invitation is emailed.
@@ -172,7 +180,9 @@ export function UsersPage() {
             header: t("users.company"),
             cell: (row: UserResponse) =>
               row.enterpriseName ?? (
-                <span className="text-cocoa-500">{t("users.platformAccount")}</span>
+                <span className="text-cocoa-500">
+                  {t("users.platformAccount")}
+                </span>
               ),
           },
         ]
@@ -233,9 +243,14 @@ export function UsersPage() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value={ALL_COMPANIES}>{t("users.allCompanies")}</SelectItem>
+                  <SelectItem value={ALL_COMPANIES}>
+                    {t("users.allCompanies")}
+                  </SelectItem>
                   {(companies.data?.content ?? []).map((enterprise) => (
-                    <SelectItem key={enterprise.tenantId} value={enterprise.tenantId}>
+                    <SelectItem
+                      key={enterprise.tenantId}
+                      value={enterprise.tenantId}
+                    >
                       {enterprise.displayName}
                     </SelectItem>
                   ))}
@@ -290,7 +305,10 @@ export function UsersPage() {
                         id: "resend-invitation",
                         label: t("users.resendInvitation"),
                         icon: MailPlus,
-                        visible: canCreate && row.active && Boolean(row.invitationPending),
+                        visible:
+                          canCreate &&
+                          row.active &&
+                          Boolean(row.invitationPending),
                         onClick: () => resendInvitation.mutate(row.id),
                       },
                     ]}

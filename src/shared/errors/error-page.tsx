@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { ArrowLeft, LayoutDashboard } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import forbiddenImage from "@/assets/images/forbidden.svg";
 import notFoundImage from "@/assets/images/not-found.svg";
 
@@ -9,6 +12,7 @@ interface ErrorPageProps {
   message?: string;
 }
 
+/** 403, 404 and unexpected errors: one card, the illustration beside the explanation. */
 export function ErrorPage({ status, message }: ErrorPageProps) {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -34,25 +38,65 @@ export function ErrorPage({ status, message }: ErrorPageProps) {
   const actionLabel = isNotFound
     ? t("notFound.backHome")
     : t("forbidden.backToDashboard");
+  // A page opened directly (bookmark, new tab) has nowhere to go back to.
+  const canGoBack = window.history.length > 1;
 
   return (
-    <section className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-center justify-center px-6 py-12 text-center">
-      {image && (
-        <img
-          src={image}
-          alt=""
-          className="mb-6 h-56 w-full max-w-sm object-contain"
-        />
-      )}
-      <p className="text-sm font-semibold text-cocoa-500">{status}</p>
-      <h1 className="mt-2 text-2xl font-semibold text-cocoa-900">{title}</h1>
-      <p className="mt-2 max-w-lg text-cocoa-600">{description}</p>
-      <Button
-        className="mt-6"
-        onClick={() => navigate(isNotFound ? "/dashboard" : "/dashboard")}
+    <section className="flex min-h-[70vh] items-center justify-center px-4 py-10">
+      <Card
+        className={cn(
+          "w-full gap-0 overflow-hidden p-0",
+          // The text gets the wider column so the title holds on one line.
+          image ? "max-w-4xl md:grid md:grid-cols-[2fr_3fr]" : "max-w-lg",
+        )}
       >
-        {actionLabel}
-      </Button>
+        {image && (
+          <div className="flex items-center justify-center bg-muted/60 p-6 md:p-8">
+            <img
+              src={image}
+              alt=""
+              className="h-48 w-full max-w-xs object-contain md:h-64"
+            />
+          </div>
+        )}
+        <div
+          className={cn(
+            "flex flex-col items-center justify-center gap-3 p-6 text-center md:p-10",
+            image && "md:items-start md:text-left",
+          )}
+        >
+          {/* The illustrations already show their code (403, 404). */}
+          {!image && (
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary">
+              {t("errors.code", { status })}
+            </span>
+          )}
+          <h1 className="text-xl font-semibold tracking-tight text-foreground lg:text-2xl">
+            {title}
+          </h1>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            {description}
+          </p>
+          {/* Wraps rather than overflowing: the card clips what sticks out. */}
+          <div
+            className={cn(
+              "mt-3 flex w-full flex-col-reverse gap-2 sm:flex-row sm:flex-wrap sm:justify-center",
+              image && "md:justify-start",
+            )}
+          >
+            {canGoBack && (
+              <Button variant="outline" onClick={() => navigate(-1)}>
+                <ArrowLeft />
+                {t("errors.goBack")}
+              </Button>
+            )}
+            <Button onClick={() => navigate("/dashboard")}>
+              <LayoutDashboard />
+              {actionLabel}
+            </Button>
+          </div>
+        </div>
+      </Card>
     </section>
   );
 }

@@ -25,12 +25,17 @@ export function useUser(id: string | undefined) {
   });
 }
 
-/** Employees the boss can give a sign-in to. Refetched after each create (users.all). */
+/**
+ * Employees the boss can give a sign-in to. Refetched after each create (users.all),
+ * and every time the form opens: an employee added on the Personnel page a moment
+ * ago must be there to pick.
+ */
 export function useAvailableEmployees(enabled = true) {
   return useQuery({
     queryKey: qk.users.availableEmployees(),
     queryFn: usersApi.availableEmployees,
     enabled,
+    refetchOnMount: "always",
   });
 }
 

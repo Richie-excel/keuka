@@ -42,7 +42,13 @@ export function useCreateEmployee() {
   return useIdempotentMutation<CreateEmployeeRequest, EmployeeResponse>({
     mutationFn: (input, idempotencyKey) =>
       employeesApi.create(input, idempotencyKey),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: qk.employees.all }),
+    onSuccess: async () => {
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: qk.employees.all }),
+        // The new employee can now be given a sign-in.
+        queryClient.invalidateQueries({ queryKey: qk.users.availableEmployees() }),
+      ]);
+    },
     meta: { success: "toast.employees.created" },
   });
 }
@@ -53,7 +59,12 @@ export function useUpdateEmployee() {
   return useMutation({
     mutationFn: (vars: { id: string; patch: UpdateEmployeeRequest }) =>
       employeesApi.update(vars.id, vars.patch),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: qk.employees.all }),
+    onSuccess: () =>
+      Promise.all([
+        queryClient.invalidateQueries({ queryKey: qk.employees.all }),
+        // A (de)activated or renamed employee changes who can be given a sign-in.
+        queryClient.invalidateQueries({ queryKey: qk.users.availableEmployees() }),
+      ]),
     meta: { success: "toast.employees.updated" },
   });
 }

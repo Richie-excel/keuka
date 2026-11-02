@@ -52,7 +52,6 @@ interface UserFormValues {
   email: string;
   employeeId: string;
   roles: string[];
-  /** Platform admin only; empty: no password is set (an invitation is emailed on create). */
   temporaryPassword: string;
 }
 
@@ -125,9 +124,10 @@ export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
   });
 
   const hasChanges =
-    !user || hasChanged(user, { fullName, email, roles }) || temporaryPassword !== "";
+    !user ||
+    hasChanged(user, { fullName, email, roles }) ||
+    temporaryPassword !== "";
 
-  // While saving: loader on the submit button, Cancel disabled, dialog locked.
   const pending = saving || isSubmitting;
   useDialogBusy(pending);
 
@@ -136,7 +136,10 @@ export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
     setValue("fullName", employee.fullName, fill);
     if (employee.email) setValue("email", employee.email, fill);
     const role = employee.suggestedRole;
-    if (role && options.some((option) => option.name === role && !option.locked)) {
+    if (
+      role &&
+      options.some((option) => option.name === role && !option.locked)
+    ) {
       setValue("roles", [role], fill);
     }
     try {
@@ -177,7 +180,7 @@ export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
 
   const serverError = errors.root?.serverError?.message;
   const employees = employeesQuery.data ?? [];
-
+  
   return (
     <form onSubmit={onSubmit} className="grid gap-1 hide-scrollbar">
       {picksEmployee && (
@@ -201,7 +204,9 @@ export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
                 disabled={employeesQuery.isPending || employees.length === 0}
                 onValueChange={(id) => {
                   field.onChange(id);
-                  const employee = employees.find((candidate) => candidate.id === id);
+                  const employee = employees.find(
+                    (candidate) => candidate.id === id,
+                  );
                   if (employee) void pickEmployee(employee);
                 }}
               >
@@ -296,9 +301,15 @@ export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
         <Field
           label={t("users.temporaryPassword")}
           htmlFor="user-temporary-password"
-          hint={t(isEdit ? "users.temporaryPasswordEditHint" : "users.temporaryPasswordHint")}
+          hint={t(
+            isEdit
+              ? "users.temporaryPasswordEditHint"
+              : "users.temporaryPasswordHint",
+          )}
           error={
-            errors.temporaryPassword ? t("users.temporaryPasswordInvalid") : undefined
+            errors.temporaryPassword
+              ? t("users.temporaryPasswordInvalid")
+              : undefined
           }
         >
           <InputGroup>
@@ -310,7 +321,9 @@ export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
               type={showPassword ? "text" : "password"}
               autoComplete="new-password"
               maxLength={72}
-              aria-describedby={temporaryPassword ? TEMP_PASSWORD_RULES_ID : undefined}
+              aria-describedby={
+                temporaryPassword ? TEMP_PASSWORD_RULES_ID : undefined
+              }
               aria-invalid={Boolean(errors.temporaryPassword)}
               {...register("temporaryPassword", {
                 validate: (value) => value === "" || meetsPasswordPolicy(value),
@@ -325,7 +338,10 @@ export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
             </InputGroupAddon>
           </InputGroup>
           {temporaryPassword && (
-            <PasswordRequirements id={TEMP_PASSWORD_RULES_ID} value={temporaryPassword} />
+            <PasswordRequirements
+              id={TEMP_PASSWORD_RULES_ID}
+              value={temporaryPassword}
+            />
           )}
         </Field>
       )}
@@ -338,7 +354,10 @@ export function UserForm({ user, saving, onCancel, onSave }: UserFormProps) {
       ) : (
         !isEdit && (
           <p className="mb-3 flex items-start gap-2 rounded-md bg-cocoa-50 px-3 py-2 text-xs text-cocoa-700">
-            <MailCheck className="mt-0.5 size-3.5 shrink-0" aria-hidden="true" />
+            <MailCheck
+              className="mt-0.5 size-3.5 shrink-0"
+              aria-hidden="true"
+            />
             {t("users.invitationNotice")}
           </p>
         )
