@@ -99,7 +99,7 @@ export function PublicPlansPage() {
     .sort((a, b) => a.displayOrder - b.displayOrder || a.priceAmount - b.priceAmount);
 
   return (
-    <div className="min-h-svh bg-paper text-cocoa-900">
+    <div className="min-h-full text-white">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6">
         <Link to="/" className="flex items-center gap-2 font-semibold">
           <img src={APP_ICON_URL} alt="" className="size-8 rounded-lg" />
@@ -108,14 +108,14 @@ export function PublicPlansPage() {
         <div className="flex items-center gap-2">
           <Link
             to="/"
-            className="hidden items-center gap-1.5 rounded-lg px-3 py-2 text-sm text-cocoa-700 hover:bg-cocoa-100 sm:inline-flex"
+            className="hidden items-center gap-1.5 rounded-lg px-3 py-2 text-sm text-cocoa-100 hover:bg-white/10 hover:text-white sm:inline-flex"
           >
             <ArrowLeft className="size-4" aria-hidden="true" />
             {t("home.plans.back")}
           </Link>
           <Link
             to="/login"
-            className="rounded-lg bg-cocoa-900 px-4 py-2 text-sm font-semibold text-white hover:bg-cocoa-700"
+            className="rounded-lg bg-amber-300 px-4 py-2 text-sm font-semibold text-cocoa-900 hover:bg-amber-200"
           >
             {t("home.plans.signIn")}
           </Link>
@@ -127,21 +127,21 @@ export function PublicPlansPage() {
           <h1 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
             {t("home.plans.title")}
           </h1>
-          <p className="mt-4 text-base text-cocoa-600">{t("home.plans.subtitle")}</p>
+          <p className="mt-4 text-base text-cocoa-100">{t("home.plans.subtitle")}</p>
         </section>
 
         {query.isPending ? (
           <div className="flex justify-center py-16">
-            <Loader className="size-10" />
+            <Loader className="size-10" tone="light" />
           </div>
         ) : query.isError || paid.length === 0 ? (
-          <p role="alert" className="py-16 text-center text-sm text-cocoa-600">
+          <p role="alert" className="py-16 text-center text-sm text-cocoa-100">
             {t("home.plans.unavailable")}
           </p>
         ) : (
           <>
             {trial && (
-              <div className="mx-auto mb-8 flex max-w-3xl flex-col items-center gap-3 rounded-2xl border border-amber-300 bg-amber-100/60 px-5 py-4 text-center sm:flex-row sm:text-left">
+              <div className="mx-auto mb-8 flex max-w-3xl flex-col items-center gap-3 rounded-2xl border border-amber-300 bg-amber-100 px-5 py-4 text-center text-cocoa-900 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.25)] sm:flex-row sm:text-left">
                 <Gift className="size-8 shrink-0 text-amber-700" aria-hidden="true" />
                 <div className="flex-1">
                   <p className="font-semibold">{t("home.plans.trialTitle", { days: trial.trialDays })}</p>
@@ -163,7 +163,7 @@ export function PublicPlansPage() {
 
             <section className="mt-14">
               <h2 className="mb-4 text-xl font-semibold">{t("home.plans.compareTitle")}</h2>
-              <div className="rounded-2xl border border-cocoa-100 bg-white p-2 sm:p-4">
+              <div className="rounded-2xl border border-white/60 bg-white p-2 text-cocoa-900 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.25)] sm:p-4">
                 <PlanComparison plans={stored.filter((plan) => plan.trialDays == null)} />
               </div>
             </section>
@@ -195,9 +195,9 @@ function PlanCard({
   return (
     <article
       className={cn(
-        "relative flex flex-col rounded-2xl border-2 bg-white",
+        "relative flex flex-col rounded-2xl border-2 bg-white text-cocoa-900 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.25)]",
         theme.border,
-        recommended && "shadow-[0_20px_50px_-20px_rgba(60,30,10,0.45)] md:-translate-y-2",
+        recommended && "shadow-[0_28px_60px_-14px_rgba(0,0,0,0.65),0_2px_6px_rgba(0,0,0,0.25)] md:-translate-y-2",
       )}
     >
       {recommended && (
@@ -266,7 +266,7 @@ function Reassurance({
   text: string;
 }) {
   return (
-    <div className="flex gap-3 rounded-2xl border border-cocoa-100 bg-white p-5">
+    <div className="flex gap-3 rounded-2xl border border-white/60 bg-white p-5 text-cocoa-900 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.25)]">
       <Icon className="size-6 shrink-0 text-cocoa-700" aria-hidden="true" />
       <div>
         <p className="font-semibold">{title}</p>

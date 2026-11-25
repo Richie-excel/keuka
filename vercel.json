@@ -2,10 +2,11 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "outputDirectory": "dist",
   "redirects": [
-    { "source": "/", "destination": "/keuka/", "permanent": false }
+    { "source": "/", "destination": "/keuka", "permanent": false }
   ],
   "rewrites": [
     { "source": "/favicon.ico", "destination": "/keuka/favicon.ico" },
+    { "source": "/keuka", "destination": "/keuka/index.html" },
     { "source": "/keuka/:path*", "destination": "/keuka/index.html" }
   ],
   "headers": [

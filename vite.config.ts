@@ -3,14 +3,43 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 import path from "path";
 import tailwindcss from "@tailwindcss/vite";
+import type { Connect, Plugin } from "vite";
+
+const BASE = "/keuka/";
+
+/**
+ * The app answers at `/keuka` itself, without the trailing slash, in `npm run
+ * dev` and `npm run preview` (vercel.json does the same live). Vite only
+ * serves the base WITH its slash, so `/keuka` is passed to it as `/keuka/`
+ * without changing the address in the browser; `/` redirects to `/keuka`.
+ */
+function serveBaseWithoutSlash(): Plugin {
+  const rewrite: Connect.NextHandleFunction = (req, res, next) => {
+    const [path, query] = (req.url ?? "").split("?");
+    const suffix = query ? `?${query}` : "";
+    if (path === "/") {
+      res.writeHead(302, { Location: BASE.slice(0, -1) + suffix });
+      res.end();
+      return;
+    }
+    if (path === BASE.slice(0, -1)) req.url = BASE + suffix;
+    next();
+  };
+  return {
+    name: "serve-base-without-slash",
+    configureServer: (server) => void server.middlewares.use(rewrite),
+    configurePreviewServer: (server) => void server.middlewares.use(rewrite),
+  };
+}
 
 export default defineConfig({
   // Every route and asset is served under /keuka/ (e.g. /keuka/login).
-  base: "/keuka/",
+  base: BASE,
   // Build into dist/keuka so the files sit at the same path the app is served
   // from; vercel.json serves dist/ as the site root.
   build: { outDir: "dist/keuka" },
   plugins: [
+    serveBaseWithoutSlash(),
     react(),
     tailwindcss(),
     VitePWA({

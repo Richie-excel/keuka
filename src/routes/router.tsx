@@ -93,7 +93,14 @@ export const router = createBrowserRouter([
           backdropOverlay: "bg-cocoa-900/80",
         } satisfies BackdropHandle,
       },
-      { path: "/offers", element: <PublicPlansPage /> },
+      {
+        path: "/offers",
+        element: <PublicPlansPage />,
+        handle: {
+          backdrop: "farm",
+          backdropOverlay: "bg-cocoa-900/80",
+        } satisfies BackdropHandle,
+      },
       {
         path: "/login",
         element: <LoginPage />,
