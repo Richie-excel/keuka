@@ -56,6 +56,14 @@ export const BASE_PATH = import.meta.env.BASE_URL.replace(/\/+$/, "");
 /** URL of a file in `public/`, prefixed with the base path. */
 export const publicUrl = (path: string) => `${BASE_PATH}/${path.replace(/^\/+/, "")}`;
 export const APP_ICON_URL = publicUrl("brand/keuka-app-icon.svg");
+/** The cocoa photographs used behind pages (public/images). */
+export const BACKDROPS = {
+  sunset: publicUrl("images/cocoa-sunset.jpg"),
+  beans: publicUrl("images/cocoa-beans.jpg"),
+  farm: publicUrl("images/cocoa-farm.jpg"),
+  podOpen: publicUrl("images/cocoa-pod-open.jpg"),
+} as const;
+
 
 // ── Loading skeletons ───────────────────────────────────────────────────────
 /** Minimum time a page shows its skeleton, even when data arrives sooner. */

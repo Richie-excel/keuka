@@ -54,7 +54,9 @@ export function HeroScreenshot() {
           loading="eager"
           decoding="async"
           onError={() => setFailed(true)}
-          className="block h-auto w-full"
+          // Taller than the capture itself (≈2.8:1): cropped from the top-left,
+          // so the sidebar and the first figures stay in view.
+          className="block aspect-[2/1] w-full object-cover object-left-top"
         />
       </div>
     </motion.figure>

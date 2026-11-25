@@ -1,4 +1,5 @@
 import { BASE_PATH } from "@/constants";
+import type { BackdropHandle } from "@/shared/layout/root-layout";
 import type { ReactNode } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { RootLayout } from "@/shared/layout/root-layout";
@@ -84,9 +85,23 @@ export const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <RouteErrorPage />,
     children: [
-      { path: "/", element: <HomePage /> },
+      {
+        path: "/",
+        element: <HomePage />,
+        handle: {
+          backdrop: "sunset",
+          backdropOverlay: "bg-cocoa-900/80",
+        } satisfies BackdropHandle,
+      },
       { path: "/offers", element: <PublicPlansPage /> },
-      { path: "/login", element: <LoginPage /> },
+      {
+        path: "/login",
+        element: <LoginPage />,
+        handle: {
+          backdrop: "beans",
+          backdropOverlay: "bg-linear-to-b from-cocoa-900/70 via-cocoa-900/60 to-cocoa-900/85",
+        } satisfies BackdropHandle,
+      },
       { path: "/accept-invite", element: <AcceptInvitePage /> },
       { path: "/session-expired", element: <SessionExpiredPage /> },
       {

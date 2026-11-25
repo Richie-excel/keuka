@@ -97,7 +97,7 @@ function FeatureCard({
 }) {
   return (
     <div
-      className={`group relative flex flex-col overflow-hidden rounded-2xl border border-cocoa-100 bg-white p-6 shadow-[0_1px_2px_rgba(52,25,15,0.04)] transition-shadow hover:shadow-[0_16px_40px_-20px_rgba(52,25,15,0.25)] ${className}`}
+      className={`group relative flex flex-col overflow-hidden rounded-2xl border border-white/60 bg-white p-6 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.25)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_28px_60px_-14px_rgba(0,0,0,0.65),0_2px_6px_rgba(0,0,0,0.25)] ${className}`}
     >
       <span className="inline-flex size-10 items-center justify-center rounded-xl bg-cocoa-50 text-cocoa-700 ring-1 ring-cocoa-100 transition-colors group-hover:bg-amber-100 group-hover:text-amber-700">
         <Icon className="size-5" aria-hidden="true" />
@@ -200,11 +200,11 @@ function Home() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="bg-paper pb-10">
+      <div className="pb-10">
         <div className="mx-auto max-w-7xl px-4 pt-4 sm:px-8">
           {/* ── Hero ─────────────────────────────────────────────── */}
           <section
-            className="relative isolate overflow-hidden rounded-3xl bg-cocoa-900"
+            className="relative isolate overflow-hidden rounded-3xl border border-white/15 bg-cocoa-900/45 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.25)] backdrop-blur-[2px]"
             style={{
               backgroundImage: [
                 "radial-gradient(60% 70% at 85% 30%, rgba(252,211,77,0.18), transparent 65%)",
@@ -318,7 +318,7 @@ function Home() {
           </section>
 
           {/* ── Facts strip ──────────────────────────────────────── */}
-          <section className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-cocoa-100 bg-cocoa-100 lg:grid-cols-4">
+          <section className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/60 bg-cocoa-100 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.25)] lg:grid-cols-4">
             {facts.map((fact, index) => (
               <Reveal
                 key={fact.label}
@@ -337,6 +337,7 @@ function Home() {
           <section id="features" className="scroll-mt-6 pt-24 md:pt-32">
             <Reveal>
               <SectionHeading
+                invert
                 eyebrow={t("home.features.eyebrow")}
                 title={t("home.features.title")}
                 subtitle={t("home.features.subtitle")}
@@ -389,7 +390,7 @@ function Home() {
                 />
               </Reveal>
               <Reveal className="md:col-span-6">
-                <div className="relative overflow-hidden rounded-2xl bg-cocoa-900 p-8 sm:p-10">
+                <div className="relative overflow-hidden rounded-2xl border border-white/25 bg-linear-to-br from-cocoa-500/50 to-cocoa-700/40 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.25)] backdrop-blur-md p-8 sm:p-10">
                   <div
                     aria-hidden="true"
                     className="absolute inset-0 opacity-60"
@@ -435,7 +436,7 @@ function Home() {
                       ].map(([time, event, who]) => (
                         <li
                           key={event}
-                          className="flex items-center justify-between gap-4 rounded-lg border border-white/10 bg-white/4 px-4 py-2.5 text-cocoa-100"
+                          className="flex items-center justify-between gap-4 rounded-lg border border-white/15 bg-black/25 px-4 py-2.5 text-cocoa-100"
                         >
                           <span className="text-cocoa-300">{time}</span>
                           <span className="flex-1 truncate text-white">
@@ -455,6 +456,7 @@ function Home() {
           <section className="pt-24 md:pt-32">
             <Reveal>
               <SectionHeading
+                invert
                 eyebrow={t("home.steps.eyebrow")}
                 title={t("home.steps.title")}
               />
@@ -462,7 +464,7 @@ function Home() {
             <ol className="mt-12 grid gap-4 md:grid-cols-3">
               {steps.map(({ key, icon: Icon }, index) => (
                 <Reveal key={key} delay={index * 0.08}>
-                  <li className="relative h-full rounded-2xl border border-cocoa-100 bg-white p-6">
+                  <li className="relative h-full rounded-2xl border border-white/60 bg-white p-6 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.25)] transition duration-300 hover:-translate-y-0.5">
                     <div className="flex items-center justify-between">
                       <span className="inline-flex size-10 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
                         <Icon className="size-5" aria-hidden="true" />
@@ -485,7 +487,7 @@ function Home() {
 
           {/* ── Documents ────────────────────────────────────────── */}
           <section className="pt-24 md:pt-32">
-            <div className="grid gap-10 rounded-3xl border border-cocoa-100 bg-white p-8 sm:p-12 lg:grid-cols-12 lg:items-center">
+            <div className="grid gap-10 rounded-3xl border border-white/60 bg-white p-8 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.25)] sm:p-12 lg:grid-cols-12 lg:items-center">
               <Reveal className="lg:col-span-5">
                 <SectionHeading
                   eyebrow={t("home.documents.eyebrow")}
@@ -518,7 +520,7 @@ function Home() {
           <section className="pt-24 md:pt-32">
             <Reveal>
               <div
-                className="relative overflow-hidden rounded-3xl bg-cocoa-900 px-6 py-16 text-center sm:px-12"
+                className="relative overflow-hidden rounded-3xl border border-white/25 bg-linear-to-br from-cocoa-500/50 to-cocoa-700/40 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.25)] backdrop-blur-md px-6 py-16 text-center sm:px-12"
                 style={{
                   backgroundImage:
                     "radial-gradient(60% 100% at 50% 0%, rgba(252,211,77,0.2), transparent 70%)",
@@ -553,7 +555,7 @@ function Home() {
           </section>
 
           {/* ── Footer ───────────────────────────────────────────── */}
-          <footer className="mt-10 flex flex-col gap-4 border-t border-cocoa-100 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <footer className="mt-10 flex flex-col gap-4 rounded-2xl border border-white/25 bg-linear-to-br from-cocoa-500/50 to-cocoa-700/40 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.55),0_2px_6px_rgba(0,0,0,0.25)] backdrop-blur-md px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8">
             <div className="flex items-center gap-3">
               <img
                 src={APP_ICON_URL}
@@ -561,13 +563,13 @@ function Home() {
                 className="size-8 rounded-lg"
               />
               <div>
-                <p className="text-sm font-semibold text-cocoa-900">
+                <p className="text-sm font-semibold text-white">
                   {APP_NAME}
                 </p>
-                <p className="text-xs text-cocoa-500">{APP_FULL_NAME}</p>
+                <p className="text-xs text-cocoa-100">{APP_FULL_NAME}</p>
               </div>
             </div>
-            <div className="text-xs text-cocoa-500 sm:text-right">
+            <div className="text-xs text-cocoa-100 sm:text-right">
               <p>{t("home.footer.illustrative")}</p>
               <p className="mt-1">
                 &copy; {year} {APP_NAME}. {t("home.footer.rights")}

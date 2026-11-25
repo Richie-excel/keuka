@@ -52,7 +52,7 @@ export default defineConfig({
       },
       workbox: {
         navigateFallback: '/keuka/index.html',
-        globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,jpg}'],
       },
       devOptions: {
         enabled: false,

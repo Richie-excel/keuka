@@ -82,11 +82,11 @@ export function LoginPage() {
   const serverError = errors.root?.serverError?.message;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-paper px-4">
+    <div className="flex min-h-full items-center justify-center px-4 py-10">
       <div className="w-full max-w-sm">
         <form
           onSubmit={onSubmit}
-          className="rounded-xl border border-cocoa-100 bg-white p-6 shadow-sm sm:p-8"
+          className="rounded-xl border border-white/20 bg-white/95 p-6 shadow-2xl shadow-black/40 backdrop-blur-md sm:p-8"
         >
           <AppLogo className="mb-6 py-2" showName={false} />
 
